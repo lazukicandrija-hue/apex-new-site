@@ -230,8 +230,9 @@ document.addEventListener('DOMContentLoaded', () => {
   aiSearchBtn.addEventListener('click', () => {
     const query = searchInput.value.trim();
     if (query) {
-      // Smooth scroll to AI section
-      document.getElementById('ai-engine').scrollIntoView({ behavior: 'smooth' });
+      // Vrati na pocetak sajta i skini fokus sa inputa da izbaci tastaturu/zoom
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      searchInput.blur();
 
       // Add user message to AI conversation
       setTimeout(() => {

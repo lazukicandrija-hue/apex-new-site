@@ -1870,7 +1870,7 @@ html, body {
   }
 
   .ai-search input {
-    font-size: 0.85rem;
+    font-size: 16px; /* Sprecava iOS auto-zoom */
     min-width: 0;
   }
 
