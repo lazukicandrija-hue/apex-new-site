@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // -------- Contact Form --------
   const contactForm = document.getElementById('contactForm');
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-EOvcwDJ7oZ-KHPgTVmHrCEZYnqxzkHHx9AdQyKgNa7d-o1-eiSme_LAsl8eKwclU/exec';
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -322,6 +323,23 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.style.opacity = '0.7';
     submitBtn.disabled = true;
 
+    // Prikupi podatke
+    const formData = {
+      ime: document.getElementById('contactName').value.trim(),
+      email: document.getElementById('contactEmail').value.trim(),
+      telefon: document.getElementById('contactPhone').value.trim(),
+      kategorija: document.getElementById('contactInterest').value,
+      poruka: document.getElementById('contactMessage').value.trim(),
+      datum: new Date().toLocaleString('sr-RS')
+    };
+
+    // Pošalji kao GET request (sa timestamp-om da browser ne kešira)
+    formData._t = Date.now();
+    const params = new URLSearchParams(formData).toString();
+    const img = new Image();
+    img.src = GOOGLE_SCRIPT_URL + '?' + params;
+
+    // Prikaži uspeh
     setTimeout(() => {
       submitBtn.textContent = '✓ Uspešno Poslato!';
       submitBtn.style.opacity = '1';
