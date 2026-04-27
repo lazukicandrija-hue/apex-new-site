@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       propertyCards.forEach((card, index) => {
         const category = card.getAttribute('data-category');
 
-        if (filter === 'all' || category === filter) {
+        if (filter === 'all' || category === filter || category === 'all') {
           card.style.opacity = '0';
           card.style.transform = 'translateY(20px)';
           card.style.display = 'block';
