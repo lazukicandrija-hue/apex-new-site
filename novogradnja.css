@@ -1,0 +1,590 @@
+/* ============================================
+   APEX — Novogradnja Landing Page Styles
+   ============================================ */
+
+/* ---------- Novogradnja Hero ---------- */
+.novo-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 360px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.novo-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.novo-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.novo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,10,10,0.3) 0%,
+    rgba(10,10,10,0.15) 30%,
+    rgba(10,10,10,0.6) 70%,
+    rgba(10,10,10,0.95) 100%
+  );
+}
+
+.novo-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px) 50px;
+}
+
+.novo-hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--pure-white);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.novo-hero-content h1 span {
+  color: var(--gold);
+}
+
+.novo-hero-subtitle {
+  font-size: 1rem;
+  color: var(--silver);
+  font-weight: 300;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ---------- Breadcrumb ---------- */
+.novo-breadcrumb {
+  background: var(--charcoal);
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+  padding: 16px 0;
+}
+
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--slate-light);
+}
+
+.breadcrumb-inner a {
+  color: var(--silver);
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.breadcrumb-inner a:hover {
+  color: var(--gold);
+}
+
+.breadcrumb-sep {
+  color: var(--gold-dark);
+  font-size: 0.65rem;
+}
+
+.breadcrumb-current {
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Results Count ---------- */
+.novo-results-bar {
+  padding: 24px 0 0;
+}
+
+.results-count {
+  font-size: 0.82rem;
+  color: var(--slate-light);
+  letter-spacing: 0.5px;
+}
+
+.results-count strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ---------- Ekskluzivna Ponuda ---------- */
+.novo-exclusive {
+  padding: 60px 0 40px;
+  position: relative;
+}
+
+.exclusive-banner {
+  background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(184,148,31,0.04));
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.exclusive-banner::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.exclusive-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(212,175,55,0.02) 30%,
+    rgba(212,175,55,0.05) 50%,
+    rgba(212,175,55,0.02) 70%,
+    transparent 100%
+  );
+  animation: exclusiveSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes exclusiveSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.exclusive-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.exclusive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ---------- Project Cards ---------- */
+.novo-projects {
+  padding: 40px 0 80px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--charcoal);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212,175,55,0.25);
+  box-shadow: 0 16px 64px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.06);
+}
+
+.project-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.project-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-img img {
+  transform: scale(1.08);
+}
+
+.project-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background: var(--gold);
+  color: var(--black);
+  z-index: 2;
+}
+
+.project-badge.exclusive {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.project-badge.new {
+  background: linear-gradient(135deg, #1a6b3a, #2a9d4d);
+  color: var(--pure-white);
+}
+
+.project-card-info {
+  padding: 22px;
+}
+
+.project-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--pure-white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.project-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--silver);
+  margin-bottom: 16px;
+}
+
+.project-card-location svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.project-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.project-card-price {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-card-price .price-label {
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate-light);
+}
+
+.project-card-price .price-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.project-card-area {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--silver);
+}
+
+.project-card-area svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-dark);
+}
+
+/* Exclusive card variant (in banner) */
+.exclusive-grid .project-card {
+  border-color: rgba(212,175,55,0.15);
+}
+
+.exclusive-grid .project-card:hover {
+  border-color: rgba(212,175,55,0.4);
+}
+
+/* ---------- CTA Section ---------- */
+.novo-cta {
+  padding: 80px 0;
+  background: var(--charcoal);
+  border-top: 1px solid rgba(212,175,55,0.1);
+}
+
+.novo-cta-inner {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.novo-cta-inner .section-tag {
+  text-align: center;
+}
+
+.novo-cta-inner .section-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.novo-cta-desc {
+  font-size: 1rem;
+  color: var(--silver);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.novo-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.novo-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--black);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.novo-cta-btn-primary:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.25);
+}
+
+.novo-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: transparent;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.novo-cta-btn-secondary:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ---------- Responsive ---------- */
+
+/* ---------- Coming Soon Placeholder ---------- */
+.coming-soon-img {
+  background: linear-gradient(135deg, rgba(20,20,20,1), rgba(30,30,30,1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.coming-soon-placeholder svg {
+  color: rgba(212,175,55,0.2);
+}
+
+.coming-soon-placeholder span {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(212,175,55,0.35);
+  font-weight: 400;
+}
+
+.coming-soon-text {
+  color: var(--slate-light) !important;
+  font-style: italic;
+}
+
+.coming-soon-price {
+  color: var(--silver) !important;
+  font-size: 0.88rem !important;
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exclusive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exclusive-banner {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .novo-hero {
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  .novo-hero-content {
+    padding-bottom: 30px;
+  }
+
+  .novo-hero-content h1 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  .novo-hero-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card-img {
+    height: 200px;
+  }
+
+  .project-card-info {
+    padding: 18px;
+  }
+
+  .project-card-name {
+    font-size: 1.05rem;
+  }
+
+  .novo-exclusive {
+    padding: 40px 0 24px;
+  }
+
+  .exclusive-banner {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .exclusive-title {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .novo-cta {
+    padding: 50px 0;
+  }
+
+  .novo-cta-desc {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .novo-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .novo-cta-btn-primary,
+  .novo-cta-btn-secondary {
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 0.72rem;
+  }
+
+  .breadcrumb-inner {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .novo-hero {
+    height: 35vh;
+    min-height: 240px;
+  }
+
+  .novo-hero-content h1 {
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+  }
+
+  .project-card-img {
+    height: 180px;
+  }
+
+  .exclusive-banner {
+    padding: 20px 14px;
+  }
+
+  .exclusive-title {
+    font-size: 0.95rem;
+  }
+}

@@ -230,8 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
   aiSearchBtn.addEventListener('click', () => {
     const query = searchInput.value.trim();
     if (query) {
-      // Vrati na pocetak sajta i skini fokus sa inputa da izbaci tastaturu/zoom
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Skroluj do AI sekcije da korisnik vidi odgovor
+      const aiSection = document.getElementById('ai-engine');
+      if (aiSection) {
+        const headerOffset = 80;
+        const elementPosition = aiSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
       searchInput.blur();
 
       // Add user message to AI conversation

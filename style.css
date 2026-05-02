@@ -262,6 +262,14 @@ ul {
   width: 100%;
 }
 
+.nav-links a.active-nav {
+  color: var(--gold);
+}
+
+.nav-links a.active-nav::after {
+  width: 100%;
+}
+
 .nav-cta {
   font-size: 0.78rem !important;
   font-weight: 600 !important;
