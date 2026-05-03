@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Nekretnina | APEX Real Estate Novi Sad</title>
+  <meta name="description" content="Premium nekretnina u ponudi APEX Real Estate agencije u Novom Sadu.">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="property.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#properties" data-nav>Nekretnine</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#ai-engine" data-nav>AI Pretraga</a></li>
+        <li><a href="index.html#blog" data-nav>Blog</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Property Hero (populated by JS) -->
+  <section class="prop-hero" id="propHero">
+    <div class="prop-hero-bg">
+      <div id="heroPlaceholder" style="width:100%;height:100%;background:#111;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;color:#D4AF37;font-family:'Cinzel',serif;">
+          <div style="font-size:1.2rem;opacity:0.6;">Učitavanje...</div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-hero-overlay"></div>
+    <div class="prop-hero-content">
+      <a href="index.html#properties" class="prop-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Nazad na Nekretnine
+      </a>
+      <span class="prop-hero-badge" id="heroBadge"></span>
+      <h1 id="heroTitle"></h1>
+      <p class="prop-hero-location" id="heroLocation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span id="heroLocationText"></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <div class="prop-quick-stats" id="quickStats" style="display:none;">
+    <div class="container">
+      <div class="quick-stats-grid">
+        <div class="quick-stat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          <div>
+            <strong id="statArea"></strong>
+            <span>Površina</span>
+          </div>
+        </div>
+        <div class="quick-stat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M21 7H3l3-4h12l3 4Z"/></svg>
+          <div>
+            <strong id="statRooms"></strong>
+            <span>Sobe</span>
+          </div>
+        </div>
+        <div class="quick-stat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+          <div>
+            <strong id="statType"></strong>
+            <span>Tip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="prop-main section" id="propMain" style="display:none;">
+    <div class="container">
+      <div class="prop-layout">
+
+        <!-- Left: Gallery + Details -->
+        <div class="prop-content">
+
+          <!-- Image Gallery -->
+          <div class="prop-gallery" id="propGallery" style="display:none;">
+            <div class="gallery-main">
+              <img src="" alt="" id="galleryMainImg" class="gallery-main-img">
+              <button class="gallery-nav gallery-prev" id="galleryPrev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="gallery-nav gallery-next" id="galleryNext">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <span class="gallery-counter" id="galleryCounter"></span>
+            </div>
+            <div class="gallery-thumbs" id="galleryThumbs"></div>
+          </div>
+
+          <!-- Description -->
+          <div class="prop-description">
+            <h2>O Nekretnini</h2>
+            <p id="propDescription"></p>
+          </div>
+        </div>
+
+        <!-- Right: Sidebar -->
+        <aside class="prop-sidebar">
+          <div class="prop-price-card">
+            <span class="price-label">Cena</span>
+            <div class="price-value" id="propPrice"></div>
+            <div class="price-sqm" id="propPriceSqm"></div>
+            <a href="index.html#contact" class="prop-cta-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Zakažite Obilazak
+            </a>
+            <a href="tel:+381643335757" class="prop-phone-btn">
+              064 / 333 / 5757
+            </a>
+          </div>
+
+          <div class="prop-agent-card">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate" class="agent-logo">
+            <h4>APEX Real Estate</h4>
+            <p>Vaš partner za premium nekretnine u Novom Sadu</p>
+            <a href="mailto:office@apexrealestate.rs" class="agent-email">office@apexrealestate.rs</a>
+          </div>
+
+          <div class="prop-details-card">
+            <h4>Detalji Nekretnine</h4>
+            <div class="detail-row"><span>Tip</span><strong id="detailType"></strong></div>
+            <div class="detail-row"><span>Lokacija</span><strong id="detailLocation"></strong></div>
+            <div class="detail-row"><span>Kvadratura</span><strong id="detailArea"></strong></div>
+            <div class="detail-row"><span>Struktura</span><strong id="detailRooms"></strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Not Found state -->
+  <div id="notFound" style="display:none;text-align:center;padding:120px 20px;min-height:60vh;">
+    <h2 style="font-family:'Cinzel',serif;color:#D4AF37;font-size:2rem;margin-bottom:1rem;">Nekretnina nije pronađena</h2>
+    <p style="color:#999;margin-bottom:2rem;">Ova nekretnina više nije u ponudi ili ne postoji.</p>
+    <a href="index.html#properties" style="color:#D4AF37;text-decoration:underline;">← Nazad na nekretnine</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+  (function() {
+    const CRM_API = 'https://crm.apexrealestate.rs/api/sync/properties';
+    const params = new URLSearchParams(window.location.search);
+    const propertyId = params.get('id');
+
+    if (!propertyId) {
+      document.getElementById('notFound').style.display = 'block';
+      document.getElementById('propHero').style.display = 'none';
+      return;
+    }
+
+    fetch(CRM_API + '/' + propertyId)
+      .then(function(r) { 
+        if (!r.ok) throw new Error('Not found');
+        return r.json(); 
+      })
+      .then(function(data) {
+        const p = data.property;
+        
+        // Update page title
+        document.title = p.title + ' | APEX Real Estate Novi Sad';
+        document.querySelector('meta[name="description"]').content = p.description;
+
+        // Hero
+        const heroPlaceholder = document.getElementById('heroPlaceholder');
+        if (p.images && p.images.length > 0) {
+          const heroImg = document.createElement('img');
+          heroImg.src = p.images[0];
+          heroImg.alt = p.title;
+          heroImg.id = 'heroPropertyImg';
+          heroPlaceholder.parentNode.replaceChild(heroImg, heroPlaceholder);
+        }
+        
+        const badge = p.type === 'Rente' ? 'Izdavanje' : p.type === 'Novogradnja' ? 'Novogradnja' : 'Prodaja';
+        document.getElementById('heroBadge').textContent = badge;
+        document.getElementById('heroTitle').textContent = p.title;
+        document.getElementById('heroLocationText').textContent = p.location;
+
+        // Quick Stats
+        document.getElementById('quickStats').style.display = '';
+        document.getElementById('statArea').textContent = p.area + 'm²';
+        document.getElementById('statRooms').textContent = p.rooms;
+        document.getElementById('statType').textContent = p.type;
+
+        // Main Content
+        document.getElementById('propMain').style.display = '';
+        document.getElementById('propDescription').textContent = p.description;
+
+        // Price
+        if (p.type === 'Rente') {
+          document.getElementById('propPrice').textContent = '€' + p.price + '/mes';
+        } else {
+          document.getElementById('propPrice').textContent = '€' + p.price.toLocaleString('de-DE');
+        }
+        document.getElementById('propPriceSqm').textContent = p.area + 'm²';
+
+        // Details sidebar
+        document.getElementById('detailType').textContent = p.type;
+        document.getElementById('detailLocation').textContent = p.location;
+        document.getElementById('detailArea').textContent = p.area + 'm²';
+        document.getElementById('detailRooms').textContent = p.rooms + (p.rooms === 1 ? ' soba' : ' sobe');
+
+        // Gallery
+        if (p.images && p.images.length > 0) {
+          var gallery = document.getElementById('propGallery');
+          gallery.style.display = '';
+          var mainImg = document.getElementById('galleryMainImg');
+          var counter = document.getElementById('galleryCounter');
+          var thumbs = document.getElementById('galleryThumbs');
+          var currentIndex = 0;
+          var images = p.images;
+
+          mainImg.src = images[0];
+          mainImg.alt = p.title;
+          counter.textContent = '1 / ' + images.length;
+
+          // Create thumbnails
+          images.forEach(function(src, i) {
+            var btn = document.createElement('button');
+            btn.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+            btn.dataset.index = i;
+            btn.innerHTML = '<img src="' + src + '" alt="Slika ' + (i+1) + '">';
+            btn.addEventListener('click', function() {
+              currentIndex = i;
+              updateGallery();
+            });
+            thumbs.appendChild(btn);
+          });
+
+          function updateGallery() {
+            mainImg.src = images[currentIndex];
+            counter.textContent = (currentIndex + 1) + ' / ' + images.length;
+            thumbs.querySelectorAll('.gallery-thumb').forEach(function(t, i) {
+              t.classList.toggle('active', i === currentIndex);
+            });
+          }
+
+          document.getElementById('galleryPrev').addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery();
+          });
+          document.getElementById('galleryNext').addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery();
+          });
+        }
+      })
+      .catch(function(err) {
+        console.error('Property load error:', err);
+        document.getElementById('notFound').style.display = 'block';
+        document.getElementById('propHero').style.display = 'none';
+      });
+  })();
+  </script>
+  <script src="property.js"></script>
+</body>
+</html>
