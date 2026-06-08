@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>APEX Real Estate | Premium Nekretnine Novi Sad | Luxury Real Estate Serbia</title>
+  <meta name="description" content="APEX Real Estate — vrhunska agencija za luksuzne nekretnine u Novom Sadu. Penthouse stanovi, vile, i ekskluzivne rezidencije. Prodaja stanova Novi Sad. Luxury Real Estate Serbia.">
+  <meta name="keywords" content="Nekretnine Novi Sad, Prodaja stanova Novi Sad, Luxury Real Estate Serbia, Luksuzni stanovi, Penthouse Novi Sad, Vile Fruška Gora">
+
+  <!-- JSON-LD Structured Data for SEO & AI -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "APEX Real Estate",
+    "description": "Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Prodaja stanova, novogradnja, izdavanje i investicione prilike.",
+    "url": "https://www.apexrealestate.rs",
+    "telephone": "+381643335757",
+    "email": "office@apexrealestate.rs",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mičurinova 74",
+      "addressLocality": "Novi Sad",
+      "addressRegion": "Vojvodina",
+      "postalCode": "21000",
+      "addressCountry": "RS"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "45.2671",
+      "longitude": "19.8335"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Novi Sad"
+    },
+    "priceRange": "€€€",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "reviewCount": "47",
+      "ratingCount": "47"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Marko Petrović"},
+        "datePublished": "2026-04-15",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Profesionalan pristup od prvog kontakta do primopredaje ključeva. Stan u novogradnji na Grbavici pronašli za manje od dve nedelje. Izuzetna agencija!"
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Jelena Nikolić"},
+        "datePublished": "2026-03-22",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "APEX tim je bio izuzetan tokom cele prodaje naše kuće na Adicama. Dobili smo čak bolju cenu nego što smo očekivali. Svaka preporuka!"
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Stefan Đorđević"},
+        "datePublished": "2026-05-10",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Kao mlad bračni par, nismo znali odakle da počnemo sa kupovinom prvog stana. APEX nas je vodio kroz ceo proces — od izbora lokacije do pravnih formalnosti."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Dr. Nikola Jovanović"},
+        "datePublished": "2026-02-08",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Investirao sam u dva stana za rentiranje preko APEX-a. Profesionalni, diskretni i efikasni. ROI je upravo onakav kakav su predvideli."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Milica Stojanović"},
+        "datePublished": "2026-01-30",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Penthouse na Detelinari — APEX je jedina agencija koja je imala pristup ovoj nekretnini. Kompletna usluga od A do Ž, uključujući i pravnu podršku."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Dragan Milosavljević"},
+        "datePublished": "2026-05-25",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "reviewBody": "Treći put koristim usluge APEX-a i svaki put sam oduševljen. Poznaju tržište kao niko drugi u Novom Sadu."
+      }
+    ]
+  }
+  </script>
+  <meta name="author" content="APEX Real Estate">
+  <meta property="og:title" content="APEX Real Estate | Premium Nekretnine Novi Sad">
+  <meta property="og:description" content="Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Ekskluzivni penthouse stanovi, vile, i rezidencije.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260601b">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate" class="preloader-logo">
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="#about" data-nav>O Nama</a></li>
+        <li><a href="#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="assets/images/hero-bg.png">
+        <source src="assets/video/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <canvas class="hero-particles" id="heroParticles"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="dot"></span>
+        Novi Sad — Srbija
+      </div>
+
+      <h1 class="reveal stagger-1">
+        Vrh Luksuza
+        <span>U Svetu Nekretnina</span>
+      </h1>
+
+      <p class="hero-subtitle reveal stagger-2">
+        Otkrijte ekskluzivne rezidencije koje definišu nov standard života.
+        APEX — gde svaka nekretnina priča svoju priču.
+      </p>
+
+      <div class="ai-search reveal stagger-3">
+        <div class="ai-search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input type="text" id="aiSearchInput" placeholder="Pretražite nekretnine... npr. 'Stan na prodaju u centru'" autocomplete="off">
+          <button class="ai-search-btn" id="aiSearchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+            <span>Pretraži</span>
+          </button>
+        </div>
+        <div class="ai-search-suggestions">
+          <span data-suggestion="Stan na prodaju centar">Prodaja centar</span>
+          <span data-suggestion="Novogradnja Novi Sad">Novogradnja</span>
+          <span data-suggestion="Stan za rentiranje">Rente</span>
+          <span data-suggestion="Kuća na prodaju">Kuća na prodaju</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" id="heroScroll">
+      <span>Skroluj</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-count="100">0</div>
+          <div class="stat-label">Prodatih Nekretnina</div>
+        </div>
+        <div class="stat-item reveal stagger-1">
+          <div class="stat-number" data-count="3">0</div>
+          <div class="stat-label">Godina Iskustva</div>
+        </div>
+        <div class="stat-item reveal stagger-2">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="stat-label">% Zadovoljnih Klijenata</div>
+        </div>
+        <div class="stat-item reveal stagger-3">
+          <div class="stat-number" data-count="45">0</div>
+          <div class="stat-label">Aktivnih Listinga</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Listings -->
+  <section class="section listings-section" id="properties">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Naše Usluge</span>
+        <h2 class="section-title reveal stagger-1">Nekretnine & Usluge</h2>
+        <p class="section-desc reveal stagger-2">Prodaja, novogradnja, izdavanje i pravna podrška — sve na jednom mestu.</p>
+        <div class="gold-line reveal stagger-3"></div>
+      </div>
+
+      <div class="listings-filter reveal">
+        <button class="filter-btn active" data-filter="all">Sve</button>
+        <a href="prodaja.html" class="filter-btn">Prodaja</a>
+        <a href="novogradnja.html" class="filter-btn">Novogradnja</a>
+        <a href="renta.html" class="filter-btn">Rente</a>
+      </div>
+
+      <div class="listings-grid">
+        <!-- Dinamičke nekretnine iz CRM-a se dodaju direktno ovde -->
+      </div>
+
+      <script src="fallback-properties.js"></script>
+      <script>
+      (function() {
+        const CRM_API = 'https://crm.apexrealestate.rs/api/sync/properties';
+        const grid = document.querySelector('.listings-grid');
+        
+        const CUSTOM_PAGES = {};
+
+        const PRIORITY_IDS = [
+          's003', 's009', 's013', 'n006', 'n002'
+        ];
+
+        const TYPE_TO_CATEGORY = {
+          'Starogradnja': 'prodaja',
+          'Sekundarni Stanovi': 'prodaja',
+          'Novogradnja': 'novogradnja',
+          'Kuće': 'prodaja',
+          'Rente': 'rente',
+          'Lokali': 'prodaja'
+        };
+
+        function formatPrice(price, type) {
+          if (type === 'Rente') return '€' + price + '/mes';
+          return '€' + price.toLocaleString('de-DE');
+        }
+
+        function createPropertyCard(prop, index) {
+          const category = TYPE_TO_CATEGORY[prop.type] || 'all';
+          const badge = prop.type === 'Rente' ? 'Izdavanje' : prop.type === 'Novogradnja' ? 'Novogradnja' : 'Prodaja';
+          const firstImage = prop.images && prop.images.length > 0 
+            ? prop.images[0] 
+            : null;
+          
+          const card = document.createElement('a');
+          card.href = 'property.html?id=' + prop.id;
+          card.className = 'property-card reveal visible';
+          card.dataset.category = category;
+          card.style.textDecoration = 'none';
+          card.style.color = 'inherit';
+          
+          card.innerHTML = firstImage 
+            ? '<div class="property-img">' +
+                '<img src="' + firstImage + '" alt="' + prop.title + '" loading="lazy">' +
+                '<span class="property-badge">' + badge + '</span>' +
+              '</div>'
+            : '<div class="property-img coming-soon-img">' +
+                '<div class="coming-soon-placeholder">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>' +
+                  '<span>Foto uskoro</span>' +
+                '</div>' +
+                '<span class="property-badge">' + badge + '</span>' +
+              '</div>';
+          
+          card.innerHTML += 
+            '<div class="property-info">' +
+              '<span class="property-location">' + prop.location + '</span>' +
+              '<h3 class="property-title">' + prop.title + '</h3>' +
+              '<div class="property-features">' +
+                '<span class="property-feature">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>' +
+                  prop.area + 'm²' +
+                '</span>' +
+                '<span class="property-feature">' +
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M21 7H3"/></svg>' +
+                  prop.rooms + (prop.rooms === 1 ? ' soba' : ' sobe') +
+                '</span>' +
+              '</div>' +
+              '<div class="property-footer">' +
+                '<span class="property-price">' + formatPrice(prop.price, prop.type) + '</span>' +
+                '<span class="property-link">Detaljnije <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>' +
+              '</div>' +
+            '</div>';
+          
+          return card;
+        }
+
+        function loadProperties(props) {
+          if (PRIORITY_IDS.length > 0) {
+            var prioritized = [];
+            var rest = [];
+            PRIORITY_IDS.forEach(function(pid) {
+              var found = props.find(function(p) { return p.id === pid; });
+              if (found) prioritized.push(found);
+            });
+            props.forEach(function(p) {
+              if (PRIORITY_IDS.indexOf(p.id) === -1) rest.push(p);
+            });
+            props = prioritized.concat(rest);
+          }
+          props.forEach(function(prop, i) {
+            grid.appendChild(createPropertyCard(prop, i));
+          });
+          if (window.reapplyPropertyFilter) window.reapplyPropertyFilter();
+          if (window.initRevealObserver) window.initRevealObserver();
+        }
+
+        fetch(CRM_API)
+          .then(function(r) {
+            if (!r.ok) throw new Error('CRM HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function(data) {
+            console.log('CRM sync: loaded', data.count, 'properties');
+            if (!data.properties || data.properties.length === 0) {
+              console.warn('CRM returned 0 properties, using fallback');
+              loadProperties(typeof FALLBACK_PROPERTIES !== 'undefined' ? FALLBACK_PROPERTIES : []);
+              return;
+            }
+            loadProperties(data.properties);
+          })
+          .catch(function(err) {
+            console.error('CRM sync error:', err, '— loading fallback properties');
+            loadProperties(typeof FALLBACK_PROPERTIES !== 'undefined' ? FALLBACK_PROPERTIES : []);
+          });
+      })();
+      </script>
+
+      <div class="view-all-wrap reveal">
+        <button class="btn-outline-gold">
+          Pogledajte Sve Nekretnine
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <img src="assets/images/about-bg.png" alt="Novi Sad panorama golden hour" loading="lazy" class="parallax-img">
+          <div class="about-image-overlay">
+            <div class="about-image-stat">
+              <strong data-count="3">0</strong>
+              <span>godina na vrhu tržišta</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <span class="section-tag">O Nama</span>
+          <h2 class="section-title">Vrh Izvrsnosti<br>U Svakom Detalju</h2>
+          <p class="about-text">
+            APEX nije samo agencija za nekretnine — mi smo partneri vašeg životnog stila.
+            Naš tim stručnjaka posvećen je pronalaženju savršene nekretnine koja reflektuje
+            vašu viziju luksuza. Sa dubokim poznavanjem novosadskog tržišta i globalnim standardima
+            usluge, pružamo iskustvo koje prevazilazi očekivanja.
+          </p>
+
+          <div class="about-pillars">
+            <div class="pillar">
+              <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+              </svg>
+              <h4>Premium Selekcija</h4>
+              <p>Ručno birane nekretnine koje zadovoljavaju najviše standarde luksuza.</p>
+            </div>
+            <div class="pillar">
+              <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <h4>Diskrecija</h4>
+              <p>Potpuna privatnost i poverljivost u svakoj transakciji.</p>
+            </div>
+            <div class="pillar">
+              <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="m16 10-5.12 5.12-2.12-2.12"/>
+              </svg>
+              <h4>Ekspertiza</h4>
+              <p>Decenija iskustva u premium segmentu tržišta nekretnina.</p>
+            </div>
+            <div class="pillar">
+              <svg class="pillar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/>
+              </svg>
+              <h4>AI Tehnologija</h4>
+              <p>Napredni algoritmi za personalizovane preporuke nekretnina.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews / Testimonials Section -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Recenzije</span>
+        <h2 class="section-title reveal stagger-1">Šta Kažu Naši Klijenti</h2>
+        <p class="section-desc reveal stagger-2">Poverenje naših klijenata je naša najveća nagrada. Evo šta kažu oni koji su nam ukazali poverenje.</p>
+        <div class="gold-line reveal stagger-3"></div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"Profesionalan pristup od prvog kontakta do primopredaje ključeva. Stan u novogradnji na Grbavici pronašli za manje od dve nedelje. Izuzetna agencija koju toplo preporučujem svima!"</p>
+          <div class="review-author">
+            <div class="review-avatar">MP</div>
+            <div class="review-author-info">
+              <h4>Marko Petrović</h4>
+              <span>Kupovina stana — Grbavica</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal stagger-1">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"APEX tim je bio izuzetan tokom cele prodaje naše kuće na Adicama. Razumeli su naše potrebe, odradili profesionalnu prezentaciju i dobili smo čak bolju cenu nego što smo očekivali."</p>
+          <div class="review-author">
+            <div class="review-avatar">JN</div>
+            <div class="review-author-info">
+              <h4>Jelena Nikolić</h4>
+              <span>Prodaja kuće — Adice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal stagger-2">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"Kao mlad bračni par, nismo znali odakle da počnemo sa kupovinom prvog stana. APEX nas je vodio kroz ceo proces — od izbora lokacije, preko pregovora, do pravnih formalnosti. Hvala vam!"</p>
+          <div class="review-author">
+            <div class="review-avatar">SĐ</div>
+            <div class="review-author-info">
+              <h4>Stefan i Ana Đorđević</h4>
+              <span>Kupovina prvog stana — Liman</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal stagger-3">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"Investirao sam u dva stana za rentiranje preko APEX-a. Profesionalni, diskretni i efikasni. ROI je upravo onakav kakav su predvideli. Pravi partneri za investicione nekretnine."</p>
+          <div class="review-author">
+            <div class="review-avatar">NJ</div>
+            <div class="review-author-info">
+              <h4>Dr. Nikola Jovanović</h4>
+              <span>Investicija — 2 stana u centru</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal stagger-4">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"Penthouse na Detelinari — APEX je jedina agencija koja je imala pristup ovoj ekskluzivnoj nekretnini. Kompletna usluga od A do Ž, uključujući i pravnu podršku. Vrhunski!"</p>
+          <div class="review-author">
+            <div class="review-avatar">MS</div>
+            <div class="review-author-info">
+              <h4>Milica Stojanović</h4>
+              <span>Kupovina penthouse-a — Detelinara</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal stagger-5">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="review-text">"Treći put koristim usluge APEX-a i svaki put sam oduševljen. Poznaju novosadsko tržište kao niko drugi. Brza komunikacija, korektni uslovi, bez skrivenih troškova."</p>
+          <div class="review-author">
+            <div class="review-avatar">DM</div>
+            <div class="review-author-info">
+              <h4>Dragan Milosavljević</h4>
+              <span>Prodaja i kupovina — 3 transakcije</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-summary reveal">
+        <div class="review-summary-inner">
+          <div class="review-summary-rating">
+            <strong>5.0</strong>
+            <span>/ 5</span>
+          </div>
+          <div class="review-summary-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="review-summary-text">Na osnovu 47 recenzija</div>
+        </div>
+        <a href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review" target="_blank" rel="noopener noreferrer" class="review-google-link">
+          Ostavite recenziju na Google-u
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview Section -->
+  <section class="section blog-section" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Blog & Saveti</span>
+        <h2 class="section-title reveal stagger-1">Najnovije iz Sveta Nekretnina</h2>
+        <p class="section-desc reveal stagger-2">Stručni saveti, tržišne analize i vodiči za kupce i investitore nekretnina u Novom Sadu.</p>
+        <div class="gold-line reveal stagger-3"></div>
+      </div>
+
+      <div class="blog-grid">
+        <a href="blog-post.html?slug=vodic-za-kupovinu-stana-u-novom-sadu" class="blog-card reveal" style="text-decoration:none;color:inherit;">
+          <div class="blog-img">
+            <img src="assets/images/blog-1.png" alt="Vodič za kupovinu stana u Novom Sadu" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Vodič</span>
+              <span class="blog-date">01. Jun 2026</span>
+            </div>
+            <h3 class="blog-title">Kompletan Vodič za Kupovinu Stana u Novom Sadu 2026</h3>
+            <p class="blog-excerpt">Sve što treba da znate pre kupovine stana — od izbora lokacije i budžeta, do pravnih koraka i saveta od stručnjaka.</p>
+            <span class="blog-link">Pročitajte više <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="blog-post.html?slug=novogradnja-vs-starogradnja" class="blog-card reveal stagger-1" style="text-decoration:none;color:inherit;">
+          <div class="blog-img">
+            <img src="assets/images/blog-2.png" alt="Novogradnja vs starogradnja" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Tržište</span>
+              <span class="blog-date">28. Maj 2026</span>
+            </div>
+            <h3 class="blog-title">Novogradnja ili Starogradnja — Šta je Bolji Izbor?</h3>
+            <p class="blog-excerpt">Detaljna analiza prednosti i mana novogradnje i starogradnje u Novom Sadu. Saznajte šta je bolja investicija za vas.</p>
+            <span class="blog-link">Pročitajte više <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="blog-post.html?slug=top-lokacije-za-investiranje-novi-sad" class="blog-card reveal stagger-2" style="text-decoration:none;color:inherit;">
+          <div class="blog-img">
+            <img src="assets/images/blog-3.png" alt="Top lokacije za investiranje u Novom Sadu" loading="lazy">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Saveti</span>
+              <span class="blog-date">20. Maj 2026</span>
+            </div>
+            <h3 class="blog-title">Top 5 Lokacija za Investiranje u Nekretnine u Novom Sadu</h3>
+            <p class="blog-excerpt">Otkrijte koje lokacije u Novom Sadu nude najbolji povrat investicije i zašto je 2026. idealna godina za ulaganje.</p>
+            <span class="blog-link">Pročitajte više <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="view-all-wrap reveal">
+        <a href="blog.html" class="btn-outline-gold">
+          Pogledajte Sve Članke
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag reveal">Kontakt</span>
+          <h2 class="section-title reveal stagger-1">Započnite Vaše<br>Putovanje do Doma</h2>
+          <p class="contact-text reveal stagger-2">
+            Svaki veliki dom počinje jednim razgovorom. Kontaktirajte nas danas i dozvolite
+            našem timu da pronađe nekretninu koja savršeno odgovara vašim željama.
+          </p>
+
+          <div class="contact-details reveal stagger-3">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Lokacija</h4>
+                <p>Mičurinova 74<br>21000 Novi Sad, Srbija</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Telefon</h4>
+                <p>064/333/5757</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>office@apexrealestate.rs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Ime i Prezime</label>
+                <input type="text" id="contactName" placeholder="Vaše ime" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" placeholder="email@primer.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Telefon</label>
+              <input type="tel" id="contactPhone" placeholder="+381 60 000 0000">
+            </div>
+            <div class="form-group">
+              <label for="contactInterest">Zainteresovani ste za</label>
+              <select id="contactInterest">
+                <option value="" disabled selected>Izaberite kategoriju</option>
+                <option value="kupovina">Kupovinu nekretnine</option>
+                <option value="prodaja">Prodaju nekretnine</option>
+                <option value="izdavanje">Izdavanje</option>
+                <option value="investicija">Investicione prilike</option>
+
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Poruka</label>
+              <textarea id="contactMessage" placeholder="Opišite vaše želje..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">Pošaljite Upit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
+          </div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="renta.html">Rente</a>
+          <a href="blog.html">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="#reviews">Recenzije</a>
+          <a href="#contact">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="#">Politika Privatnosti</a>
+          <a href="#">Uslovi Korišćenja</a>
+          <a href="#">Kolačići</a>
+          <a href="#">GDPR</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+        <p class="footer-seo-keywords">
+          Nekretnine Novi Sad • Prodaja stanova Novi Sad • Luxury Real Estate Serbia •
+          Luksuzni stanovi Novi Sad • Penthouse Novi Sad • Vile Fruška Gora • Premium nekretnine Srbija
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js?v=20260601b"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Prodaja Stanova | APEX Real Estate Novi Sad</title>
+  <meta name="description" content="Stanovi na prodaju u Novom Sadu — pretražite široku ponudu stanova, kuća i lokala. Filteri po lokaciji, ceni, površini i strukturi.">
+  <meta name="keywords" content="Prodaja stanova Novi Sad, Stanovi Novi Sad, Kupovina stana, APEX Real Estate">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260601">
+  <link rel="stylesheet" href="prodaja.css?v=20260601">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav class="active-nav">Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="prodaja-hero">
+    <div class="container">
+      <h1 class="prodaja-title">Stanovi na Prodaju</h1>
+      <p class="prodaja-subtitle">Pretražite našu ponudu stanova, kuća i lokala u Novom Sadu</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="filterLokacija">Lokacija</label>
+          <select id="filterLokacija">
+            <option value="">Sve lokacije</option>
+            <option value="Centar">Centar</option>
+            <option value="Liman">Liman</option>
+            <option value="Liman I">Liman I</option>
+            <option value="Liman II">Liman II</option>
+            <option value="Liman III">Liman III</option>
+            <option value="Liman IV">Liman IV</option>
+            <option value="Grbavica">Grbavica</option>
+            <option value="Novo Naselje">Novo Naselje</option>
+            <option value="Podbara">Podbara</option>
+            <option value="Sajmište">Sajmište</option>
+            <option value="Satelit">Satelit</option>
+            <option value="Telep">Telep</option>
+            <option value="Detelinara">Detelinara</option>
+            <option value="Petrovaradin">Petrovaradin</option>
+            <option value="Sremska Kamenica">Sremska Kamenica</option>
+            <option value="Futog">Futog</option>
+            <option value="Veternik">Veternik</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterTip">Tip</label>
+          <select id="filterTip">
+            <option value="">Svi tipovi</option>
+            <option value="stan">Stan</option>
+            <option value="kuca">Kuća</option>
+            <option value="lokal">Lokal</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterCenaOd">Cena (€)</label>
+          <div class="filter-range">
+            <input type="text" id="filterCenaOd" placeholder="Od" inputmode="numeric">
+            <span class="range-sep">–</span>
+            <input type="text" id="filterCenaDo" placeholder="Do" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterPovrsinaOd">Površina (m²)</label>
+          <div class="filter-range">
+            <input type="number" id="filterPovrsinaOd" placeholder="Od" min="0">
+            <span class="range-sep">–</span>
+            <input type="number" id="filterPovrsinaDo" placeholder="Do" min="0">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterStruktura">Struktura</label>
+          <select id="filterStruktura">
+            <option value="">Sve strukture</option>
+            <option value="1">Garsonjera</option>
+            <option value="2">Jednosoban</option>
+            <option value="2.5">Jednoiposoban</option>
+            <option value="3">Dvosoban</option>
+            <option value="4">Trosoban</option>
+            <option value="5">Četvorosoban+</option>
+          </select>
+        </div>
+
+        <div class="filter-actions">
+          <button class="filter-search-btn" id="filterSearchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            Pretraži
+          </button>
+          <button class="filter-reset-btn" id="filterResetBtn">Poništi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results-section">
+    <div class="container">
+      <div class="results-header">
+        <p class="results-count" id="resultsCount">Učitavanje...</p>
+        <div class="results-sort">
+          <label for="sortBy">Sortiraj:</label>
+          <select id="sortBy">
+            <option value="newest">Najnovije</option>
+            <option value="price-asc">Cena: niža prvo</option>
+            <option value="price-desc">Cena: viša prvo</option>
+            <option value="area-asc">Površina: manja prvo</option>
+            <option value="area-desc">Površina: veća prvo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="prodaja-grid" id="prodajaGrid">
+        <!-- Properties loaded from CRM -->
+      </div>
+
+      <div class="no-results" id="noResults" style="display:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M8 11h6"/></svg>
+        <h3>Nema rezultata</h3>
+        <p>Pokušajte sa drugim filterima ili poništite pretragu.</p>
+      </div>
+
+      <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Učitavanje nekretnina...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
+          </div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="renta.html">Izdavanje</a>
+          <a href="blog.html">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="index.html#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="#">Politika Privatnosti</a>
+          <a href="#">Uslovi Korišćenja</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js?v=20260601b"></script>
+  <script src="fallback-properties.js"></script>
+  <script src="prodaja.js?v=20260601"></script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Telep — Novogradnja Telep | APEX Real Estate Novi Sad</title>
+  <meta name="description" content="Telep — premium novogradnja na Telepu, Novi Sad. 35 modernih stanova u novom stambenom kompleksu. Cena na upit. APEX Real Estate.">
+  <meta name="keywords" content="Novogradnja Telep, Stanovi Telep Novi Sad, Novi stanovi Telep, Premium novogradnja Telep">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="novogradnja-project.css">
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav class="active-nav">Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="proj-hero">
+    <div class="proj-hero-bg" style="background-image: url('assets/images/novogradnja/telep/render.jpg');">
+      <div class="img-shield"></div>
+    </div>
+    <div class="proj-hero-overlay"></div>
+    <div class="proj-hero-content">
+      <span class="proj-hero-badge">U Izgradnji</span>
+      <h1 class="proj-hero-title">Telep</h1>
+      <p class="proj-hero-location">📍 Telep, Novi Sad</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="proj-breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Početna</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="novogradnja.html">Novogradnja</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">Telep</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="proj-stats">
+    <div class="container">
+      <div class="proj-stats-grid">
+        <div class="proj-stat-item reveal">
+          <div class="proj-stat-value" id="statUkupno">35</div>
+          <div class="proj-stat-label">Ukupno Stanova</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-1">
+          <div class="proj-stat-value" id="statDostupno">—</div>
+          <div class="proj-stat-label">Dostupno</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-2">
+          <div class="proj-stat-value" id="statPovrsina">—</div>
+          <div class="proj-stat-label">Površina</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-3">
+          <div class="proj-stat-value">Na upit</div>
+          <div class="proj-stat-label">Završetak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="proj-content-section">
+    <div class="container">
+
+      <!-- Render Images Gallery -->
+      <div class="proj-gallery reveal" style="margin-bottom: 50px;">
+        <span class="proj-section-tag">Galerija</span>
+        <h2 class="proj-section-title">Renderi Projekta</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="proj-gallery-main">
+            <div class="proj-gallery-img" role="img" aria-label="Telep novogradnja render 1" style="background-image: url('assets/images/novogradnja/telep/render.jpg');">
+              <div class="img-shield"></div>
+            </div>
+          </div>
+          <div class="proj-gallery-main">
+            <div class="proj-gallery-img" role="img" aria-label="Telep novogradnja render 2" style="background-image: url('assets/images/novogradnja/telep/render-2.jpg');">
+              <div class="img-shield"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-layout">
+
+        <!-- Left Column -->
+        <div class="proj-main-col">
+
+          <!-- Description -->
+          <div class="proj-description reveal">
+            <span class="proj-section-tag">O Projektu</span>
+            <h2 class="proj-section-title">Moderno Stanovanje na Telepu</h2>
+            <p class="proj-desc-text">
+              Novi stambeni kompleks na <strong>Telepu</strong> koji spaja modernu arhitekturu sa najkvalitetnijim materijalima.
+              Objekat spratnosti Su+P+3/4 obuhvata <strong>35 stanova</strong>, energetski razred B.
+              Na raspolaganju je <strong>54 parking mesta</strong> (27 garažnih + 27 spoljnih).
+            </p>
+            <p class="proj-desc-text">
+              Gasno grejanje, lift, video interfon. Trokomorna PVC stolarija sa argonom,
+              lameliran parket Tarkett, keramičke pločice I klase.
+              Telep je idealna lokacija za porodice — u blizini su škole, vrtići, parkovi,
+              marketi i odlična saobraćajna povezanost sa centrom grada.
+            </p>
+          </div>
+
+          <!-- Apartments Table (loaded from CRM) -->
+          <div class="proj-apartments reveal">
+            <span class="proj-section-tag">Ponuda Stanova</span>
+            <h2 class="proj-section-title">Dostupni Stanovi</h2>
+            <div class="proj-table-wrapper">
+              <table class="proj-table" id="apartmentsTable">
+                <thead>
+                  <tr>
+                    <th>Stan</th>
+                    <th>Sprat</th>
+                    <th>Površina</th>
+                    <th>Struktura</th>
+                    <th>Cena</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="apartmentsBody">
+                  <tr>
+                    <td colspan="6" style="text-align:center;padding:30px;color:rgba(255,255,255,0.4);">
+                      Učitavanje stanova...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="proj-sidebar">
+          <div class="proj-price-card">
+            <div class="proj-price-label">Cena</div>
+            <div class="proj-price-value">Na Upit</div>
+            <div class="proj-price-note">Kontaktirajte nas za detaljne informacije</div>
+            <a href="index.html#contact" class="proj-cta-primary">📞 Zakažite Obilazak</a>
+            <a href="tel:+381643335757" class="proj-cta-secondary">064 / 333 / 5757</a>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>Detalji Projekta</h4>
+            <div class="proj-info-row"><span>Lokacija</span><strong>Telep, Novi Sad</strong></div>
+            <div class="proj-info-row"><span>Tip</span><strong>Stambeni kompleks</strong></div>
+            <div class="proj-info-row"><span>Ukupno jedinica</span><strong id="sidebarUkupno">35</strong></div>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>APEX Real Estate</h4>
+            <div class="proj-info-row"><span>Telefon</span><strong>064/333/5757</strong></div>
+            <div class="proj-info-row"><span>Email</span><strong>office@apexrealestate.rs</strong></div>
+            <div class="proj-info-row"><span>Adresa</span><strong>Mičurinova 74, NS</strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Approximate Location Map -->
+  <section class="proj-map-section">
+    <div class="container">
+      <span class="proj-section-tag" style="text-align:center;display:block;">Lokacija</span>
+      <h2 class="proj-section-title" style="text-align:center;">Okvirna Lokacija Projekta</h2>
+    </div>
+    <div class="proj-map-fullwidth">
+      <div id="leafletMap" style="width:100%;height:500px;"></div>
+      <p class="proj-map-note">* Prikazana lokacija je okvirna. Za tačnu adresu kontaktirajte nas.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="proj-cta-section">
+    <div class="container">
+      <div class="proj-cta-inner">
+        <span class="section-tag reveal">Zainteresovani?</span>
+        <h2 class="section-title reveal stagger-1">Želite Više Informacija?</h2>
+        <p class="novo-cta-desc reveal stagger-2">Ako ste zainteresovani za prezentaciju ili želite više informacija o projektu na Telepu, kontaktirajte nas putem forme ili telefona.</p>
+        
+        <!-- Inquiry Form -->
+        <form class="proj-inquiry-form reveal stagger-3" id="inquiryForm">
+          <div class="proj-form-row">
+            <div class="proj-form-group">
+              <input type="text" id="inquiryName" placeholder="Vaše Ime i Prezime" required>
+            </div>
+            <div class="proj-form-group">
+              <input type="tel" id="inquiryPhone" placeholder="Broj Telefona" required>
+            </div>
+          </div>
+          <div class="proj-form-group">
+            <input type="email" id="inquiryEmail" placeholder="Email Adresa">
+          </div>
+          <div class="proj-form-group">
+            <textarea id="inquiryMessage" rows="3" placeholder="Vaša poruka (opciono)"></textarea>
+          </div>
+          <button type="submit" class="novo-cta-btn-primary" style="width:100%;justify-content:center;">Pošaljite Upit</button>
+        </form>
+
+        <div class="proj-cta-divider reveal stagger-4">
+          <span>ili nas pozovite direktno</span>
+        </div>
+        <a href="tel:+381643335757" class="novo-cta-btn-secondary reveal stagger-4" style="display:inline-flex;margin-top:10px;">📞 064 / 333 / 5757</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+        <p class="footer-seo-keywords">Novogradnja Telep • Stanovi Telep Novi Sad • Premium novogradnja Novi Sad • Novi stanovi Telep</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">↑</button>
+
+  <script>
+    // Load apartments from CRM Projects API for Telep
+    (function() {
+      var PROJECTS_API = 'https://crm.apexrealestate.rs/api/sync/projects';
+      var tbody = document.getElementById('apartmentsBody');
+      var statDostupno = document.getElementById('statDostupno');
+      var statPovrsina = document.getElementById('statPovrsina');
+      var statUkupno = document.getElementById('statUkupno');
+      var sidebarUkupno = document.getElementById('sidebarUkupno');
+
+      function getStructureFromTitle(title) {
+        if (!title) return '—';
+        // Extract structure from title like "Telep - S01 (Jednosoban, 43.02m²)"
+        var match = title.match(/\(([^,]+),/);
+        if (match && match[1]) return match[1].trim();
+        // Fallback: check for keywords in title
+        if (title.indexOf('Trosoban') !== -1) return 'Trosoban';
+        if (title.indexOf('Dvosoban') !== -1) return 'Dvosoban';
+        if (title.indexOf('Jednoiposoban') !== -1) return 'Jednoiposoban';
+        if (title.indexOf('Jednosoban') !== -1) return 'Jednosoban';
+        if (title.indexOf('Garsonjera') !== -1) return 'Garsonjera';
+        return '—';
+      }
+
+      function formatPrice(price) {
+        if (!price || price === 0) return 'Na upit';
+        return '€' + price.toLocaleString('de-DE');
+      }
+
+      function renderTable(apartments) {
+        if (!apartments || apartments.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:30px;color:rgba(255,255,255,0.4);">Trenutno nema podataka o stanovima. Kontaktirajte nas za informacije.</td></tr>';
+          statDostupno.textContent = '—';
+          statPovrsina.textContent = '—';
+          return;
+        }
+
+        // Sort by title (S01, S02, S03...)
+        apartments.sort(function(a, b) {
+          return (a.title || '').localeCompare(b.title || '', undefined, {numeric: true});
+        });
+
+        // Stats
+        var activeApts = apartments.filter(function(a) { return a.status === 'Aktivna'; });
+        statDostupno.textContent = activeApts.length;
+        statUkupno.textContent = apartments.length;
+        sidebarUkupno.textContent = apartments.length;
+        var areas = apartments.map(function(a) { return a.area || 0; }).filter(function(a) { return a > 0; });
+        if (areas.length > 0) {
+          var minArea = Math.round(Math.min.apply(null, areas) * 100) / 100;
+          var maxArea = Math.round(Math.max.apply(null, areas) * 100) / 100;
+          statPovrsina.textContent = minArea + '–' + maxArea + 'm²';
+        }
+
+        tbody.innerHTML = '';
+        apartments.forEach(function(apt, i) {
+          var tr = document.createElement('tr');
+          tr.style.cursor = 'pointer';
+          tr.addEventListener('click', function() {
+            window.location.href = 'property.html?id=' + apt.id;
+          });
+          var statusClass = apt.status === 'Aktivna' ? 'status-available' : 'status-sold';
+          var statusText = apt.status === 'Aktivna' ? '● Dostupan' : '● Prodat';
+          tr.innerHTML =
+            '<td>' + (apt.title || 'Stan ' + (i + 1)) + '</td>' +
+            '<td>' + (apt.floor || '—') + '</td>' +
+            '<td>' + (apt.area ? apt.area + ' m²' : '—') + '</td>' +
+            '<td>' + getStructureFromTitle(apt.title) + '</td>' +
+            '<td class="price-cell">' + formatPrice(apt.price) + '</td>' +
+            '<td><span class="' + statusClass + '">' + statusText + '</span></td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      fetch(PROJECTS_API)
+        .then(function(r) {
+          if (!r.ok) throw new Error('API HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          if (!data.projects) throw new Error('No projects');
+          // Find Telep project
+          var telepProject = null;
+          for (var i = 0; i < data.projects.length; i++) {
+            if (data.projects[i].slug === 'telep' || data.projects[i].name === 'Telep') {
+              telepProject = data.projects[i];
+              break;
+            }
+          }
+          if (telepProject && telepProject.units) {
+            renderTable(telepProject.units);
+          } else {
+            renderTable([]);
+          }
+        })
+        .catch(function(err) {
+          console.error('CRM error for Telep:', err);
+          renderTable([]);
+        });
+    })();
+  </script>
+
+  <script src="novogradnja-project.js"></script>
+  <style>
+    /* POI Marker Styles */
+    .poi-marker {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      border: 2px solid #fff;
+      line-height: 1;
+    }
+    .map-label-content {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #c0392b;
+      text-shadow: 0 1px 3px rgba(255,255,255,0.9), 0 0 6px rgba(255,255,255,0.7);
+      letter-spacing: 3px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    /* Legend */
+    .map-legend {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      line-height: 1.8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      color: #333;
+      max-width: 200px;
+    }
+    .map-legend h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #111;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .map-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .leaflet-popup-content-wrapper {
+      border-radius: 10px !important;
+      font-family: 'Montserrat', sans-serif !important;
+    }
+    .leaflet-popup-content {
+      margin: 10px 14px !important;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+    }
+    .poi-popup-name {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 2px;
+      color: #111;
+    }
+    .poi-popup-type {
+      font-size: 11px;
+      color: #666;
+    }
+    .poi-popup-dist {
+      font-size: 11px;
+      color: #999;
+      margin-top: 2px;
+    }
+  </style>
+  <script>
+    // Initialize Leaflet Map — Telep area
+    (function() {
+      var telep = [45.2420, 19.8100];
+      var map = L.map('leafletMap', {
+        center: telep,
+        zoom: 14,
+        zoomControl: true,
+        scrollWheelZoom: false,
+        attributionControl: true
+      });
+
+      L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        attribution: '&copy; Google Maps',
+        maxZoom: 20
+      }).addTo(map);
+
+      L.circle(telep, {
+        radius: 800,
+        color: '#ea4335',
+        weight: 0,
+        opacity: 0,
+        fillColor: '#ea4335',
+        fillOpacity: 0.2
+      }).addTo(map);
+
+      function createPOIMarker(lat, lng, emoji, bgColor, name, type, distance) {
+        var icon = L.divIcon({
+          className: '',
+          html: '<div class="poi-marker" style="background:' + bgColor + ';">' + emoji + '</div>',
+          iconSize: [24, 24],
+          iconAnchor: [12, 12]
+        });
+        var marker = L.marker([lat, lng], { icon: icon }).addTo(map);
+        marker.bindPopup(
+          '<div class="poi-popup-name">' + name + '</div>' +
+          '<div class="poi-popup-type">' + type + '</div>' +
+          '<div class="poi-popup-dist">📍 ~' + distance + ' od projekta</div>'
+        );
+      }
+
+      // Nearby amenities for Telep
+      createPOIMarker(45.2440, 19.8050, '🏫', '#3498db',
+        'OŠ "Đorđe Natošević"', 'Osnovna škola', '500m');
+      createPOIMarker(45.2400, 19.8150, '👶', '#e67e22',
+        'Vrtić Telep', 'Predškolska ustanova', '400m');
+      createPOIMarker(45.2430, 19.8160, '🛒', '#9b59b6',
+        'Market', 'Prodavnica', '300m');
+      createPOIMarker(45.2390, 19.8080, '🌳', '#27ae60',
+        'Park na Telepu', 'Zelena zona', '350m');
+      createPOIMarker(45.2450, 19.8120, '🚌', '#34495e',
+        'Autobuska stanica', 'Gradski prevoz', '400m');
+      createPOIMarker(45.2410, 19.8200, '🏥', '#e74c3c',
+        'Ambulanta', 'Zdravstvena ustanova', '600m');
+
+      // Legend
+      var legend = L.control({ position: 'bottomleft' });
+      legend.onAdd = function() {
+        var div = L.DomUtil.create('div', 'map-legend');
+        div.innerHTML =
+          '<h4>Sadržaji u Blizini</h4>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#3498db;"></div> Škole</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#e67e22;"></div> Vrtići</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#9b59b6;"></div> Marketi</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#27ae60;"></div> Parkovi</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#34495e;"></div> Prevoz</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#e74c3c;"></div> Zdravstvo</div>';
+        return div;
+      };
+      legend.addTo(map);
+
+      map.on('click', function() {
+        map.scrollWheelZoom.enable();
+      });
+    })();
+  </script>
+</body>
+</html>

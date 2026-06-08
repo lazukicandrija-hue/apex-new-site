@@ -1,0 +1,514 @@
+/* =============================================
+   PRODAJA PAGE STYLES
+   ============================================= */
+
+/* Hero */
+.prodaja-hero {
+  padding: 140px 0 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(10,10,10,0.98) 100%);
+  text-align: center;
+  border-bottom: 1px solid rgba(212,175,55,0.15);
+}
+
+.prodaja-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: #D4AF37;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.prodaja-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+}
+
+/* Filter Section */
+.filter-section {
+  background: rgba(15,15,15,0.98);
+  padding: 25px 0;
+  position: sticky;
+  top: 70px;
+  z-index: 90;
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(212,175,55,0.7);
+  font-weight: 600;
+}
+
+.filter-group select,
+.filter-group input[type="number"],
+.filter-group input[type="text"] {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.filter-group select:hover,
+.filter-group select:focus,
+.filter-group input[type="number"]:hover,
+.filter-group input[type="number"]:focus,
+.filter-group input[type="text"]:hover,
+.filter-group input[type="text"]:focus {
+  border-color: rgba(212,175,55,0.5);
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+.filter-group select option {
+  background: #111;
+  color: #fff;
+}
+
+.filter-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-range input {
+  width: 100%;
+  min-width: 0;
+}
+
+.range-sep {
+  color: rgba(255,255,255,0.3);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Remove number input arrows */
+.filter-group input[type="number"]::-webkit-inner-spin-button,
+.filter-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.filter-group input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.filter-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #D4AF37, #B8962E);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-search-btn:hover {
+  background: linear-gradient(135deg, #E5C349, #D4AF37);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+}
+
+.filter-reset-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-reset-btn:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+}
+
+/* Results Section */
+.results-section {
+  background: #0a0a0a;
+  padding: 30px 0 80px;
+  min-height: 60vh;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.results-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.results-count strong {
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+.results-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.results-sort label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.results-sort select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 24px;
+}
+
+.results-sort select option {
+  background: #111;
+}
+
+/* Property Grid */
+.prodaja-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.prodaja-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.prodaja-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212,175,55,0.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,175,55,0.1);
+}
+
+.prodaja-card-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.prodaja-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.prodaja-card:hover .prodaja-card-img img {
+  transform: scale(1.05);
+}
+
+.prodaja-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #D4AF37, #B8962E);
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prodaja-card-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.2);
+}
+
+.prodaja-card-coming-soon svg {
+  opacity: 0.3;
+}
+
+.prodaja-card-coming-soon span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prodaja-card-info {
+  padding: 18px;
+}
+
+.prodaja-card-location {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #D4AF37;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.prodaja-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.prodaja-card-features {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.prodaja-card-feature {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.prodaja-card-feature svg {
+  color: rgba(212,175,55,0.5);
+  flex-shrink: 0;
+}
+
+.prodaja-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.prodaja-card-price {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+.prodaja-card-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s ease;
+}
+
+.prodaja-card:hover .prodaja-card-link {
+  color: #D4AF37;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255,255,255,0.3);
+}
+
+.no-results svg {
+  margin-bottom: 15px;
+  color: rgba(212,175,55,0.3);
+}
+
+.no-results h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Loading */
+.loading-spinner {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212,175,55,0.1);
+  border-top: 3px solid #D4AF37;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .prodaja-hero {
+    padding: 120px 0 30px;
+  }
+
+  .filter-section {
+    position: static;
+    padding: 20px 0;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .filter-range {
+    flex-direction: row;
+  }
+
+  .filter-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .filter-search-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .filter-reset-btn {
+    flex: 0;
+  }
+
+  .results-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .prodaja-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .prodaja-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .prodaja-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Sajmište — Novogradnja Novi Sad | APEX Real Estate</title>
+  <meta name="description" content="Sajmište — premium novogradnja u Novom Sadu. Stanovi sa SPA, teretanom, recepcijom. Cena na upit.">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="novogradnja-project.css">
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav class="active-nav">Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="proj-hero">
+    <div class="proj-hero-bg" style="background-image: url('assets/images/novogradnja/graviton/render.png');">
+      <div class="img-shield"></div>
+    </div>
+    <div class="proj-hero-overlay"></div>
+    <div class="proj-hero-content">
+      <span class="proj-hero-badge">U Izgradnji</span>
+      <h1 class="proj-hero-title">Sajmište</h1>
+      <p class="proj-hero-location">📍 Sajmište, Novi Sad</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="proj-breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Početna</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="novogradnja.html">Novogradnja</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">Sajmište</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="proj-stats">
+    <div class="container">
+      <div class="proj-stats-grid">
+        <div class="proj-stat-item reveal">
+          <div class="proj-stat-value">27</div>
+          <div class="proj-stat-label">Ukupno Jedinica</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-1">
+          <div class="proj-stat-value">7</div>
+          <div class="proj-stat-label">Dostupno</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-2">
+          <div class="proj-stat-value">28–58m²</div>
+          <div class="proj-stat-label">Površina</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-3">
+          <div class="proj-stat-value">Mart 2027</div>
+          <div class="proj-stat-label">Završetak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="proj-content-section">
+    <div class="container">
+
+      <!-- Full-width Render Image -->
+      <div class="proj-gallery reveal" style="margin-bottom: 50px;">
+        <span class="proj-section-tag">Galerija</span>
+        <h2 class="proj-section-title">Render Projekta</h2>
+        <div class="proj-gallery-main">
+          <div class="proj-gallery-img" role="img" aria-label="Sajmište novogradnja render" style="background-image: url('assets/images/novogradnja/graviton/render.png');">
+            <div class="img-shield"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Floor Plan Modal (hidden, triggered by "Plan stana" buttons) -->
+      <div id="skicaModal" class="skica-modal" onclick="closeSkicaModal(event)">
+        <div class="skica-modal-content" onclick="event.stopPropagation()">
+          <button class="skica-modal-close" onclick="closeSkicaModal()" aria-label="Zatvori">&times;</button>
+          <div class="skica-modal-body">
+            <div class="skica-modal-img">
+              <img id="skicaModalImg" src="" alt="Plan stana">
+            </div>
+            <div class="skica-modal-info" id="skicaModalInfo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-layout">
+
+        <!-- Left Column -->
+        <div class="proj-main-col">
+
+          <!-- Description -->
+          <div class="proj-description reveal">
+            <span class="proj-section-tag">O Projektu</span>
+            <h2 class="proj-section-title">Premium Stanovanje na Sajmištu</h2>
+            <p class="proj-desc-text">
+              Na jednoj od najtraženijih lokacija u Novom Sadu, na <strong>Sajmištu</strong>,
+              u izgradnji je objekat koji pomera granice modernog stanovanja. Uz vrhunski kvalitet gradnje,
+              stanari mogu da uživaju i u dodatnim sadržajima: elegantnom restoranu, recepciji, praktičnom
+              vešeraju, sauni i mini teretani.
+            </p>
+            <p class="proj-desc-text">
+              Sve što vam je potrebno za savremen i komforan život, sada je na jednom mestu.
+              Premium materijali i vrhunska izrada garantuju kvalitet koji traje.
+            </p>
+            <div class="proj-completion">
+              <span>🏗️ Planirani završetak radova: <strong>Mart 2027</strong> (±60 dana)</span>
+            </div>
+          </div>
+
+          <!-- Apartments Table -->
+          <div class="proj-apartments reveal">
+            <span class="proj-section-tag">Ponuda Stanova</span>
+            <h2 class="proj-section-title">Dostupni Stanovi</h2>
+            <div class="proj-table-wrapper">
+              <table class="proj-table">
+                <thead>
+                  <tr>
+                    <th>Stan</th>
+                    <th>Sprat</th>
+                    <th>Površina</th>
+                    <th>Struktura</th>
+                    <th>Cena</th>
+                    <th>Status</th>
+                    <th>Skica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Stan br.5</td>
+                    <td>1. sprat</td>
+                    <td>28,82 m²</td>
+                    <td>Garsonjera</td>
+                    <td class="price-cell">Cena na upit</td>
+                    <td><span class="status-available">● Dostupan</span></td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Stan br.13</td>
+                    <td>3. sprat</td>
+                    <td>34,33 m²</td>
+                    <td>Garsonjera</td>
+                    <td class="price-cell">Cena na upit</td>
+                    <td><span class="status-available">● Dostupan</span></td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Stan br.14</td>
+                    <td>3. sprat</td>
+                    <td>28,74 m²</td>
+                    <td>Garsonjera</td>
+                    <td class="price-cell">—</td>
+                    <td><span class="status-sold">Prodat</span></td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td>Stan</td>
+                    <td>5. sprat</td>
+                    <td>45,67 m²</td>
+                    <td>Dvosoban</td>
+                    <td class="price-cell">Cena na upit</td>
+                    <td><span class="status-available">● Dostupan</span></td>
+                    <td><a href="#" class="plan-stana-link" onclick="openSkicaModal(event,'assets/images/novogradnja/graviton/skica-stan-3.png','5. sprat','45,67 m²','Dvosoban')">🏠 Plan stana</a></td>
+                  </tr>
+                  <tr>
+                    <td>Stan</td>
+                    <td>4. sprat</td>
+                    <td>46,29 m²</td>
+                    <td>Dvosoban</td>
+                    <td class="price-cell">Cena na upit</td>
+                    <td><span class="status-available">● Dostupan</span></td>
+                    <td><a href="#" class="plan-stana-link" onclick="openSkicaModal(event,'assets/images/novogradnja/graviton/skica-stan-2.png','4. sprat','46,29 m²','Dvosoban')">🏠 Plan stana</a></td>
+                  </tr>
+                  <tr>
+                    <td>Stan</td>
+                    <td>1. sprat</td>
+                    <td>57,99 m²</td>
+                    <td>Dvosoban</td>
+                    <td class="price-cell">Cena na upit</td>
+                    <td><span class="status-available">● Dostupan</span></td>
+                    <td><a href="#" class="plan-stana-link" onclick="openSkicaModal(event,'assets/images/novogradnja/graviton/skica-stan-1.png','1. sprat','57,99 m²','Dvosoban')">🏠 Plan stana</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="proj-table-note">* Cene su sa PDV-om. Za detaljne informacije o cenama kontaktirajte nas. Dostupno 7 od 27 jedinica.</p>
+          </div>
+
+          <!-- Amenities -->
+          <div class="proj-amenities reveal">
+            <span class="proj-section-tag">Sadržaji</span>
+            <h2 class="proj-section-title">Dodatne Usluge i Pogodnosti</h2>
+            <div class="proj-amenities-grid">
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">🏋️</div>
+                <div class="proj-amenity-name">Teretana</div>
+                <div class="proj-amenity-desc">Fitnes sala sa profesionalnim trenerom</div>
+              </div>
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">🧖</div>
+                <div class="proj-amenity-name">SPA & Wellness</div>
+                <div class="proj-amenity-desc">Sauna i slana soba za sve stanare</div>
+              </div>
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">🛎️</div>
+                <div class="proj-amenity-name">Recepcija</div>
+                <div class="proj-amenity-desc">Profesionalna recepcija u zgradi</div>
+              </div>
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">🍽️</div>
+                <div class="proj-amenity-name">Restoran</div>
+                <div class="proj-amenity-desc">Elegantan restoran u prizemlju</div>
+              </div>
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">👔</div>
+                <div class="proj-amenity-name">Vešeraj</div>
+                <div class="proj-amenity-desc">Praktičan vešeraj za sve stanare</div>
+              </div>
+              <div class="proj-amenity-card">
+                <div class="proj-amenity-icon">🏨</div>
+                <div class="proj-amenity-name">Property Management</div>
+                <div class="proj-amenity-desc">Uslužno izdavanje sa hotelskim pristupom</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Materials -->
+          <div class="proj-materials reveal">
+            <span class="proj-section-tag">Kvalitet Gradnje</span>
+            <h2 class="proj-section-title">Materijalizacija</h2>
+            <div class="proj-materials-grid">
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🧱</div>
+                <div>
+                  <div class="proj-material-name">Fasada i Zidovi</div>
+                  <div class="proj-material-desc">Kvalitetni termo blokovi + kamena vuna termoizolacija</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🪵</div>
+                <div>
+                  <div class="proj-material-name">Podovi</div>
+                  <div class="proj-material-desc">Ručno rađen slavonski hrast / LVT visoke izdržljivosti</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🪟</div>
+                <div>
+                  <div class="proj-material-name">Prozori</div>
+                  <div class="proj-material-desc">Aluminijumska stolarija sa električnim roletama</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🚿</div>
+                <div>
+                  <div class="proj-material-name">Sanitarije</div>
+                  <div class="proj-material-desc">Grohe armatura, step-in tuševi, Bosch SMART bojleri</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🏠</div>
+                <div>
+                  <div class="proj-material-name">Keramika</div>
+                  <div class="proj-material-desc">Premium Ragno Marazzi (Italija)</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">❄️</div>
+                <div>
+                  <div class="proj-material-name">Grejanje & Hlađenje</div>
+                  <div class="proj-material-desc">Gradsko centralno grejanje + Midea inverter klima</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">🔐</div>
+                <div>
+                  <div class="proj-material-name">Bezbednost</div>
+                  <div class="proj-material-desc">24/7 video nadzor, tag/šifra pristup, video interfon</div>
+                </div>
+              </div>
+              <div class="proj-material-item">
+                <div class="proj-material-icon">📱</div>
+                <div>
+                  <div class="proj-material-name">Smart Priprema</div>
+                  <div class="proj-material-desc">SMART home priprema, optički kablovi (MTS & SBB)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Info -->
+          <div class="proj-payment reveal">
+            <span class="proj-section-tag">Uslovi Kupovine</span>
+            <h2 class="proj-section-title">Dinamika Uplata</h2>
+            <div class="proj-payment-grid">
+              <div class="proj-payment-card">
+                <h4>Kupovina iz Kredita</h4>
+                <p>Sa 20% učešća — moguća za sve stanove osim garsonjera. Završeni stanovi u KP93 mogu da se kupe putem stambenog kredita.</p>
+              </div>
+              <div class="proj-payment-card">
+                <h4>Avansna Uplata</h4>
+                <p>Za avansne uplate (od 70% kupoprodajne cene) moguća je korekcija cene. Garsonjere — dinamika 90%-10%.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="proj-sidebar">
+          <div class="proj-price-card">
+            <div class="proj-price-label">Cena</div>
+            <div class="proj-price-value">Na Upit</div>
+            <div class="proj-price-note">Kontaktirajte nas za detaljne informacije</div>
+            <a href="index.html#contact" class="proj-cta-primary">📞 Zakažite Obilazak</a>
+            <a href="tel:+381643335757" class="proj-cta-secondary">064 / 333 / 5757</a>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>Detalji Projekta</h4>
+            <div class="proj-info-row"><span>Lokacija</span><strong>Sajmište, Novi Sad</strong></div>
+            <div class="proj-info-row"><span>Tip</span><strong>Stambeni objekat</strong></div>
+            <div class="proj-info-row"><span>Ukupno jedinica</span><strong>27</strong></div>
+            <div class="proj-info-row"><span>Dostupno</span><strong>7 stanova</strong></div>
+            <div class="proj-info-row"><span>Završetak</span><strong>Mart 2027</strong></div>
+            <div class="proj-info-row"><span>Struktura</span><strong>Garsonjere, 2-sobni</strong></div>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>APEX Real Estate</h4>
+            <div class="proj-info-row"><span>Telefon</span><strong>064/333/5757</strong></div>
+            <div class="proj-info-row"><span>Email</span><strong>office@apexrealestate.rs</strong></div>
+            <div class="proj-info-row"><span>Adresa</span><strong>Mičurinova 74, NS</strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Approximate Location Map -->
+  <section class="proj-map-section">
+    <div class="container">
+      <span class="proj-section-tag" style="text-align:center;display:block;">Lokacija</span>
+      <h2 class="proj-section-title" style="text-align:center;">Okvirna Lokacija Projekta</h2>
+    </div>
+    <div class="proj-map-fullwidth">
+      <div id="leafletMap" style="width:100%;height:500px;"></div>
+      <p class="proj-map-note">* Prikazana lokacija je okvirna. Za tačnu adresu kontaktirajte nas.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="proj-cta-section">
+    <div class="container">
+      <div class="proj-cta-inner">
+        <span class="section-tag reveal">Zainteresovani?</span>
+        <h2 class="section-title reveal stagger-1">Želite Više Informacija?</h2>
+        <p class="novo-cta-desc reveal stagger-2">Ako ste zainteresovani za prezentaciju ili želite više informacija o projektu, kontaktirajte nas putem forme ili telefona.</p>
+        
+        <!-- Inquiry Form -->
+        <form class="proj-inquiry-form reveal stagger-3" id="inquiryForm">
+          <div class="proj-form-row">
+            <div class="proj-form-group">
+              <input type="text" id="inquiryName" placeholder="Vaše Ime i Prezime" required>
+            </div>
+            <div class="proj-form-group">
+              <input type="tel" id="inquiryPhone" placeholder="Broj Telefona" required>
+            </div>
+          </div>
+          <div class="proj-form-group">
+            <input type="email" id="inquiryEmail" placeholder="Email Adresa">
+          </div>
+          <div class="proj-form-group">
+            <textarea id="inquiryMessage" rows="3" placeholder="Vaša poruka (opciono)"></textarea>
+          </div>
+          <button type="submit" class="novo-cta-btn-primary" style="width:100%;justify-content:center;">Pošaljite Upit</button>
+        </form>
+
+        <div class="proj-cta-divider reveal stagger-4">
+          <span>ili nas pozovite direktno</span>
+        </div>
+        <a href="tel:+381643335757" class="novo-cta-btn-secondary reveal stagger-4" style="display:inline-flex;margin-top:10px;">📞 064 / 333 / 5757</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+        <p class="footer-seo-keywords">Novogradnja Sajmište • Stanovi Sajmište Novi Sad • Premium novogradnja Novi Sad • Novogradnja Sajmište</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">↑</button>
+
+  <script>
+    // Floor plan modal popup
+    const skicaData = {};
+
+    function openSkicaModal(e, imgSrc, sprat, povrsina, struktura) {
+      e.preventDefault();
+      const modal = document.getElementById('skicaModal');
+      const img = document.getElementById('skicaModalImg');
+      const info = document.getElementById('skicaModalInfo');
+
+      img.src = imgSrc;
+      info.innerHTML = `
+        <h4 style="font-family:var(--font-display);font-size:1.3rem;color:var(--pure-white);margin-bottom:16px;">Stan — ${struktura}</h4>
+        <div style="background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.12);border-radius:10px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--slate-light);">Sprat</span><strong style="color:var(--pure-white);">${sprat}</strong></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--slate-light);">Površina</span><strong style="color:var(--pure-white);">${povrsina}</strong></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--slate-light);">Struktura</span><strong style="color:var(--pure-white);">${struktura}</strong></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);"><span style="color:var(--slate-light);">Cena</span><strong style="color:var(--gold);">Na upit</strong></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;"><span style="color:var(--slate-light);">Status</span><strong style="color:#2a9d4d;">● Dostupan</strong></div>
+        </div>
+        <a href="index.html#contact" class="proj-cta-primary" style="margin-top:20px;display:block;text-align:center;">📞 Zakažite Obilazak</a>
+      `;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSkicaModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      const modal = document.getElementById('skicaModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSkicaModal();
+    });
+  </script>
+  <style>
+    /* Floor plan modal overlay */
+    .skica-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 10000;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .skica-modal.active {
+      display: flex;
+      opacity: 1;
+      animation: fadeInModal 0.3s ease;
+    }
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .skica-modal-content {
+      background: #111;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 16px;
+      max-width: 1000px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUpModal 0.35s ease;
+    }
+    @keyframes slideUpModal {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .skica-modal-close {
+      position: absolute;
+      top: 14px; right: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 1.6rem;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .skica-modal-close:hover {
+      background: rgba(212,175,55,0.2);
+      border-color: var(--gold);
+    }
+    .skica-modal-body {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 0;
+    }
+    .skica-modal-img {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px 0 0 16px;
+    }
+    .skica-modal-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      max-height: 70vh;
+    }
+    .skica-modal-info {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .skica-modal { padding: 16px; }
+      .skica-modal-body { grid-template-columns: 1fr; }
+      .skica-modal-img { border-radius: 16px 16px 0 0; padding: 16px; }
+      .skica-modal-info { padding: 20px 16px; }
+    }
+  </style>
+  <script src="novogradnja-project.js"></script>
+  <style>
+    /* POI Marker Styles */
+    .poi-marker {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      border: 2px solid #fff;
+      line-height: 1;
+    }
+    .map-label-content {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #c0392b;
+      text-shadow: 0 1px 3px rgba(255,255,255,0.9), 0 0 6px rgba(255,255,255,0.7);
+      letter-spacing: 3px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    /* Legend */
+    .map-legend {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      line-height: 1.8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      color: #333;
+      max-width: 200px;
+    }
+    .map-legend h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #111;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .map-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    /* Leaflet popup override */
+    .leaflet-popup-content-wrapper {
+      border-radius: 10px !important;
+      font-family: 'Montserrat', sans-serif !important;
+    }
+    .leaflet-popup-content {
+      margin: 10px 14px !important;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+    }
+    .poi-popup-name {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 2px;
+      color: #111;
+    }
+    .poi-popup-type {
+      font-size: 11px;
+      color: #666;
+    }
+    .poi-popup-dist {
+      font-size: 11px;
+      color: #999;
+      margin-top: 2px;
+    }
+  </style>
+  <script>
+    // Initialize Leaflet Map — approximate location on Sajmište
+    (function() {
+      const sajmiste = [45.2551, 19.8262];
+      const map = L.map('leafletMap', {
+        center: sajmiste,
+        zoom: 14,
+        zoomControl: true,
+        scrollWheelZoom: false,
+        attributionControl: true
+      });
+
+      // Google Maps tiles
+      L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        attribution: '&copy; Google Maps',
+        maxZoom: 20
+      }).addTo(map);
+
+      // Approximate area circle — soft pink like Google Maps
+      L.circle(sajmiste, {
+        radius: 800,
+        color: '#ea4335',
+        weight: 0,
+        opacity: 0,
+        fillColor: '#ea4335',
+        fillOpacity: 0.2
+      }).addTo(map);
+
+
+      // --- Nearby Amenities / POI Markers ---
+      function createPOIMarker(lat, lng, emoji, bgColor, name, type, distance) {
+        const icon = L.divIcon({
+          className: '',
+          html: '<div class="poi-marker" style="background:' + bgColor + ';">' + emoji + '</div>',
+          iconSize: [24, 24],
+          iconAnchor: [12, 12]
+        });
+        const marker = L.marker([lat, lng], { icon: icon }).addTo(map);
+        marker.bindPopup(
+          '<div class="poi-popup-name">' + name + '</div>' +
+          '<div class="poi-popup-type">' + type + '</div>' +
+          '<div class="poi-popup-dist">📍 ~' + distance + ' od projekta</div>'
+        );
+        return marker;
+      }
+
+      // 🏫 Škole
+      createPOIMarker(45.2518, 19.8290, '🏫', '#3498db',
+        'OŠ "Žarko Zrenjanin"', 'Osnovna škola', '400m');
+      createPOIMarker(45.2508, 19.8300, '🏫', '#3498db',
+        'OŠ "Branko Radičević"', 'Osnovna škola — Futoška 5', '550m');
+      createPOIMarker(45.2530, 19.8330, '🎓', '#2980b9',
+        'Elektrotehnička škola "Mihajlo Pupin"', 'Srednja škola — Futoška 17', '500m');
+
+      // 👶 Vrtići
+      createPOIMarker(45.2570, 19.8230, '👶', '#e67e22',
+        'PU "Radosno Detinjstvo"', 'Predškolska ustanova', '300m');
+      createPOIMarker(45.2535, 19.8210, '👶', '#e67e22',
+        'Vrtić "Mačak"', 'Privatni vrtić', '450m');
+
+      // 💊 Apoteke
+      createPOIMarker(45.2540, 19.8300, '💊', '#2ecc71',
+        'Apoteka Janković', 'Apoteka — Mičurinova 34', '300m');
+      createPOIMarker(45.2565, 19.8320, '💊', '#2ecc71',
+        'BENU Apoteka', 'Apoteka', '500m');
+
+      // 🛒 Prodavnice / Marketi
+      createPOIMarker(45.2575, 19.8310, '🛒', '#9b59b6',
+        'IDEA Supermarket', 'Supermarket', '400m');
+      createPOIMarker(45.2530, 19.8190, '🛒', '#9b59b6',
+        'Mix Markt', 'Supermarket — Blvd. oslobođenja', '550m');
+      createPOIMarker(45.2560, 19.8350, '🛒', '#9b59b6',
+        'Univerexport', 'Supermarket', '600m');
+
+      // 🏥 Zdravstvo
+      createPOIMarker(45.2495, 19.8235, '🏥', '#e74c3c',
+        'Dečja bolnica', 'Institut za zdravstvenu zaštitu dece', '700m');
+      createPOIMarker(45.2490, 19.8310, '🏥', '#e74c3c',
+        'Klinički centar Vojvodine', 'Bolnica — Hajduk Veljkova', '800m');
+
+      // 🌳 Parkovi / Rekreacija
+      createPOIMarker(45.2510, 19.8225, '🌳', '#27ae60',
+        'Futoški Park', 'Park — idealan za šetnju i sport', '350m');
+      createPOIMarker(45.2585, 19.8250, '🌳', '#27ae60',
+        'Igralište / Zelena zona', 'Dečje igralište', '350m');
+
+      // 🍽️ Ugostiteljstvo
+      createPOIMarker(45.2565, 19.8275, '🍽️', '#f39c12',
+        'Restorani i Kafići', 'Ugostiteljska zona', '200m');
+
+      // 🚌 Prevoz
+      createPOIMarker(45.2545, 19.8195, '🚌', '#34495e',
+        'Autobuska stanica "Sajmište"', 'Gradski prevoz', '400m');
+
+      // --- Legend Control ---
+      const legend = L.control({ position: 'bottomleft' });
+      legend.onAdd = function() {
+        const div = L.DomUtil.create('div', 'map-legend');
+        div.innerHTML = '' +
+          '<h4>Sadržaji u Blizini</h4>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#3498db;"></div> Škole</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#e67e22;"></div> Vrtići</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#2ecc71;"></div> Apoteke</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#9b59b6;"></div> Marketi</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#e74c3c;"></div> Zdravstvo</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#27ae60;"></div> Parkovi</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#f39c12;"></div> Ugostiteljstvo</div>' +
+          '<div class="map-legend-item"><div class="map-legend-dot" style="background:#34495e;"></div> Prevoz</div>';
+        return div;
+      };
+      legend.addTo(map);
+
+      // Enable scroll zoom on click
+      map.on('click', function() {
+        map.scrollWheelZoom.enable();
+      });
+    })();
+  </script>
+</body>
+</html>

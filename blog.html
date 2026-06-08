@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Blog | APEX Real Estate — Saveti za Nekretnine Novi Sad</title>
+  <meta name="description" content="APEX Real Estate Blog — stručni saveti za kupovinu stana u Novom Sadu, tržišne analize, vodiči za investitore, novogradnja vs starogradnja i više.">
+  <meta name="keywords" content="blog nekretnine Novi Sad, saveti kupovina stana, tržište nekretnina Srbija, investicija nekretnine, novogradnja Novi Sad">
+  <meta property="og:title" content="Blog | APEX Real Estate — Saveti za Nekretnine Novi Sad">
+  <meta property="og:description" content="Stručni saveti, tržišne analize i vodiči za kupce i investitore nekretnina u Novom Sadu.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260608">
+  <link rel="stylesheet" href="blog.css?v=20260608">
+
+  <!-- JSON-LD Blog listing structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "APEX Real Estate Blog",
+    "description": "Stručni saveti, tržišne analize i vodiči za kupce i investitore nekretnina u Novom Sadu.",
+    "url": "https://www.apexrealestate.rs/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "APEX Real Estate",
+      "url": "https://www.apexrealestate.rs"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav class="active-nav">Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <span class="section-tag">APEX Blog</span>
+      <h1>Svet Nekretnina</h1>
+      <p>Stručni saveti, tržišne analize i vodiči za kupce i investitore nekretnina u Novom Sadu.</p>
+    </div>
+  </section>
+
+  <!-- Blog Listing -->
+  <section class="blog-listing-section">
+    <div class="container">
+      <div class="blog-filter-bar">
+        <button class="blog-filter-btn active" data-filter="all">Sve</button>
+        <button class="blog-filter-btn" data-filter="Vodič">Vodič</button>
+        <button class="blog-filter-btn" data-filter="Tržište">Tržište</button>
+        <button class="blog-filter-btn" data-filter="Saveti">Saveti</button>
+      </div>
+
+      <div class="blog-listing-grid" id="blogGrid">
+        <!-- Populated by blog.js -->
+      </div>
+
+      <div class="blog-no-results" id="blogNoResults" style="display:none;">
+        <h3>Nema članaka u ovoj kategoriji</h3>
+        <p>Pokušajte sa drugom kategorijom.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
+          </div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="renta.html">Rente</a>
+          <a href="blog.html">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="index.html#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="#">Politika Privatnosti</a>
+          <a href="#">Uslovi Korišćenja</a>
+          <a href="#">GDPR</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+        <p class="footer-seo-keywords">
+          Nekretnine Novi Sad • Prodaja stanova Novi Sad • Luxury Real Estate Serbia •
+          Luksuzni stanovi Novi Sad • Blog nekretnine • Premium nekretnine Srbija
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="blog-data.js"></script>
+  <script src="blog.js"></script>
+  <script src="script.js?v=20260608"></script>
+</body>
+</html>
