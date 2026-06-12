@@ -276,7 +276,7 @@
         const CUSTOM_PAGES = {};
 
         const PRIORITY_IDS = [
-          's003', 's009', 's013', 'n006', 'n002'
+          's003', 's009', 's013'
         ];
 
         const TYPE_TO_CATEGORY = {
@@ -344,6 +344,9 @@
         }
 
         function loadProperties(props) {
+          // Filtriramo novogradnju — nikad ne prikazujemo na home page-u
+          props = props.filter(function(p) { return p.type !== 'Novogradnja'; });
+
           if (PRIORITY_IDS.length > 0) {
             var prioritized = [];
             var rest = [];
