@@ -93,9 +93,10 @@
   <section class="novo-projects" style="padding-top: 60px;">
     <div class="container">
 
-      <div class="projects-grid" style="margin-top: 30px;">
+      <div class="projects-grid" id="projectsGrid" style="margin-top: 30px;">
+        <!-- Projects are loaded dynamically from CRM + hardcoded ones below -->
 
-        <!-- Sajmište -->
+        <!-- Sajmište (hardcoded — not in CRM) -->
         <a href="novogradnja-graviton.html" class="project-card reveal" style="text-decoration:none;color:inherit;">
           <div class="project-card-img">
             <img src="assets/images/novogradnja/graviton/render.png" alt="Novogradnja Sajmište, Novi Sad" loading="lazy">
@@ -103,22 +104,15 @@
           </div>
           <div class="project-card-info">
             <h3 class="project-card-name">Sajmište</h3>
-            <div class="project-card-location">
-              📍 Sajmište, Novi Sad
-            </div>
+            <div class="project-card-location">📍 Sajmište, Novi Sad</div>
             <div class="project-card-meta">
-              <div class="project-card-price">
-                <span class="price-label">Cena</span>
-                <span class="price-value">Na upit</span>
-              </div>
-              <div class="project-card-area">
-                28–58 m²
-              </div>
+              <div class="project-card-price"><span class="price-label">Cena</span><span class="price-value">Na upit</span></div>
+              <div class="project-card-area">28–58 m²</div>
             </div>
           </div>
         </a>
 
-        <!-- Sremska Kamenica -->
+        <!-- Sremska Kamenica (hardcoded — not in CRM) -->
         <a href="novogradnja-metfer.html" class="project-card reveal stagger-1" style="text-decoration:none;color:inherit;">
           <div class="project-card-img">
             <img src="assets/images/novogradnja/metfer/render-2.jpg" alt="Novogradnja Sremska Kamenica, Novi Sad" loading="lazy">
@@ -126,89 +120,15 @@
           </div>
           <div class="project-card-info">
             <h3 class="project-card-name">Sremska Kamenica</h3>
-            <div class="project-card-location">
-              📍 Sremska Kamenica, Novi Sad
-            </div>
+            <div class="project-card-location">📍 Sremska Kamenica, Novi Sad</div>
             <div class="project-card-meta">
-              <div class="project-card-price">
-                <span class="price-label">Cena</span>
-                <span class="price-value">Na upit</span>
-              </div>
-              <div class="project-card-area">
-                28–110 m²
-              </div>
+              <div class="project-card-price"><span class="price-label">Cena</span><span class="price-value">Na upit</span></div>
+              <div class="project-card-area">28–110 m²</div>
             </div>
           </div>
         </a>
 
-        <!-- Klisa -->
-        <a href="novogradnja-sunnyline.html" class="project-card reveal stagger-1" style="text-decoration:none;color:inherit;">
-          <div class="project-card-img">
-            <img src="assets/images/novogradnja/sunnyline/render.jpg" alt="Novogradnja Klisa, Novi Sad" loading="lazy">
-            <span class="project-badge new">Novo</span>
-          </div>
-          <div class="project-card-info">
-            <h3 class="project-card-name">Klisa</h3>
-            <div class="project-card-location">
-              📍 Klisa, Novi Sad
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-price">
-                <span class="price-label">Cena</span>
-                <span class="price-value">Na upit</span>
-              </div>
-              <div class="project-card-area">
-                16 stanova
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Telep -->
-        <a href="novogradnja-telep.html" class="project-card reveal stagger-2" style="text-decoration:none;color:inherit;">
-          <div class="project-card-img">
-            <img src="assets/images/novogradnja/telep/render.jpg" alt="Novogradnja Telep, Novi Sad" loading="lazy">
-            <span class="project-badge new">Novo</span>
-          </div>
-          <div class="project-card-info">
-            <h3 class="project-card-name">Telep</h3>
-            <div class="project-card-location">
-              📍 Telep, Novi Sad
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-price">
-                <span class="price-label">Cena</span>
-                <span class="price-value">Na upit</span>
-              </div>
-              <div class="project-card-area">
-                35 stanova
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Coming Soon 4 -->
-        <div class="project-card reveal stagger-3">
-          <div class="project-card-img coming-soon-img">
-            <div class="coming-soon-placeholder">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-              <span>Coming Soon</span>
-            </div>
-            <span class="project-badge">Uskoro</span>
-          </div>
-          <div class="project-card-info">
-            <h3 class="project-card-name">Coming Soon</h3>
-            <div class="project-card-location coming-soon-text">
-              Novi projekat novogradnje u pripremi
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-price">
-                <span class="price-value coming-soon-price">Cena na upit</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Dynamic CRM projects will be inserted here by JS -->
       </div>
     </div>
   </section>
