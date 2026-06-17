@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Politika Privatnosti | APEX Real Estate | Novi Sad</title>
+  <meta name="description" content="Politika privatnosti agencije APEX Real Estate D.O.O. Saznajte kako prikupljamo, koristimo i štitimo vaše lične podatke u skladu sa ZZPL-om.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="APEX Real Estate">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260601b">
+
+  <!-- Legal Content Styles -->
+  <style>
+    .legal-hero {
+      padding: 160px 0 80px;
+      background: linear-gradient(180deg, rgba(26,26,26,0.95) 0%, var(--black) 100%);
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+      text-align: center;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--pure-white);
+      margin-bottom: 16px;
+    }
+
+    .legal-hero .legal-subtitle {
+      font-size: 1rem;
+      color: var(--silver);
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .legal-hero .gold-line {
+      margin-top: 30px;
+    }
+
+    .legal-content {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 80px clamp(20px, 4vw, 60px) 100px;
+    }
+
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-top: 56px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-content h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--pure-white);
+      margin-top: 32px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-content p {
+      font-size: 0.95rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .legal-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .legal-content ul li {
+      font-size: 0.95rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.9;
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .legal-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .legal-content strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .legal-content a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s ease;
+    }
+
+    .legal-content a:hover {
+      color: var(--gold-light);
+    }
+
+    .legal-content .info-box {
+      background: rgba(212,175,55,0.04);
+      border: 1px solid rgba(212,175,55,0.12);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0 32px;
+    }
+
+    .legal-content .info-box p {
+      margin-bottom: 6px;
+    }
+
+    .legal-content .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-last-updated {
+      font-size: 0.82rem;
+      color: var(--slate-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .legal-hero {
+        padding: 130px 0 50px;
+      }
+
+      .legal-content {
+        padding: 50px 20px 70px;
+      }
+
+      .legal-content h2 {
+        margin-top: 40px;
+        font-size: 1.3rem;
+      }
+
+      .legal-content .info-box {
+        padding: 20px;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Legal Hero -->
+  <section class="legal-hero">
+    <div class="container">
+      <span class="section-tag">Pravno</span>
+      <h1>Politika Privatnosti</h1>
+      <p class="legal-subtitle">Vaša privatnost nam je izuzetno važna. Ovde možete saznati kako prikupljamo, koristimo i štitimo vaše lične podatke.</p>
+      <div class="gold-line"></div>
+      <p class="legal-last-updated">Poslednje ažuriranje: 17. jun 2026.</p>
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <div class="legal-content">
+
+    <h2>1. Ko smo mi</h2>
+    <p>Odgovorno lice za obradu vaših ličnih podataka je:</p>
+    <div class="info-box">
+      <p><strong>Apex Real Estate D.O.O</strong></p>
+      <p>Mičurinova 74, 21000 Novi Sad, Srbija</p>
+      <p>PIB: 115600475</p>
+      <p>Matični broj: 22181947</p>
+      <p>Registarski broj posrednika: 2167</p>
+      <p>Email: <a href="mailto:office@apexrealestate.rs">office@apexrealestate.rs</a></p>
+      <p>Telefon: 064/333/5757</p>
+      <p>Web: <a href="https://www.apexrealestate.rs" target="_blank" rel="noopener noreferrer">apexrealestate.rs</a></p>
+    </div>
+    <p>Apex Real Estate D.O.O je licencirana agencija za posredovanje u prometu i zakupu nepokretnosti, registrovana u skladu sa Zakonom o posredovanju u prometu i zakupu nepokretnosti Republike Srbije.</p>
+
+    <h2>2. Koje podatke prikupljamo</h2>
+    <p>U zavisnosti od načina na koji koristite naše usluge, možemo prikupljati sledeće kategorije ličnih podataka:</p>
+
+    <h3>Podaci koje nam direktno dostavljate</h3>
+    <ul>
+      <li>Ime i prezime</li>
+      <li>Email adresa</li>
+      <li>Broj telefona</li>
+      <li>Adresa stanovanja</li>
+      <li>JMBG (isključivo kod zaključenja ugovora o posredovanju)</li>
+      <li>Podaci o nekretnini koja se prodaje, kupuje ili izdaje</li>
+      <li>Finansijski podaci relevantni za transakciju (budžet, način plaćanja)</li>
+      <li>Sadržaj poruka koje nam šaljete putem kontakt forme, emaila ili telefona</li>
+    </ul>
+
+    <h3>Podaci koje automatski prikupljamo</h3>
+    <ul>
+      <li>IP adresa i podaci o uređaju (tip uređaja, operativni sistem, pretraživač)</li>
+      <li>Podaci o ponašanju na sajtu (posećene stranice, vreme provedeno, klikovi)</li>
+      <li>Podaci putem kolačića i sličnih tehnologija praćenja</li>
+      <li>Podaci sa Meta Pixel-a (Facebook/Instagram) za analitiku i remarketing</li>
+    </ul>
+
+    <h3>Podaci iz trećih izvora</h3>
+    <ul>
+      <li>Javno dostupni podaci iz katastra nepokretnosti</li>
+      <li>Podaci od partnera i investitora (uz vaš prethodni pristanak)</li>
+    </ul>
+
+    <h2>3. Kako koristimo vaše podatke</h2>
+    <p>Vaše lične podatke koristimo u sledeće svrhe:</p>
+    <ul>
+      <li><strong>Pružanje usluga posredovanja</strong> — pronalaženje odgovarajućih nekretnina, organizacija obilazaka, pregovori, zaključenje ugovora</li>
+      <li><strong>Komunikacija</strong> — odgovaranje na vaše upite, slanje informacija o nekretninama koje odgovaraju vašim kriterijumima</li>
+      <li><strong>Pravne obaveze</strong> — ispunjavanje zakonskih obaveza u skladu sa Zakonom o posredovanju, Zakonom o sprečavanju pranja novca, poreskim propisima</li>
+      <li><strong>Marketing</strong> — slanje promotivnih poruka i obaveštenja o novim nekretninama (uz vaš pristanak)</li>
+      <li><strong>Poboljšanje usluga</strong> — analiza korišćenja sajta, optimizacija korisničkog iskustva, statističke analize</li>
+      <li><strong>Remarketing i oglašavanje</strong> — prikazivanje relevantnih oglasa na društvenim mrežama putem Meta Pixel-a</li>
+      <li><strong>Bezbednost</strong> — zaštita od prevara, neovlašćenog pristupa i zloupotrebe</li>
+    </ul>
+
+    <h2>4. Pravni osnov obrade</h2>
+    <p>Vaše podatke obrađujemo na osnovu sledećih pravnih osnova predviđenih Zakonom o zaštiti podataka o ličnosti (ZZPL):</p>
+    <ul>
+      <li><strong>Izvršenje ugovora</strong> — obrada je neophodna za ispunjenje ugovora o posredovanju ili preduzimanje radnji na vaš zahtev pre zaključenja ugovora (član 12, stav 1, tačka 2 ZZPL)</li>
+      <li><strong>Pravna obaveza</strong> — obrada je neophodna za ispunjavanje zakonskih obaveza rukovaoca (Zakon o posredovanju, Zakon o sprečavanju pranja novca) (član 12, stav 1, tačka 3 ZZPL)</li>
+      <li><strong>Legitimni interes</strong> — obrada je neophodna za naše legitimne poslovne interese, uključujući unapređenje usluga i zaštitu poslovanja (član 12, stav 1, tačka 6 ZZPL)</li>
+      <li><strong>Pristanak</strong> — za slanje marketinških poruka i korišćenje kolačića za praćenje, obradu vršimo isključivo na osnovu vašeg dobrovoljnog pristanka koji možete povući u svakom trenutku (član 12, stav 1, tačka 1 ZZPL)</li>
+    </ul>
+
+    <h2>5. Sa kim delimo vaše podatke</h2>
+    <p>Vaše lične podatke ne prodajemo niti ustupamo trećim licima radi njihovih marketinških aktivnosti. Podatke možemo deliti sa:</p>
+    <ul>
+      <li><strong>Prodavci i kupci nekretnina</strong> — u meri neophodnoj za sprovođenje posredovanja</li>
+      <li><strong>Notari i advokati</strong> — za pravnu podršku pri zaključenju kupoprodajnih ugovora</li>
+      <li><strong>Državni organi</strong> — katastar, poreska uprava, organi za sprečavanje pranja novca, kada je to zakonski obavezno</li>
+      <li><strong>IT provajderi</strong> — hosting, CRM sistem, email servis — koji obrađuju podatke u naše ime na osnovu ugovora o obradi</li>
+      <li><strong>Reklamne platforme</strong> — Meta (Facebook/Instagram) — za analitiku i remarketing putem Meta Pixel-a, u skladu sa vašim pristankom</li>
+    </ul>
+    <p>Svi treći subjekti kojima otkrivamo vaše podatke obavezni su da ih štite u skladu sa važećim propisima i ugovorima o obradi podataka.</p>
+
+    <h2>6. Koliko čuvamo vaše podatke</h2>
+    <p>Vaše lične podatke čuvamo samo onoliko koliko je neophodno za ostvarenje svrhe za koju su prikupljeni:</p>
+    <ul>
+      <li><strong>Podaci iz ugovora o posredovanju</strong> — 10 godina od zaključenja ugovora (zakonska obaveza)</li>
+      <li><strong>Podaci iz kontakt formi i upita</strong> — 2 godine od poslednje komunikacije</li>
+      <li><strong>Marketing podaci</strong> — do povlačenja pristanka</li>
+      <li><strong>Podaci o korišćenju sajta (kolačići)</strong> — u skladu sa rokom trajanja kolačića (videti sekciju Kolačići)</li>
+      <li><strong>Računovodstveni podaci</strong> — u skladu sa zakonskim rokovima čuvanja (minimum 5 godina)</li>
+    </ul>
+    <p>Po isteku navedenih rokova, podaci se bezbedno brišu ili anonimizuju.</p>
+
+    <h2>7. Vaša prava</h2>
+    <p>U skladu sa Zakonom o zaštiti podataka o ličnosti, imate sledeća prava:</p>
+    <ul>
+      <li><strong>Pravo na pristup</strong> — imate pravo da zahtevate informaciju o tome da li obrađujemo vaše podatke i da dobijete kopiju tih podataka</li>
+      <li><strong>Pravo na ispravku</strong> — imate pravo da zahtevate ispravku netačnih ili nepotpunih podataka</li>
+      <li><strong>Pravo na brisanje</strong> — imate pravo da zahtevate brisanje svojih podataka kada oni više nisu neophodni za svrhu obrade, osim ako postoji zakonska obaveza čuvanja</li>
+      <li><strong>Pravo na ograničenje obrade</strong> — imate pravo da zahtevate ograničenje obrade u određenim situacijama</li>
+      <li><strong>Pravo na prigovor</strong> — imate pravo da uložite prigovor na obradu podataka zasnovanu na legitimnom interesu ili obradu u svrhe direktnog marketinga</li>
+      <li><strong>Pravo na prenosivost podataka</strong> — imate pravo da dobijete svoje podatke u strukturiranom, mašinski čitljivom formatu</li>
+      <li><strong>Pravo na povlačenje pristanka</strong> — ukoliko se obrada zasniva na pristanku, imate pravo da ga povučete u svakom trenutku, bez uticaja na zakonitost obrade pre povlačenja</li>
+      <li><strong>Pravo na podnošenje pritužbe</strong> — imate pravo da podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti</li>
+    </ul>
+    <p>Za ostvarivanje bilo kog od navedenih prava, kontaktirajte nas na <a href="mailto:office@apexrealestate.rs">office@apexrealestate.rs</a> ili pozovite 064/333/5757. Odgovorićemo na vaš zahtev u roku od 30 dana.</p>
+
+    <h2>8. Kolačići</h2>
+    <p>Naš sajt koristi kolačiće (cookies) — male tekstualne datoteke koje se čuvaju na vašem uređaju. Kolačići nam pomažu da obezbedimo pravilno funkcionisanje sajta i da poboljšamo vaše korisničko iskustvo.</p>
+
+    <h3>Vrste kolačića koje koristimo</h3>
+    <ul>
+      <li><strong>Neophodni kolačići</strong> — omogućavaju osnovne funkcionalnosti sajta (navigacija, pristup zaštićenim delovima). Ne zahtevaju pristanak.</li>
+      <li><strong>Analitički kolačići</strong> — pomažu nam da razumemo kako koristite sajt (koje stranice posećujete, koliko vremena provodite). Koristimo ih za poboljšanje sajta.</li>
+      <li><strong>Marketinški kolačići</strong> — koriste se za prikazivanje relevantnih oglasa i merenje efikasnosti reklamnih kampanja (uključujući Meta Pixel).</li>
+    </ul>
+    <p>Možete upravljati kolačićima putem podešavanja vašeg pretraživača. Napominjemo da blokiranje određenih kolačića može uticati na funkcionalnost sajta.</p>
+    <p>Za detaljnije informacije, pogledajte našu <a href="kolacici.html">Politiku kolačića</a>.</p>
+
+    <h2>9. Bezbednost podataka</h2>
+    <p>Preduzimamo odgovarajuće tehničke i organizacione mere za zaštitu vaših ličnih podataka od neovlašćenog pristupa, gubitka, uništenja ili zloupotrebe, uključujući:</p>
+    <ul>
+      <li>SSL/TLS enkripcija za prenos podataka</li>
+      <li>Ograničen pristup podacima — samo ovlašćena lica koja imaju poslovnu potrebu</li>
+      <li>Redovno ažuriranje softvera i sigurnosnih sistema</li>
+      <li>Bezbedno čuvanje fizičkih dokumenata sa ličnim podacima</li>
+      <li>Obuke zaposlenih o zaštiti podataka o ličnosti</li>
+    </ul>
+    <p>Uprkos svim merama, nijedan sistem prenosa podataka putem interneta nije apsolutno siguran. U slučaju povrede bezbednosti podataka, obavestićemo vas i nadležne organe u skladu sa zakonskim rokovima.</p>
+
+    <h2>10. Prenos podataka</h2>
+    <p>Korišćenjem određenih servisa (Meta Pixel, Google Fonts), neki podaci mogu biti preneti na servere izvan Republike Srbije, uključujući zemlje Evropske Unije i Sjedinjene Američke Države. U tim slučajevima, obezbeđujemo da se prenos vrši u skladu sa važećim propisima i da postoje odgovarajuće zaštitne mere (standardne ugovorne klauzule, sertifikacija primaoca i slično).</p>
+
+    <h2>11. Kontakt za zaštitu podataka</h2>
+    <p>Za sva pitanja u vezi sa zaštitom vaših ličnih podataka, možete nas kontaktirati:</p>
+    <div class="info-box">
+      <p><strong>Apex Real Estate D.O.O — Zaštita podataka</strong></p>
+      <p>Email: <a href="mailto:office@apexrealestate.rs">office@apexrealestate.rs</a></p>
+      <p>Telefon: 064/333/5757</p>
+      <p>Adresa: Mičurinova 74, 21000 Novi Sad, Srbija</p>
+    </div>
+    <p>Takođe, imate pravo da se obratite <strong>Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti</strong>:</p>
+    <div class="info-box">
+      <p><strong>Poverenik za informacije od javnog značaja i zaštitu podataka o ličnosti</strong></p>
+      <p>Bulevar kralja Aleksandra 15, 11000 Beograd</p>
+      <p>Web: <a href="https://www.poverenik.rs" target="_blank" rel="noopener noreferrer">www.poverenik.rs</a></p>
+    </div>
+
+    <h2>12. Izmene politike privatnosti</h2>
+    <p>Zadržavamo pravo da povremeno izmenimo ovu Politiku privatnosti kako bi odražavala promene u našem poslovanju ili zakonskim zahtevima. Sve izmene biće objavljene na ovoj stranici sa ažuriranim datumom poslednje izmene.</p>
+    <p>Preporučujemo da povremeno posetite ovu stranicu kako biste bili informisani o načinu na koji štitimo vaše podatke.</p>
+    <p>Ova Politika privatnosti je na snazi od <strong>17. juna 2026. godine</strong>.</p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
+          </div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="renta.html">Rente</a>
+          <a href="blog.html">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="index.html#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#reviews">Recenzije</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="politika-privatnosti.html">Politika Privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi Korišćenja</a>
+          <a href="kolacici.html">Kolačići</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Real Estate D.O.O | PIB: 115600475 | MB: 22181947 | Reg. br. posrednika: 2167</p>
+        <p class="footer-seo-keywords">
+          Nekretnine Novi Sad • Prodaja stanova Novi Sad • Luxury Real Estate Serbia •
+          Luksuzni stanovi Novi Sad • Penthouse Novi Sad • Vile Fruška Gora • Premium nekretnine Srbija
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js?v=20260601b"></script>
+</body>
+</html>
