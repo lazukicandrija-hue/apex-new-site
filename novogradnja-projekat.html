@@ -311,9 +311,9 @@
         document.getElementById('metaDesc').setAttribute('content', p.name + ' — premium novogradnja, ' + p.location + '. APEX Real Estate.');
 
         // Hero
-        var images = p.images ? JSON.parse(p.images) : [];
+        var images = Array.isArray(p.images) ? p.images : [];
         if (images.length > 0) {
-          document.getElementById('heroBg').style.backgroundImage = "url('" + CRM + images[0] + "')";
+          document.getElementById('heroBg').style.backgroundImage = "url('" + images[0] + "')";
         }
         document.getElementById('heroTitle').textContent = p.name;
         document.getElementById('heroLocation').textContent = '📍 ' + p.location;
@@ -342,7 +342,7 @@
           images.forEach(function(img) {
             var div = document.createElement('div');
             div.className = 'proj-gallery-main';
-            div.innerHTML = '<div class="proj-gallery-img" role="img" style="background-image: url(\'' + CRM + img + '\');"><div class="img-shield"></div></div>';
+            div.innerHTML = '<div class="proj-gallery-img" role="img" style="background-image: url(\'' + img + '\');"><div class="img-shield"></div></div>';
             galleryGrid.appendChild(div);
           });
         } else {

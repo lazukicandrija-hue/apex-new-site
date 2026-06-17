@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function createProjectCard(project, index) {
-    const images = JSON.parse(project.images || '[]');
+    const images = Array.isArray(project.images) ? project.images : [];
     const heroImage = images.length > 0
-      ? 'https://crm.apexrealestate.rs' + images[0]
+      ? images[0]
       : 'assets/images/about-bg.png';
 
     // Use dedicated page if exists, otherwise use generic project page
