@@ -353,9 +353,21 @@
         var units = data.units || [];
         allUnits = units;
 
+    // Extract structure from title like "Stan 9A (Četvorosoban)" or from rooms number
+    function getStructure(u) {
+      // Try to extract from title parentheses first
+      var match = u.title && u.title.match(/\(([^)]+)\)/);
+      if (match) return match[1];
+      // Fallback to rooms number
+      var rooms = u.rooms;
+      if (!rooms) return '—';
+      return rooms <= 1 ? 'Jednosoban' : rooms <= 1.5 ? 'Jednoiposoban' : rooms <= 2 ? 'Dvosoban' : rooms <= 2.5 ? 'Dvoiposoban' : rooms <= 3 ? 'Trosoban' : rooms <= 3.5 ? 'Troiposoban' : rooms <= 4 ? 'Četvorosoban' : 'Lokal';
+    }
+
         // Stats
         var total = units.length;
         var available = units.filter(function(u) { return u.status === 'Aktivna' || u.status === 'Dostupan'; }).length;
+        var sold = units.filter(function(u) { return u.status === 'Prodato'; }).length;
         var areas = units.filter(function(u) { return u.area; }).map(function(u) { return u.area; });
         var minArea = areas.length > 0 ? Math.min.apply(null, areas) : 0;
         var maxArea = areas.length > 0 ? Math.max.apply(null, areas) : 0;
@@ -371,9 +383,8 @@
         var structures = {};
         units.forEach(function(u) {
           if (u.floor) floors[u.floor] = true;
-          var rooms = u.rooms || 0;
-          var struct = rooms <= 1 ? 'Jednosoban' : rooms <= 1.5 ? 'Jednoiposoban' : rooms <= 2 ? 'Dvosoban' : rooms <= 2.5 ? 'Dvoiposoban' : rooms <= 3 ? 'Trosoban' : rooms <= 3.5 ? 'Troiposoban' : rooms <= 4 ? 'Četvorosoban' : 'Lokal';
-          structures[struct] = true;
+          var struct = getStructure(u);
+          if (struct && struct !== '—') structures[struct] = true;
         });
 
         var floorSelect = document.getElementById('filterFloor');
@@ -416,9 +427,7 @@
           if (uStatus !== status) return false;
         }
         if (struct) {
-          var rooms = u.rooms || 0;
-          var uStruct = rooms <= 1 ? 'Jednosoban' : rooms <= 1.5 ? 'Jednoiposoban' : rooms <= 2 ? 'Dvosoban' : rooms <= 2.5 ? 'Dvoiposoban' : rooms <= 3 ? 'Trosoban' : rooms <= 3.5 ? 'Troiposoban' : rooms <= 4 ? 'Četvorosoban' : 'Lokal';
-          if (uStruct !== struct) return false;
+          if (getStructure(u) !== struct) return false;
         }
         return true;
       });
@@ -435,11 +444,10 @@
 
       tbody.innerHTML = '';
       units.forEach(function(u) {
-        var rooms = u.rooms || 0;
-        var struct = rooms <= 1 ? 'Jednosoban' : rooms <= 1.5 ? 'Jednoiposoban' : rooms <= 2 ? 'Dvosoban' : rooms <= 2.5 ? 'Dvoiposoban' : rooms <= 3 ? 'Trosoban' : rooms <= 3.5 ? 'Troiposoban' : rooms <= 4 ? 'Četvorosoban' : 'Lokal';
+        var struct = getStructure(u);
         var isSold = u.status === 'Prodato';
         var statusClass = isSold ? 'status-sold' : 'status-available';
-        var statusText = isSold ? 'Prodato' : '+ Dostupan';
+        var statusText = isSold ? 'Prodato' : '✓ Dostupan';
         var name = u.title.replace(/^.*? - /, '');
 
         var tr = document.createElement('tr');
