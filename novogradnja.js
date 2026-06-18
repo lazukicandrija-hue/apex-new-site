@@ -67,11 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const CRM_API = 'https://crm.apexrealestate.rs/api/sync/projects';
   const grid = document.getElementById('projectsGrid');
 
-  // Slugs that already have dedicated hardcoded HTML pages (skip these from dynamic)
-  const HARDCODED_SLUGS = {
-    'klisa': 'novogradnja-sunnyline.html',
-    'telep': 'novogradnja-telep.html'
-  };
+
 
   function createProjectCard(project, index) {
     const images = Array.isArray(project.images) ? project.images : [];
@@ -79,9 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ? images[0]
       : 'assets/images/about-bg.png';
 
-    // Use dedicated page if exists, otherwise use generic project page
-    const href = HARDCODED_SLUGS[project.slug]
-      || ('novogradnja-projekat.html?slug=' + project.slug);
+    // All projects use dynamic CRM-powered page (use ID for unique identification)
+    const href = 'novogradnja-projekat.html?slug=' + project.id;
 
     const staggerClass = 'stagger-' + ((index % 4) + 1);
     const unitCount = project.available_count || project.total_units || 0;
