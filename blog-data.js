@@ -218,5 +218,97 @@ const BLOG_POSTS = [
     readTime: "9 min",
     metaDescription: "Top 5 lokacija za investiranje u nekretnine u Novom Sadu 2026. ROI analiza, cene po četvrtima, saveti za investitore. APEX Real Estate.",
     tags: ["investicija", "ROI", "Novi Sad", "lokacije", "tržište nekretnina"]
+  },
+  {
+    slug: "povrat-pdv-kupovina-prvog-stana",
+    title: "Povrat PDV-a za Kupovinu Prvog Stana — Sve Što Treba da Znate",
+    category: "Vodič",
+    excerpt: "Saznajte kako da ostvarite povrat PDV-a od 10% prilikom kupovine prvog stana u novogradnji. Uslovi, dokumentacija, koraci i saveti na jednom mestu.",
+    content: `
+      <p>Kupovina prvog stana je veliki korak, a mnogi kupci ne znaju da imaju pravo na <strong>povrat PDV-a od 10%</strong>. Ovo može da predstavlja značajnu uštedu — na stan od 100.000€, to je čak 10.000€ koje vam država vraća. U ovom tekstu objašnjavamo ko ima pravo na povrat, kolika je kvadratura koja se refundira i koja dokumenta su vam potrebna.</p>
+
+      <h2>Ko Ima Pravo na Povrat PDV-a?</h2>
+      <p>Povrat PDV-a od 10% mogu da ostvare <strong>punoletni državljani Srbije</strong> koji kupuju svoj prvi stan od investitora u novogradnji. Da biste ostvarili ovo pravo, morate ispuniti sledeće uslove:</p>
+      <ul>
+        <li><strong>Prvi kupac:</strong> Od 1. jula 2006. godine niste imali u vlasništvu ili suvlasništvu stan ili kuću na teritoriji Srbije.</li>
+        <li><strong>Novogradnja:</strong> Stan morate kupiti od investitora koji je u sistemu PDV-a i koji taj porez jasno prikazuje na računu.</li>
+        <li><strong>Prebivalište:</strong> Članovi vašeg domaćinstva koji vam uvećavaju pravo na kvadraturu moraju imati prijavljeno prebivalište na istoj adresi kao i vi.</li>
+        <li><strong>Plaćanje preko računa:</strong> Kompletna cena stana, uključujući PDV, mora biti uplaćena isključivo preko bankovnog računa. Ako bilo koji deo platite gotovinom — gubite pravo na povrat.</li>
+      </ul>
+
+      <h2>Za Koliko Kvadrata Možete Dobiti Povrat?</h2>
+      <p>Zakon jasno definiše maksimalnu kvadraturu za koju se PDV vraća:</p>
+      <ul>
+        <li><strong>Za kupca:</strong> do 40 m²</li>
+        <li><strong>Za svakog člana domaćinstva:</strong> dodatnih 15 m²</li>
+      </ul>
+      <p><strong>Primer:</strong> Ako živite sami i kupite stan od 70 m², povrat PDV-a dobićete samo za 40 m². Za preostalih 30 m² PDV se ne refundira. Međutim, ako imate supružnika i jedno dete, imate pravo na povrat za 40 + 15 + 15 = 70 m², što pokriva ceo stan.</p>
+
+      <h2>Koliko Novca Možete da Uštedite?</h2>
+      <p>Iznos koji vam se vraća zavisi od cene stana i kvadrature koja ispunjava uslove. Evo jednostavnog primera:</p>
+      <ul>
+        <li>Kupili ste stan od <strong>50 m²</strong> po ceni od <strong>2.000€/m²</strong></li>
+        <li>Živite sa supružnikom — imate pravo na povrat za <strong>55 m²</strong> (40 + 15), ali stan ima 50 m², tako da se računa ceo stan</li>
+        <li>Ukupna cena: <strong>100.000€</strong></li>
+        <li>PDV (10%): <strong>10.000€</strong></li>
+        <li><strong>Refundacija: 10.000€ vam se vraća na račun!</strong></li>
+      </ul>
+
+      <h2>Koji Dokumenti su Vam Potrebni?</h2>
+      <p>Zahtev za povrat PDV-a se podnosi <strong>Poreskoj upravi</strong> nakon što overite ugovor kod javnog beležnika (notara) i u celosti isplatite stan. Uz zahtev prilažete sledeća dokumenta:</p>
+      <ul>
+        <li>Zahtev za refundaciju PDV-a</li>
+        <li>Overena izjava kupca da kupuje prvu nekretninu (<strong>obrazac IKPS</strong>)</li>
+        <li>Popunjen <strong>RFN obrazac</strong> (ne zahteva overu)</li>
+        <li>Original ili overena fotokopija <strong>kupoprodajnog ugovora</strong></li>
+        <li>Overena lična karta kod javnog beležnika</li>
+        <li><strong>Račun investitora</strong> sa jasno prikazanim PDV-om</li>
+        <li><strong>Avansni računi</strong> za sve avansne uplate (ako ih je bilo)</li>
+        <li><strong>Izvodi iz banke</strong> kao dokaz da je celokupan iznos uplaćen preko računa</li>
+        <li>Fotokopija bankovne kartice na kojoj se vidi <strong>dinarski tekući račun</strong> za povrat sredstava</li>
+      </ul>
+      <p>Detaljne obrasce i formulare za preuzimanje možete pronaći na zvaničnom sajtu <strong>Republičke Poreske uprave</strong>.</p>
+
+      <h2>Kako Izgleda Ceo Postupak?</h2>
+      <p>Postupak ostvarivanja povrata PDV-a se može podeliti u nekoliko koraka:</p>
+      <ul>
+        <li><strong>Korak 1:</strong> Izaberite stan u novogradnji kod investitora koji je u sistemu PDV-a</li>
+        <li><strong>Korak 2:</strong> Potpišite predugovor i kupoprodajni ugovor, a zatim ih overite kod javnog beležnika</li>
+        <li><strong>Korak 3:</strong> Celokupan iznos uplatite isključivo preko bankovnog računa — nikako gotovinom</li>
+        <li><strong>Korak 4:</strong> Nakon što završite uplatu, prikupite sva potrebna dokumenta</li>
+        <li><strong>Korak 5:</strong> Podnesite zahtev Poreskoj upravi sa kompletnom dokumentacijom</li>
+        <li><strong>Korak 6:</strong> Poreska uprava obrađuje zahtev i vrši povrat PDV-a na vaš dinarski račun</li>
+      </ul>
+
+      <h2>Najčešće Greške koje Kupci Prave</h2>
+      <ul>
+        <li><strong>Plaćanje gotovinom:</strong> Čak i ako jedan deo cene platite gotovinski, gubite celokupno pravo na povrat PDV-a. Sve mora ići preko banke.</li>
+        <li><strong>Kupovina od fizičkog lica:</strong> Povrat važi samo za kupovinu od investitora u sistemu PDV-a. Ako kupujete stan od privatnog vlasnika, nema povrata.</li>
+        <li><strong>Neprijavljena adresa:</strong> Članovi domaćinstva moraju imati prijavljeno prebivalište na istoj adresi kao kupac. Bez toga se ne računaju u dodatnu kvadraturu.</li>
+        <li><strong>Nepotpuna dokumentacija:</strong> Ako nedostaje bilo koji od traženih dokumenata, zahtev se odbija. Proverite sve stavke pre podnošenja.</li>
+      </ul>
+
+      <h2>APEX Real Estate — Vaš Partner u Kupovini Prvog Stana</h2>
+      <p>Kupovina prvog stana ne mora da bude komplikovana. <strong>APEX Real Estate</strong> je tu da vam pomogne u svakom koraku — od izbora savršenog stana u novogradnji, do kompletne pravne podrške i pomoći sa dokumentacijom za povrat PDV-a.</p>
+      <p>Naš tim pravnih stručnjaka radi u sklopu agencije i bez dodatnih troškova za vas obavlja:</p>
+      <ul>
+        <li>Proveru pravnog statusa nekretnine u katastru</li>
+        <li>Izradu i pregled svih ugovora (predugovor, kupoprodajni ugovor)</li>
+        <li>Zastupanje kod javnog beležnika</li>
+        <li>Pomoć u pripremi dokumentacije za povrat PDV-a</li>
+        <li>Kompletnu pravnu podršku tokom celog procesa kupovine</li>
+      </ul>
+      <blockquote>
+        <p>Ne morate sami kroz papirologiju — mi smo tu da se pobrinemo za sve. Vi samo izaberite stan iz snova, a ostalo je na nama.</p>
+      </blockquote>
+      <p><a href="index.html#contact"><strong>Kontaktirajte APEX Real Estate</strong></a> i zakažite besplatan konsultantski razgovor. Pomažemo vam da pronađete idealan stan i ostvarite maksimalan povrat PDV-a.</p>
+    `,
+    image: "assets/images/blog-4.png",
+    author: "APEX Tim",
+    date: "2026-06-25",
+    dateFormatted: "25. Jun 2026",
+    readTime: "7 min",
+    metaDescription: "Povrat PDV-a od 10% za kupovinu prvog stana u novogradnji u Srbiji. Uslovi, dokumentacija, koraci i saveti. APEX Real Estate Novi Sad.",
+    tags: ["PDV", "povrat PDV-a", "prvi stan", "novogradnja", "kupovina stana", "dokumentacija"]
   }
 ];
