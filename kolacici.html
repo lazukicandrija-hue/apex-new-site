@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Politika Kolačića | APEX Real Estate</title>
+  <meta name="description" content="Politika kolačića sajta APEX Real Estate. Saznajte koje kolačiće koristimo, kako ih koristimo i kako možete upravljati podešavanjima kolačića.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20260601b">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* Legal Page Styles */
+    .legal-hero {
+      padding: 160px 0 60px;
+      background: linear-gradient(180deg, rgba(212,175,55,0.03) 0%, var(--black) 100%);
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+      text-align: center;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--pure-white);
+      margin-bottom: 16px;
+    }
+
+    .legal-hero .legal-subtitle {
+      font-size: 0.95rem;
+      color: var(--silver);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-hero .gold-line {
+      margin-top: 30px;
+    }
+
+    .legal-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 20px 100px;
+    }
+
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-top: 56px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-content h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 32px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-content p {
+      font-size: 0.95rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .legal-content ul,
+    .legal-content ol {
+      margin: 12px 0 20px 24px;
+      list-style: none;
+    }
+
+    .legal-content ul li,
+    .legal-content ol li {
+      font-size: 0.93rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .legal-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .legal-content ol {
+      counter-reset: legal-counter;
+    }
+
+    .legal-content ol li {
+      counter-increment: legal-counter;
+    }
+
+    .legal-content ol li::before {
+      content: counter(legal-counter) '.';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .legal-content a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color var(--duration-fast) ease;
+    }
+
+    .legal-content a:hover {
+      color: var(--gold-light);
+    }
+
+    .legal-content strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* Cookie Table */
+    .cookie-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0 32px;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 8px;
+    }
+
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 640px;
+    }
+
+    .cookie-table thead {
+      background: rgba(212,175,55,0.08);
+    }
+
+    .cookie-table th {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 16px 20px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .cookie-table td {
+      padding: 14px 20px;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+
+    .cookie-table tbody tr:hover {
+      background: rgba(212,175,55,0.03);
+    }
+
+    .cookie-table .cookie-name {
+      color: var(--white);
+      font-weight: 500;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+    }
+
+    .cookie-type-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .badge-necessary {
+      background: rgba(76,175,80,0.15);
+      color: #81c784;
+      border: 1px solid rgba(76,175,80,0.3);
+    }
+
+    .badge-analytics {
+      background: rgba(33,150,243,0.15);
+      color: #64b5f6;
+      border: 1px solid rgba(33,150,243,0.3);
+    }
+
+    .badge-marketing {
+      background: rgba(255,152,0,0.15);
+      color: #ffb74d;
+      border: 1px solid rgba(255,152,0,0.3);
+    }
+
+    /* Company info box */
+    .legal-company-box {
+      background: var(--charcoal);
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 24px 0 32px;
+    }
+
+    .legal-company-box p {
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+
+    .legal-company-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Last updated */
+    .legal-updated {
+      font-size: 0.82rem !important;
+      color: var(--slate-light) !important;
+      font-style: italic;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Breadcrumb */
+    .legal-breadcrumb {
+      font-size: 0.78rem;
+      color: var(--slate-light);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .legal-breadcrumb a {
+      color: var(--silver);
+      text-decoration: none;
+    }
+
+    .legal-breadcrumb a:hover {
+      color: var(--gold);
+    }
+
+    .legal-breadcrumb span {
+      margin: 0 8px;
+      color: var(--slate);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .legal-hero {
+        padding: 130px 0 40px;
+      }
+
+      .legal-content {
+        padding: 50px 16px 70px;
+      }
+
+      .legal-content h2 {
+        margin-top: 40px;
+        font-size: 1.25rem;
+      }
+
+      .legal-company-box {
+        padding: 20px;
+      }
+
+      .cookie-table {
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav>Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Legal Hero -->
+  <section class="legal-hero">
+    <div class="container">
+      <div class="legal-breadcrumb">
+        <a href="index.html">Početna</a>
+        <span>›</span>
+        Politika Kolačića
+      </div>
+      <h1>Politika Kolačića</h1>
+      <p class="legal-subtitle">Transparentnost u korišćenju kolačića na sajtu apexrealestate.rs</p>
+      <div class="gold-line"></div>
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <div class="legal-content">
+
+    <h2>1. Šta su kolačići?</h2>
+    <p>
+      Kolačići (<em>cookies</em>) su male tekstualne datoteke koje se čuvaju na vašem uređaju (računar, tablet, mobilni telefon) kada posetite naš veb-sajt <strong>apexrealestate.rs</strong>. Kolačići nam pomažu da vam pružimo bolje korisničko iskustvo, da zapamtimo vaše preferencije i da analiziramo kako koristite naš sajt.
+    </p>
+    <p>
+      Kolačići ne sadrže lične podatke poput vašeg imena ili adrese e-pošte, osim ukoliko nam ih sami niste dostavili putem formulara na sajtu.
+    </p>
+
+    <h2>2. Koje kolačiće koristimo?</h2>
+    <p>Na sajtu <strong>apexrealestate.rs</strong> koristimo sledeće kategorije kolačića:</p>
+
+    <h3>a) Neophodni (funkcionalni) kolačići</h3>
+    <p>
+      Ovi kolačići su neophodni za pravilno funkcionisanje sajta. Bez njih sajt ne može da funkcioniše ispravno. Oni ne prikupljaju vaše lične podatke u marketinške svrhe.
+    </p>
+    <ul>
+      <li>Pamćenje sesije korisnika tokom posete</li>
+      <li>Čuvanje podešavanja privatnosti i saglasnosti za kolačiće</li>
+      <li>Obezbeđivanje sigurnosnih funkcija sajta</li>
+    </ul>
+
+    <h3>b) Analitički kolačići</h3>
+    <p>
+      Ovi kolačići nam pomažu da razumemo kako posetioci koriste naš sajt. Informacije koje prikupljaju su agregirane i anonimne. Koristimo ih za poboljšanje funkcionalnosti i sadržaja sajta.
+    </p>
+
+    <h3>c) Marketinški (reklamni) kolačići</h3>
+    <p>
+      Marketinški kolačići se koriste za prikazivanje oglasa koji su relevantni za vas. Oni takođe služe za ograničavanje broja puta koliko vidite oglas, kao i za merenje efikasnosti reklamnih kampanja.
+    </p>
+
+    <h2>3. Pregled kolačića koje koristimo</h2>
+    <p>U nastavku je detaljna tabela svih kolačića prisutnih na našem sajtu:</p>
+
+    <div class="cookie-table-wrap">
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Kolačić</th>
+            <th>Pružalac</th>
+            <th>Kategorija</th>
+            <th>Svrha</th>
+            <th>Trajanje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cookie-name">_fbp</td>
+            <td>Meta (Facebook)</td>
+            <td><span class="cookie-type-badge badge-marketing">Marketinški</span></td>
+            <td>Meta Pixel — koristi se za identifikaciju pretraživača radi pružanja reklamnih i analitičkih usluga. Omogućava praćenje konverzija sa Meta oglasa.</td>
+            <td>3 meseca</td>
+          </tr>
+          <tr>
+            <td class="cookie-name">_fbc</td>
+            <td>Meta (Facebook)</td>
+            <td><span class="cookie-type-badge badge-marketing">Marketinški</span></td>
+            <td>Meta Pixel — čuva podatke o poslednjem kliku na Meta oglas koji je doveo korisnika na sajt. Koristi se za atribuciju konverzija.</td>
+            <td>2 godine</td>
+          </tr>
+          <tr>
+            <td class="cookie-name">fr</td>
+            <td>Meta (Facebook)</td>
+            <td><span class="cookie-type-badge badge-marketing">Marketinški</span></td>
+            <td>Koristi se za isporuku, merenje i poboljšanje relevantnosti oglasa na Facebook platformi.</td>
+            <td>3 meseca</td>
+          </tr>
+          <tr>
+            <td class="cookie-name">tr</td>
+            <td>Meta (Facebook)</td>
+            <td><span class="cookie-type-badge badge-marketing">Marketinški</span></td>
+            <td>Meta Pixel piksel za praćenje — šalje podatke o aktivnosti korisnika na sajtu ka Meta Ads platformi.</td>
+            <td>Sesija</td>
+          </tr>
+          <tr>
+            <td class="cookie-name">cookie_consent</td>
+            <td>apexrealestate.rs</td>
+            <td><span class="cookie-type-badge badge-necessary">Neophodni</span></td>
+            <td>Čuva vašu saglasnost za korišćenje kolačića, kako vam se baner ne bi prikazivao pri svakoj poseti.</td>
+            <td>1 godina</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>4. Meta Pixel (Facebook Pixel)</h2>
+    <p>
+      Na našem sajtu koristimo <strong>Meta Pixel</strong> (ranije poznat kao Facebook Pixel), alat za analitiku i oglašavanje koji pruža kompanija Meta Platforms, Inc. Meta Pixel nam omogućava:
+    </p>
+    <ul>
+      <li>Merenje efikasnosti naših reklamnih kampanja na Facebook-u i Instagram-u</li>
+      <li>Kreiranje prilagođenih ciljnih grupa (<em>Custom Audiences</em>) za remarketing</li>
+      <li>Praćenje konverzija — npr. kada korisnik popuni kontakt formu nakon klika na oglas</li>
+      <li>Optimizaciju naših oglasa za prikaz korisnicima koji su najverovatnije zainteresovani za naše usluge</li>
+    </ul>
+    <p>
+      Meta Pixel prikuplja podatke kao što su: IP adresa, vrsta pretraživača, operativni sistem, stranice koje ste posetili na našem sajtu i radnje koje ste preduzeli (npr. klik na dugme „Kontakt"). Ovi podaci se obrađuju u skladu sa <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta politikom privatnosti</a>.
+    </p>
+    <p>
+      Možete upravljati vašim podešavanjima za Meta oglase putem <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">Facebook Ad Preferences</a> stranice.
+    </p>
+
+    <h2>5. Kako upravljati kolačićima?</h2>
+    <p>
+      Imate potpunu kontrolu nad kolačićima. Možete ih obrisati ili blokirati u podešavanjima vašeg pretraživača. Imajte na umu da brisanje ili blokiranje kolačića može uticati na funkcionalnost sajta.
+    </p>
+    <p>Evo kako da upravljate kolačićima u najpopularnijim pretraživačima:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Postavke → Privatnost i bezbednost → Kolačići i drugi podaci sa sajtova</li>
+      <li><strong>Mozilla Firefox:</strong> Opcije → Privatnost i bezbednost → Kolačići i podaci o sajtovima</li>
+      <li><strong>Safari:</strong> Podešavanja → Privatnost → Upravljanje podacima veb-sajtova</li>
+      <li><strong>Microsoft Edge:</strong> Postavke → Kolačići i dozvole za sajtove → Upravljanje i brisanje kolačića</li>
+      <li><strong>Opera:</strong> Podešavanja → Napredna podešavanja → Privatnost i bezbednost → Kolačići</li>
+    </ul>
+    <p>
+      Takođe možete koristiti alate za odustajanje od praćenja koje pružaju treće strane:
+    </p>
+    <ul>
+      <li><a href="https://www.youronlinechoices.com/" target="_blank" rel="noopener noreferrer">Your Online Choices</a> — evropski alat za upravljanje online oglašavanjem</li>
+      <li><a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer">Network Advertising Initiative</a> — alat za odustajanje od ciljanih oglasa</li>
+    </ul>
+
+    <h2>6. Kolačići trećih strana</h2>
+    <p>
+      Neki kolačići na našem sajtu postavljaju treće strane — spoljni servisi koje koristimo za analitiku, oglašavanje ili poboljšanje korisničkog iskustva. Mi nemamo direktnu kontrolu nad ovim kolačićima.
+    </p>
+    <p>Treće strane čije kolačiće koristimo:</p>
+    <ul>
+      <li><strong>Meta Platforms, Inc.</strong> (Facebook/Instagram) — za remarketing i analitiku oglasa putem Meta Pixel-a</li>
+    </ul>
+    <p>
+      Preporučujemo da posetite politike privatnosti navedenih trećih strana za detaljnije informacije o njihovim praksama prikupljanja podataka.
+    </p>
+
+    <h2>7. Vaša prava</h2>
+    <p>
+      U skladu sa <strong>Zakonom o zaštiti podataka o ličnosti Republike Srbije</strong> („Sl. glasnik RS", br. 87/2018) i <strong>Opštom uredbom o zaštiti podataka (GDPR)</strong>, imate sledeća prava:
+    </p>
+    <ul>
+      <li><strong>Pravo na informisanje</strong> — da budete obavešteni o tome kako koristimo vaše podatke</li>
+      <li><strong>Pravo na pristup</strong> — da zatražite kopiju podataka koje čuvamo o vama</li>
+      <li><strong>Pravo na ispravku</strong> — da zatražite ispravku netačnih podataka</li>
+      <li><strong>Pravo na brisanje</strong> — da zatražite brisanje vaših podataka („pravo na zaborav")</li>
+      <li><strong>Pravo na ograničenje obrade</strong> — da ograničite način na koji koristimo vaše podatke</li>
+      <li><strong>Pravo na prigovor</strong> — da uložite prigovor na obradu vaših podataka</li>
+      <li><strong>Pravo na povlačenje saglasnosti</strong> — da u bilo kom trenutku povučete datu saglasnost za obradu podataka</li>
+    </ul>
+    <p>
+      Za ostvarivanje bilo kog od navedenih prava, kontaktirajte nas putem informacija navedenih u nastavku.
+    </p>
+
+    <h2>8. Kontakt</h2>
+    <p>Za sva pitanja u vezi sa kolačićima i zaštitom vaših podataka, možete nas kontaktirati:</p>
+
+    <div class="legal-company-box">
+      <p><strong>Apex Real Estate D.O.O.</strong></p>
+      <p>Mičurinova 74, 21000 Novi Sad, Srbija</p>
+      <p>PIB: 115600475 | MB: 22181947</p>
+      <p>Registarski broj posrednika: 2167</p>
+      <p>Telefon: <a href="tel:+381643335757">064/333/5757</a></p>
+      <p>E-mail: <a href="mailto:office@apexrealestate.rs">office@apexrealestate.rs</a></p>
+      <p>Web: <a href="https://apexrealestate.rs" target="_blank" rel="noopener noreferrer">apexrealestate.rs</a></p>
+    </div>
+
+    <h2>9. Izmene politike kolačića</h2>
+    <p>
+      Zadržavamo pravo da povremeno ažuriramo ovu Politiku kolačića kako bismo odrazili promene u kolačićima koje koristimo ili iz drugih operativnih, pravnih ili regulatornih razloga. Preporučujemo da povremeno proveravate ovu stranicu kako biste bili u toku sa najnovijim informacijama o korišćenju kolačića.
+    </p>
+
+    <p class="legal-updated">Poslednje ažuriranje: 17. jun 2026. godine</p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
+          </div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="renta.html">Rente</a>
+          <a href="blog.html">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="index.html#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#reviews">Recenzije</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="politika-privatnosti.html">Politika Privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi Korišćenja</a>
+          <a href="kolacici.html">Kolačići</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Real Estate D.O.O. | PIB: 115600475 | MB: 22181947 | Reg. br. posrednika: 2167 | Mičurinova 74, 21000 Novi Sad, Srbija. Sva prava zadržana.</p>
+        <p class="footer-seo-keywords">
+          Nekretnine Novi Sad • Prodaja stanova Novi Sad • Luxury Real Estate Serbia •
+          Luksuzni stanovi Novi Sad • Penthouse Novi Sad • Vile Fruška Gora • Premium nekretnine Srbija
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js?v=20260601b"></script>
+</body>
+</html>

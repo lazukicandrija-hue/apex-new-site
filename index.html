@@ -276,7 +276,7 @@
         const CUSTOM_PAGES = {};
 
         const PRIORITY_IDS = [
-          's003', 's009', 's013', 'n006', 'n002'
+          's003', 's009', 's013'
         ];
 
         const TYPE_TO_CATEGORY = {
@@ -344,6 +344,9 @@
         }
 
         function loadProperties(props) {
+          // Filtriramo novogradnju — nikad ne prikazujemo na home page-u
+          props = props.filter(function(p) { return p.type !== 'Novogradnja'; });
+
           if (PRIORITY_IDS.length > 0) {
             var prioritized = [];
             var rest = [];
@@ -750,7 +753,12 @@
           <div class="footer-logo">
             <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate">
           </div>
-          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <p>Apex Real Estate D.O.O. — vrhunska agencija za luksuzne nekretnine u Novom Sadu. Vaš partner za pronalaženje savršenog doma koji odražava vaš stil života.</p>
+          <div class="footer-company-info">
+            <span>PIB: 115600475</span>
+            <span>MB: 22181947</span>
+            <span>Reg. br. posrednika: 2167</span>
+          </div>
           <div class="footer-social">
             <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -780,15 +788,14 @@
 
         <div class="footer-col">
           <h4>Pravno</h4>
-          <a href="#">Politika Privatnosti</a>
-          <a href="#">Uslovi Korišćenja</a>
-          <a href="#">Kolačići</a>
-          <a href="#">GDPR</a>
+          <a href="politika-privatnosti.html">Politika Privatnosti</a>
+          <a href="uslovi-koriscenja.html">Uslovi Korišćenja</a>
+          <a href="kolacici.html">Kolačići</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+        <p>&copy; 2026 Apex Real Estate D.O.O. | PIB: 115600475 | MB: 22181947 | Reg. br. posrednika: 2167</p>
         <p class="footer-seo-keywords">
           Nekretnine Novi Sad • Prodaja stanova Novi Sad • Luxury Real Estate Serbia •
           Luksuzni stanovi Novi Sad • Penthouse Novi Sad • Vile Fruška Gora • Premium nekretnine Srbija

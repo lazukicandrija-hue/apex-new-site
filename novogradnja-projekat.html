@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title id="pageTitle">Novogradnja | APEX Real Estate Novi Sad</title>
+  <meta name="description" id="metaDesc" content="Premium novogradnja u Novom Sadu. APEX Real Estate.">
+  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="novogradnja-project.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1467296481304386');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1467296481304386&ev=PageView&noscript=1"
+  /></noscript>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo/apex-logo-transparent.png" alt="APEX Real Estate Logo">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav>Home</a></li>
+        <li><a href="prodaja.html" data-nav>Prodaja</a></li>
+        <li><a href="novogradnja.html" data-nav class="active-nav">Novogradnja</a></li>
+        <li><a href="renta.html" data-nav>Renta</a></li>
+        <li><a href="blog.html" data-nav>Blog</a></li>
+        <li><a href="index.html#about" data-nav>O Nama</a></li>
+        <li><a href="index.html#contact" data-nav class="nav-cta">Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero (dynamic) -->
+  <section class="proj-hero">
+    <div class="proj-hero-bg" id="heroBg" style="background-image: url('assets/images/about-bg.png');">
+      <div class="img-shield"></div>
+    </div>
+    <div class="proj-hero-overlay"></div>
+    <div class="proj-hero-content">
+      <span class="proj-hero-badge" id="heroBadge">Novo</span>
+      <h1 class="proj-hero-title" id="heroTitle">Učitavanje...</h1>
+      <p class="proj-hero-location" id="heroLocation">📍 Novi Sad</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="proj-breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Početna</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="novogradnja.html">Novogradnja</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current" id="breadcrumbName">...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="proj-stats">
+    <div class="container">
+      <div class="proj-stats-grid">
+        <div class="proj-stat-item reveal">
+          <div class="proj-stat-value" id="statUkupno">—</div>
+          <div class="proj-stat-label">Ukupno Stanova</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-1">
+          <div class="proj-stat-value" id="statDostupno">—</div>
+          <div class="proj-stat-label">Dostupno</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-2">
+          <div class="proj-stat-value" id="statPovrsina">—</div>
+          <div class="proj-stat-label">Površina</div>
+        </div>
+        <div class="proj-stat-item reveal stagger-3">
+          <div class="proj-stat-value" id="statZavrsetak">—</div>
+          <div class="proj-stat-label">Završetak</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="proj-content-section">
+    <div class="container">
+
+      <!-- Gallery (dynamic) -->
+      <div class="proj-gallery reveal" style="margin-bottom: 50px;" id="gallerySection">
+        <span class="proj-section-tag">Galerija</span>
+        <h2 class="proj-section-title">Renderi Projekta</h2>
+        <div id="galleryGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;"></div>
+      </div>
+
+      <div class="proj-layout">
+
+        <!-- Left Column -->
+        <div class="proj-main-col">
+
+          <!-- Description -->
+          <div class="proj-description reveal">
+            <span class="proj-section-tag">O Projektu</span>
+            <h2 class="proj-section-title" id="descTitle">O Projektu</h2>
+            <div id="descText" class="proj-desc-text">Učitavanje opisa projekta...</div>
+          </div>
+
+          <!-- Apartments Table -->
+          <div class="proj-apartments reveal">
+            <span class="proj-section-tag">Ponuda Stanova</span>
+            <h2 class="proj-section-title">Dostupni Stanovi</h2>
+
+            <!-- Filters -->
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+              <select id="filterFloor" style="background:#1a1a1a;border:1px solid rgba(212,175,55,0.2);color:#fff;padding:8px 12px;border-radius:8px;font-size:0.85rem;">
+                <option value="">Svi spratovi</option>
+              </select>
+              <select id="filterStructure" style="background:#1a1a1a;border:1px solid rgba(212,175,55,0.2);color:#fff;padding:8px 12px;border-radius:8px;font-size:0.85rem;">
+                <option value="">Sve strukture</option>
+              </select>
+              <select id="filterStatus" style="background:#1a1a1a;border:1px solid rgba(212,175,55,0.2);color:#fff;padding:8px 12px;border-radius:8px;font-size:0.85rem;">
+                <option value="">Svi statusi</option>
+                <option value="Dostupan">Dostupan</option>
+                <option value="Prodato">Prodato</option>
+              </select>
+            </div>
+
+            <div class="proj-table-wrapper">
+              <table class="proj-table" id="apartmentsTable">
+                <thead>
+                  <tr>
+                    <th>Stan</th>
+                    <th>Sprat</th>
+                    <th>Površina</th>
+                    <th>Struktura</th>
+                    <th>Cena</th>
+                    <th>Status</th>
+                    <th>Skica</th>
+                  </tr>
+                </thead>
+                <tbody id="apartmentsBody">
+                  <tr>
+                    <td colspan="7" style="text-align:center;padding:30px;color:rgba(255,255,255,0.4);">
+                      Učitavanje stanova...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="proj-sidebar">
+          <div class="proj-price-card">
+            <div class="proj-price-label">Cena</div>
+            <div class="proj-price-value">Na Upit</div>
+            <div class="proj-price-note">Kontaktirajte nas za detaljne informacije</div>
+            <a href="index.html#contact" class="proj-cta-primary">📞 Zakažite Obilazak</a>
+            <a href="tel:+381643335757" class="proj-cta-secondary">064 / 333 / 5757</a>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>Detalji Projekta</h4>
+            <div class="proj-info-row"><span>Lokacija</span><strong id="sidebarLokacija">—</strong></div>
+            <div class="proj-info-row"><span>Tip</span><strong>Stambeni kompleks</strong></div>
+            <div class="proj-info-row"><span>Ukupno jedinica</span><strong id="sidebarUkupno">—</strong></div>
+          </div>
+
+          <div class="proj-info-card">
+            <h4>APEX Real Estate</h4>
+            <div class="proj-info-row"><span>Telefon</span><strong>064/333/5757</strong></div>
+            <div class="proj-info-row"><span>Email</span><strong>office@apexrealestate.rs</strong></div>
+            <div class="proj-info-row"><span>Adresa</span><strong>Mičurinova 74, NS</strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="proj-cta-section">
+    <div class="container">
+      <div class="proj-cta-inner">
+        <span class="section-tag reveal">Zainteresovani?</span>
+        <h2 class="section-title reveal stagger-1">Želite Više Informacija?</h2>
+        <p class="novo-cta-desc reveal stagger-2" id="ctaDesc">Kontaktirajte nas putem forme ili telefona za više informacija o projektu.</p>
+
+        <form class="proj-inquiry-form reveal stagger-3" id="inquiryForm">
+          <div class="proj-form-row">
+            <div class="proj-form-group">
+              <input type="text" id="inquiryName" placeholder="Vaše Ime i Prezime" required>
+            </div>
+            <div class="proj-form-group">
+              <input type="tel" id="inquiryPhone" placeholder="Broj Telefona" required>
+            </div>
+          </div>
+          <div class="proj-form-group">
+            <input type="email" id="inquiryEmail" placeholder="Email Adresa">
+          </div>
+          <div class="proj-form-group">
+            <textarea id="inquiryMessage" rows="3" placeholder="Vaša poruka (opciono)"></textarea>
+          </div>
+          <button type="submit" class="novo-cta-btn-primary" style="width:100%;justify-content:center;">Pošaljite Upit</button>
+        </form>
+
+        <div class="novo-cta-buttons reveal stagger-4" style="margin-top: 20px;">
+          <a href="tel:+381643335757" class="novo-cta-btn-secondary">064 / 333 / 5757</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="logo/apex-logo-transparent.png" alt="APEX Real Estate"></div>
+          <p>Vrhunska agencija za luksuzne nekretnine u Novom Sadu.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/apexrealestaters" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61589550516934" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Nekretnine</h4>
+          <a href="novogradnja.html">Novogradnja</a>
+          <a href="prodaja.html">Prodaja</a>
+          <a href="renta.html">Renta</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kompanija</h4>
+          <a href="index.html#about">O Nama</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="kolacici.html">Kolačići</a>
+          <a href="#">Politika Privatnosti</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Real Estate. Sva prava zadržana.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sketch Lightbox -->
+  <div id="sketchLightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:9999;cursor:pointer;align-items:center;justify-content:center;" onclick="this.style.display='none'">
+    <button onclick="event.stopPropagation();document.getElementById('sketchLightbox').style.display='none'" style="position:absolute;top:20px;right:30px;background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;z-index:10000;">×</button>
+    <img id="sketchLightboxImg" src="" alt="Skica stana" style="max-width:90%;max-height:90%;object-fit:contain;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.5);">
+  </div>
+
+  <style>
+    .sketch-thumb { width:50px; height:50px; object-fit:cover; border-radius:6px; cursor:pointer; border:1px solid rgba(212,175,55,0.3); transition:transform 0.2s, border-color 0.2s; }
+    .sketch-thumb:hover { transform:scale(1.15); border-color:rgba(212,175,55,0.8); }
+    .sketch-link { color:var(--gold,#d4af37); text-decoration:none; font-size:0.82rem; cursor:pointer; }
+    .sketch-link:hover { text-decoration:underline; }
+  </style>
+
+  <script src="novogradnja-project.js"></script>
+  <script>
+  /* ============================================
+     Dynamic Project Loader — reads ?slug= from URL
+     Fetches project data + apartments from CRM API
+     ============================================ */
+  (function() {
+    var CRM = 'https://crm.apexrealestate.rs';
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+
+    if (!slug) {
+      document.getElementById('heroTitle').textContent = 'Projekat nije pronađen';
+      return;
+    }
+
+    var allUnits = [];
+
+    // Fetch project details
+    fetch(CRM + '/api/sync/projects/' + slug)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var p = data.project;
+        if (!p) {
+          document.getElementById('heroTitle').textContent = 'Projekat nije pronađen';
+          return;
+        }
+
+        // Page title & meta
+        document.getElementById('pageTitle').textContent = p.name + ' — Novogradnja ' + p.location + ' | APEX Real Estate';
+        document.getElementById('metaDesc').setAttribute('content', p.name + ' — premium novogradnja, ' + p.location + '. APEX Real Estate.');
+
+        // Hero
+        var images = Array.isArray(p.images) ? p.images : [];
+        if (images.length > 0) {
+          document.getElementById('heroBg').style.backgroundImage = "url('" + images[0] + "')";
+        }
+        document.getElementById('heroTitle').textContent = p.name;
+        document.getElementById('heroLocation').textContent = '📍 ' + p.location;
+        document.getElementById('heroBadge').textContent = 'Novo';
+
+        // Breadcrumb
+        document.getElementById('breadcrumbName').textContent = p.name;
+
+        // Description
+        document.getElementById('descTitle').textContent = p.name;
+        if (p.website_description) {
+          document.getElementById('descText').innerHTML = p.website_description.replace(/\n/g, '<br>');
+        } else {
+          document.getElementById('descText').textContent = 'Premium novogradnja u lokaciji ' + p.location + '. Kontaktirajte nas za više informacija.';
+        }
+
+        // Sidebar
+        document.getElementById('sidebarLokacija').textContent = p.location;
+
+        // CTA
+        document.getElementById('ctaDesc').textContent = 'Kontaktirajte nas za više informacija o projektu ' + p.name + '.';
+
+        // Gallery
+        var galleryGrid = document.getElementById('galleryGrid');
+        if (images.length > 0) {
+          images.forEach(function(img) {
+            var div = document.createElement('div');
+            div.className = 'proj-gallery-main';
+            div.innerHTML = '<div class="proj-gallery-img" role="img" style="background-image: url(\'' + img + '\');"><div class="img-shield"></div></div>';
+            galleryGrid.appendChild(div);
+          });
+        } else {
+          document.getElementById('gallerySection').style.display = 'none';
+        }
+
+        // Load apartments
+        var units = p.units || [];
+        allUnits = units;
+
+        // Stats
+        var total = units.length;
+        var available = units.filter(function(u) { return u.status === 'Aktivna' || u.status === 'Dostupan'; }).length;
+        var sold = units.filter(function(u) { return u.status === 'Prodato'; }).length;
+        var areas = units.filter(function(u) { return u.area; }).map(function(u) { return parseFloat(u.area) || 0; });
+        var minArea = areas.length > 0 ? Math.min.apply(null, areas) : 0;
+        var maxArea = areas.length > 0 ? Math.max.apply(null, areas) : 0;
+
+        document.getElementById('statUkupno').textContent = total;
+        document.getElementById('sidebarUkupno').textContent = total;
+        document.getElementById('statDostupno').textContent = available;
+        document.getElementById('statPovrsina').textContent = minArea && maxArea ? (minArea.toFixed(0) + '–' + maxArea.toFixed(0) + ' m²') : '—';
+        document.getElementById('statZavrsetak').textContent = p.completion_date || 'Na upit';
+
+        // Populate filter dropdowns
+        var floors = {};
+        var structures = {};
+        units.forEach(function(u) {
+          if (u.floor) floors[u.floor] = true;
+          var struct = getStructure(u);
+          if (struct && struct !== '—') structures[struct] = true;
+        });
+
+        var floorSelect = document.getElementById('filterFloor');
+        Object.keys(floors).sort().forEach(function(f) {
+          var opt = document.createElement('option');
+          opt.value = f;
+          opt.textContent = f;
+          floorSelect.appendChild(opt);
+        });
+
+        var structSelect = document.getElementById('filterStructure');
+        Object.keys(structures).sort().forEach(function(s) {
+          var opt = document.createElement('option');
+          opt.value = s;
+          opt.textContent = s;
+          structSelect.appendChild(opt);
+        });
+
+        renderUnits(units);
+
+        // Filter events
+        floorSelect.addEventListener('change', applyFilters);
+        structSelect.addEventListener('change', applyFilters);
+        document.getElementById('filterStatus').addEventListener('change', applyFilters);
+      })
+      .catch(function(err) {
+        console.error('Error loading project:', err);
+        document.getElementById('heroTitle').textContent = 'Greška pri učitavanju';
+      });
+
+    // Extract structure from title like "Stan 9A (Četvorosoban)" or from rooms number
+    function getStructure(u) {
+      // Try to extract from title parentheses first
+      var match = u.title && u.title.match(/\(([^)]+)\)/);
+      if (match) {
+        // Clean up: remove area info like ", 43.96m2"
+        var raw = match[1];
+        var parts = raw.split(',');
+        return parts[0].trim();
+      }
+      // Fallback to rooms number
+      var rooms = u.rooms;
+      if (!rooms) return '—';
+      return rooms <= 1 ? 'Jednosoban' : rooms <= 1.5 ? 'Jednoiposoban' : rooms <= 2 ? 'Dvosoban' : rooms <= 2.5 ? 'Dvoiposoban' : rooms <= 3 ? 'Trosoban' : rooms <= 3.5 ? 'Troiposoban' : rooms <= 4 ? 'Četvorosoban' : 'Petosoban+';
+    }
+
+    function applyFilters() {
+      var floor = document.getElementById('filterFloor').value;
+      var struct = document.getElementById('filterStructure').value;
+      var status = document.getElementById('filterStatus').value;
+
+      var filtered = allUnits.filter(function(u) {
+        if (floor && u.floor !== floor) return false;
+        if (status) {
+          var uStatus = (u.status === 'Aktivna') ? 'Dostupan' : (u.status === 'Prodato' ? 'Prodato' : u.status);
+          if (uStatus !== status) return false;
+        }
+        if (struct) {
+          if (getStructure(u) !== struct) return false;
+        }
+        return true;
+      });
+
+      renderUnits(filtered);
+    }
+
+    function renderUnits(units) {
+      var tbody = document.getElementById('apartmentsBody');
+      if (units.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:30px;color:rgba(255,255,255,0.4);">Nema stanova za prikazivanje</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = '';
+      units.forEach(function(u) {
+        var struct = getStructure(u);
+        var isSold = u.status === 'Prodato';
+        var statusClass = isSold ? 'status-sold' : 'status-available';
+        var statusText = isSold ? 'Prodato' : '✓ Dostupan';
+        var name = (u.title || '').replace(/^.*? - /, '');
+        var areaVal = parseFloat(u.area);
+        var areaText = areaVal ? areaVal.toFixed(2) + ' m²' : '—';
+
+        // Sketch/plan image
+        var imgs = u.images || [];
+        var sketchHtml = '—';
+        if (imgs.length > 0) {
+          sketchHtml = '<img src="' + imgs[0] + '" alt="Skica ' + name + '" class="sketch-thumb" onclick="event.stopPropagation();var lb=document.getElementById(\'sketchLightbox\');document.getElementById(\'sketchLightboxImg\').src=\'' + imgs[0] + '\';lb.style.display=\'flex\';" loading="lazy">';
+        }
+
+        var tr = document.createElement('tr');
+        if (isSold) tr.style.opacity = '0.5';
+        tr.innerHTML =
+          '<td>' + name + '</td>' +
+          '<td>' + (u.floor || '—') + '</td>' +
+          '<td>' + areaText + '</td>' +
+          '<td>' + struct + '</td>' +
+          '<td><strong>CENA NA UPIT</strong></td>' +
+          '<td><span class="' + statusClass + '">' + statusText + '</span></td>' +
+          '<td>' + sketchHtml + '</td>';
+        tbody.appendChild(tr);
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>
