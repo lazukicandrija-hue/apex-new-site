@@ -250,6 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.style.display = images.length <= 1 ? 'none' : '';
     if (counterEl) counterEl.style.display = images.length <= 1 ? 'none' : '';
 
+    // Use light background for Novogradnja (floor plan sketches)
+    const heroBadge = document.getElementById('heroBadge');
+    if (heroBadge && heroBadge.textContent.trim() === 'Novogradnja') {
+      lightbox.classList.add('lightbox-light');
+    } else {
+      lightbox.classList.remove('lightbox-light');
+    }
+
     requestAnimationFrame(() => lightbox.classList.add('active'));
     document.body.style.overflow = 'hidden';
   }
@@ -257,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('active');
+    lightbox.classList.remove('lightbox-light');
     document.body.style.overflow = '';
   }
 

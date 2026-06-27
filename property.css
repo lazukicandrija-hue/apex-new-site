@@ -498,6 +498,37 @@
   font-weight: 500;
 }
 
+/* Share / Copy Link Button */
+.prop-share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 12px;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prop-share-btn:hover {
+  background: rgba(212,175,55,0.08);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.prop-share-btn svg {
+  flex-shrink: 0;
+}
+
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;
@@ -521,6 +552,29 @@
 .lightbox.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* Light background variant for floor plan sketches */
+.lightbox.lightbox-light {
+  background: rgba(255,255,255,0.97);
+}
+
+.lightbox.lightbox-light .lightbox-close {
+  background: rgba(40,40,40,0.9) !important;
+  color: #fff !important;
+  border-color: rgba(0,0,0,0.3) !important;
+}
+
+.lightbox.lightbox-light .lightbox-nav {
+  background: rgba(40,40,40,0.9) !important;
+  color: #fff !important;
+  border-color: rgba(0,0,0,0.3) !important;
+}
+
+.lightbox.lightbox-light .lightbox-counter {
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  border-color: rgba(0,0,0,0.2);
 }
 
 .lightbox-img-wrapper {
