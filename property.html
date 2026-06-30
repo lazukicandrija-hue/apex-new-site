@@ -278,7 +278,19 @@
       // Quick Stats
       document.getElementById('quickStats').style.display = '';
       document.getElementById('statArea').textContent = p.area + 'm²';
-      document.getElementById('statRooms').textContent = p.rooms;
+
+      // For Novogradnja: extract structure from title since CRM rooms data is unreliable
+      var displayRooms = p.rooms;
+      var structureLabel = '';
+      if (p.type === 'Novogradnja' && p.title) {
+        var structMatch = p.title.match(/\(([^,)]+)/);
+        if (structMatch && structMatch[1]) {
+          structureLabel = structMatch[1].trim();
+          displayRooms = structureLabel;
+        }
+      }
+
+      document.getElementById('statRooms').textContent = displayRooms || '-';
       document.getElementById('statFloor').textContent = p.floor ? (isNaN(p.floor) ? p.floor : p.floor + '. sprat') : '-';
 
       // Main Content
@@ -297,7 +309,7 @@
       document.getElementById('detailFloor').textContent = p.floor ? (isNaN(p.floor) ? p.floor : p.floor + '. sprat') : '-';
       document.getElementById('detailLocation').textContent = p.location;
       document.getElementById('detailArea').textContent = p.area ? p.area + 'm²' : '-';
-      document.getElementById('detailRooms').textContent = p.rooms ? p.rooms + (p.rooms === 1 ? ' soba' : ' sobe') : '-';
+      document.getElementById('detailRooms').textContent = structureLabel || (p.rooms ? p.rooms + (p.rooms === 1 ? ' soba' : ' sobe') : '-');
 
       // Gallery
       if (p.images && p.images.length > 0) {
@@ -411,6 +423,31 @@
       }
     }
 
+    // Try to find unit in Projects API (fallback for units not published to properties)
+    function fetchFromProjectsAPI(unitId) {
+      return fetch('https://crm.apexrealestate.rs/api/sync/projects')
+        .then(function(r) {
+          if (!r.ok) throw new Error('Projects API HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          if (!data.projects) throw new Error('No projects');
+          for (var i = 0; i < data.projects.length; i++) {
+            var proj = data.projects[i];
+            if (!proj.units) continue;
+            for (var j = 0; j < proj.units.length; j++) {
+              if (proj.units[j].id === unitId) {
+                var unit = proj.units[j];
+                // Ensure type is set to Novogradnja for project units
+                if (!unit.type) unit.type = 'Novogradnja';
+                return unit;
+              }
+            }
+          }
+          return null;
+        });
+    }
+
     fetch(CRM_API + '/' + propertyId)
       .then(function(r) { 
         if (!r.ok) throw new Error('Not found');
@@ -420,16 +457,44 @@
         renderProperty(data.property);
       })
       .catch(function(err) {
-        console.warn('CRM fetch failed, checking fallback:', err);
-        if (typeof FALLBACK_PROPERTIES !== 'undefined') {
-          var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
-          if (p) {
-            renderProperty(p);
-            return;
-          }
-        }
-        document.getElementById('notFound').style.display = 'block';
-        document.getElementById('propHero').style.display = 'none';
+        console.warn('CRM properties API failed, trying projects API fallback:', err);
+        
+        // Fallback 1: Try projects API (for novogradnja units not published to properties)
+        fetchFromProjectsAPI(propertyId)
+          .then(function(unit) {
+            if (unit) {
+              console.log('Found unit in projects API:', unit.title);
+              renderProperty(unit);
+              return;
+            }
+            
+            // Fallback 2: Try local fallback data
+            if (typeof FALLBACK_PROPERTIES !== 'undefined') {
+              var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
+              if (p) {
+                renderProperty(p);
+                return;
+              }
+            }
+            
+            document.getElementById('notFound').style.display = 'block';
+            document.getElementById('propHero').style.display = 'none';
+          })
+          .catch(function(err2) {
+            console.warn('Projects API fallback also failed:', err2);
+            
+            // Last resort: try local fallback
+            if (typeof FALLBACK_PROPERTIES !== 'undefined') {
+              var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
+              if (p) {
+                renderProperty(p);
+                return;
+              }
+            }
+            
+            document.getElementById('notFound').style.display = 'block';
+            document.getElementById('propHero').style.display = 'none';
+          });
       });
   })();
   </script>
