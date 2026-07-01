@@ -946,6 +946,69 @@
   }
 }
 
+/* ---------- Mobile Card Layout for Apartment Tables ---------- */
+@media (max-width: 768px) {
+  .proj-table {
+    min-width: unset !important;
+  }
+  .proj-table thead {
+    display: none;
+  }
+  .proj-table-wrapper {
+    border: none;
+  }
+  .proj-table tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .proj-table tbody tr:hover {
+    background: rgba(212,175,55,0.06);
+    border-color: rgba(212,175,55,0.15);
+  }
+  .proj-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.9rem;
+  }
+  .proj-table tbody td:last-child {
+    border-bottom: none;
+  }
+  .proj-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--gold, #D4AF37);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+  .proj-table tbody td:first-child {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    padding-bottom: 12px !important;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .proj-table tbody td:first-child::before {
+    display: none;
+  }
+  .proj-table tbody td.price-cell {
+    color: var(--gold, #D4AF37);
+    font-weight: 600;
+  }
+}
+
 /* ---------- Darker Theme Overrides ---------- */
 .proj-hero-overlay {
   background: linear-gradient(
