@@ -6,12 +6,14 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>Nekretnina | APEX Real Estate Novi Sad</title>
   <meta name="description" content="Premium nekretnina u ponudi APEX Real Estate agencije u Novom Sadu.">
-  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="logo/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="property.css?v=20260606b">
+  <link rel="stylesheet" href="property.css?v=20260701">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -65,9 +67,9 @@
     </div>
     <div class="prop-hero-overlay"></div>
     <div class="prop-hero-content">
-      <a href="index.html#properties" class="prop-back-link">
+      <a href="index.html#properties" class="prop-back-link" id="backLink">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        Nazad na Nekretnine
+        <span id="backLinkText">Nazad na Nekretnine</span>
       </a>
       <span class="prop-hero-badge" id="heroBadge"></span>
       <h1 id="heroTitle"></h1>
@@ -150,6 +152,11 @@
             <a href="tel:+381643335757" class="prop-phone-btn">
               064 / 333 / 5757
             </a>
+            <!-- Share / Copy Link button -->
+            <button class="prop-share-btn" id="copyLinkBtn" onclick="copyPropertyLink()" title="Kopiraj link ovog stana">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Kopiraj Link Stana
+            </button>
           </div>
 
           <div class="prop-agent-card">
@@ -209,7 +216,7 @@
       // Update page title
       document.title = p.title + ' | APEX Real Estate Novi Sad';
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = p.description;
+      if (metaDesc) metaDesc.content = p.description || (p.title + ' - APEX Real Estate Novi Sad');
 
       // Hero
       const heroPlaceholder = document.getElementById('heroPlaceholder');
@@ -231,10 +238,62 @@
       document.getElementById('heroTitle').textContent = p.title;
       document.getElementById('heroLocationText').textContent = p.location;
 
+      // Smart back link for Novogradnja — detect project from title
+      if (p.type === 'Novogradnja') {
+        var backLink = document.getElementById('backLink');
+        var backText = document.getElementById('backLinkText');
+        var titleLower = (p.title || '').toLowerCase();
+
+        // Map known project names to their pages
+        var projectPages = [
+          { keywords: ['telep premium'], page: 'novogradnja-telep-premium.html', name: 'Telep Premium' },
+          { keywords: ['telep iii', 'telep-iii', 'telep 3'], page: 'novogradnja-telep.html', name: 'Telep III' },
+          { keywords: ['telep ii', 'telep-ii', 'telep 2'], page: 'novogradnja-telep.html', name: 'Telep II' },
+          { keywords: ['telep i', 'telep-i', 'telep 1'], page: 'novogradnja-telep.html', name: 'Telep I' },
+          { keywords: ['telep novogradnja', 'telep -'], page: 'novogradnja-telep.html', name: 'Telep' },
+          { keywords: ['telep'], page: 'novogradnja-telep.html', name: 'Telep' },
+          { keywords: ['graviton', 'klisa'], page: 'novogradnja-sunnyline.html', name: 'Klisa' },
+          { keywords: ['petrovaradin'], page: 'novogradnja.html', name: 'Petrovaradin' },
+          { keywords: ['rotkvarija'], page: 'novogradnja.html', name: 'Rotkvarija' },
+          { keywords: ['veternik'], page: 'novogradnja.html', name: 'Veternik' },
+          { keywords: ['salajka'], page: 'novogradnja.html', name: 'Salajka' },
+          { keywords: ['podbara'], page: 'novogradnja.html', name: 'Podbara' }
+        ];
+
+        var matched = false;
+        for (var i = 0; i < projectPages.length; i++) {
+          for (var j = 0; j < projectPages[i].keywords.length; j++) {
+            if (titleLower.indexOf(projectPages[i].keywords[j]) !== -1) {
+              backLink.href = projectPages[i].page;
+              backText.textContent = 'Nazad na ' + projectPages[i].name;
+              matched = true;
+              break;
+            }
+          }
+          if (matched) break;
+        }
+        if (!matched) {
+          backLink.href = 'novogradnja.html';
+          backText.textContent = 'Nazad na Novogradnju';
+        }
+      }
+
       // Quick Stats
       document.getElementById('quickStats').style.display = '';
       document.getElementById('statArea').textContent = p.area + 'm²';
-      document.getElementById('statRooms').textContent = p.rooms;
+
+      // For Novogradnja: extract structure from title since CRM rooms data is unreliable
+      var displayRooms = p.rooms;
+      var structureLabel = '';
+      if (p.type === 'Novogradnja' && p.title) {
+        var structMatch = p.title.match(/\(([^,)]+)/);
+        if (structMatch && structMatch[1]) {
+          structureLabel = structMatch[1].trim();
+          displayRooms = structureLabel;
+        }
+      }
+
+      document.getElementById('statRooms').textContent = displayRooms || '-';
       document.getElementById('statFloor').textContent = p.floor ? (isNaN(p.floor) ? p.floor : p.floor + '. sprat') : '-';
 
       // Main Content
@@ -253,7 +312,7 @@
       document.getElementById('detailFloor').textContent = p.floor ? (isNaN(p.floor) ? p.floor : p.floor + '. sprat') : '-';
       document.getElementById('detailLocation').textContent = p.location;
       document.getElementById('detailArea').textContent = p.area ? p.area + 'm²' : '-';
-      document.getElementById('detailRooms').textContent = p.rooms ? p.rooms + (p.rooms === 1 ? ' soba' : ' sobe') : '-';
+      document.getElementById('detailRooms').textContent = structureLabel || (p.rooms ? p.rooms + (p.rooms === 1 ? ' soba' : ' sobe') : '-');
 
       // Gallery
       if (p.images && p.images.length > 0) {
@@ -367,6 +426,31 @@
       }
     }
 
+    // Try to find unit in Projects API (fallback for units not published to properties)
+    function fetchFromProjectsAPI(unitId) {
+      return fetch('https://crm.apexrealestate.rs/api/sync/projects')
+        .then(function(r) {
+          if (!r.ok) throw new Error('Projects API HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function(data) {
+          if (!data.projects) throw new Error('No projects');
+          for (var i = 0; i < data.projects.length; i++) {
+            var proj = data.projects[i];
+            if (!proj.units) continue;
+            for (var j = 0; j < proj.units.length; j++) {
+              if (proj.units[j].id === unitId) {
+                var unit = proj.units[j];
+                // Ensure type is set to Novogradnja for project units
+                if (!unit.type) unit.type = 'Novogradnja';
+                return unit;
+              }
+            }
+          }
+          return null;
+        });
+    }
+
     fetch(CRM_API + '/' + propertyId)
       .then(function(r) { 
         if (!r.ok) throw new Error('Not found');
@@ -376,19 +460,90 @@
         renderProperty(data.property);
       })
       .catch(function(err) {
-        console.warn('CRM fetch failed, checking fallback:', err);
-        if (typeof FALLBACK_PROPERTIES !== 'undefined') {
-          var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
-          if (p) {
-            renderProperty(p);
-            return;
-          }
-        }
-        document.getElementById('notFound').style.display = 'block';
-        document.getElementById('propHero').style.display = 'none';
+        console.warn('CRM properties API failed, trying projects API fallback:', err);
+        
+        // Fallback 1: Try projects API (for novogradnja units not published to properties)
+        fetchFromProjectsAPI(propertyId)
+          .then(function(unit) {
+            if (unit) {
+              console.log('Found unit in projects API:', unit.title);
+              renderProperty(unit);
+              return;
+            }
+            
+            // Fallback 2: Try local fallback data
+            if (typeof FALLBACK_PROPERTIES !== 'undefined') {
+              var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
+              if (p) {
+                renderProperty(p);
+                return;
+              }
+            }
+            
+            document.getElementById('notFound').style.display = 'block';
+            document.getElementById('propHero').style.display = 'none';
+          })
+          .catch(function(err2) {
+            console.warn('Projects API fallback also failed:', err2);
+            
+            // Last resort: try local fallback
+            if (typeof FALLBACK_PROPERTIES !== 'undefined') {
+              var p = FALLBACK_PROPERTIES.find(function(item) { return item.id === propertyId; });
+              if (p) {
+                renderProperty(p);
+                return;
+              }
+            }
+            
+            document.getElementById('notFound').style.display = 'block';
+            document.getElementById('propHero').style.display = 'none';
+          });
       });
   })();
   </script>
-  <script src="property.js?v=20260606"></script>
+
+  <script>
+  // Copy property link to clipboard
+  function copyPropertyLink() {
+    var url = window.location.href;
+    var btn = document.getElementById('copyLinkBtn');
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function() {
+        showCopySuccess(btn);
+      }).catch(function() {
+        fallbackCopy(url, btn);
+      });
+    } else {
+      fallbackCopy(url, btn);
+    }
+  }
+
+  function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showCopySuccess(btn); }
+    catch(e) { alert('Link: ' + text); }
+    document.body.removeChild(ta);
+  }
+
+  function showCopySuccess(btn) {
+    var original = btn.innerHTML;
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Link Kopiran!';
+    btn.style.borderColor = '#2ecc71';
+    btn.style.color = '#2ecc71';
+    setTimeout(function() {
+      btn.innerHTML = original;
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }, 2500);
+  }
+  </script>
+
+  <script src="property.js?v=20260701"></script>
 </body>
 </html>

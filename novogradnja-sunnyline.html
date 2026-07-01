@@ -6,12 +6,14 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>Klisa — Novogradnja Klisa | APEX Real Estate</title>
   <meta name="description" content="Klisa — premium novogradnja na Klisi, Novi Sad. 16 modernih stanova. Cena na upit.">
-  <link rel="icon" type="image/jpeg" href="logo/apex-logo-transparent.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="logo/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="novogradnja-project.css">
+  <link rel="stylesheet" href="novogradnja-project.css?v=20260701b">
   <!-- Leaflet Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -260,20 +262,25 @@
   <button class="back-to-top" id="backToTop" aria-label="Nazad na vrh">↑</button>
 
   <script>
-    // Load apartments from CRM for this project
+    // Load apartments from CRM Projects API for Klisa
     (function() {
-      var CRM_API = 'https://crm.apexrealestate.rs/api/sync/properties?include=novogradnja';
+      var PROJECTS_API = 'https://crm.apexrealestate.rs/api/sync/projects';
+      var PROPERTIES_API = 'https://crm.apexrealestate.rs/api/sync/properties?include=novogradnja';
       var tbody = document.getElementById('apartmentsBody');
       var statDostupno = document.getElementById('statDostupno');
       var statPovrsina = document.getElementById('statPovrsina');
 
-      function getRoomLabel(rooms) {
-        if (!rooms || rooms <= 1) return 'Garsonjera';
-        if (rooms === 1.5) return 'Jednoiposoban';
-        if (rooms === 2) return 'Jednosoban';
-        if (rooms === 3) return 'Dvosoban';
-        if (rooms === 4) return 'Trosoban';
-        return rooms + '-soban';
+      function getStructureFromTitle(title) {
+        if (!title) return '—';
+        var match = title.match(/\(([^,]+)/);
+        if (match && match[1]) return match[1].trim();
+        if (title.indexOf('Trosoban') !== -1) return 'Trosoban';
+        if (title.indexOf('Dvosoban') !== -1) return 'Dvosoban';
+        if (title.indexOf('Jednoiposoban') !== -1) return 'Jednoiposoban';
+        if (title.indexOf('Jednosoban') !== -1) return 'Jednosoban';
+        if (title.indexOf('Garsonjera') !== -1) return 'Garsonjera';
+        if (title.indexOf('Lokal') !== -1) return 'Lokal';
+        return '—';
       }
 
       function formatPrice(price) {
@@ -289,59 +296,116 @@
           return;
         }
 
-        // Sort by area
-        apartments.sort(function(a, b) { return (a.area || 0) - (b.area || 0); });
+        // Sort by title (Stan A01, Stan A02, etc.)
+        apartments.sort(function(a, b) {
+          return (a.title || '').localeCompare(b.title || '', undefined, {numeric: true});
+        });
 
         // Stats
-        statDostupno.textContent = apartments.length;
-        var minArea = Math.round(Math.min.apply(null, apartments.map(function(a) { return a.area || 0; })));
-        var maxArea = Math.round(Math.max.apply(null, apartments.map(function(a) { return a.area || 0; })));
-        statPovrsina.textContent = minArea + '–' + maxArea + 'm²';
+        var activeApts = apartments.filter(function(a) { return a.status === 'Aktivna'; });
+        statDostupno.textContent = activeApts.length;
+
+        var areas = apartments.map(function(a) { return a.area || 0; }).filter(function(a) { return a > 0; });
+        if (areas.length > 0) {
+          var minArea = Math.round(Math.min.apply(null, areas) * 100) / 100;
+          var maxArea = Math.round(Math.max.apply(null, areas) * 100) / 100;
+          statPovrsina.textContent = minArea + '–' + maxArea + 'm²';
+        }
 
         tbody.innerHTML = '';
         apartments.forEach(function(apt, i) {
           var tr = document.createElement('tr');
+          tr.style.cursor = 'pointer';
+          tr.addEventListener('click', function() {
+            window.location.href = 'property.html?id=' + apt.id;
+          });
+
+          var statusClass = 'status-available';
+          var statusText = '● Dostupan';
+          if (apt.status === 'Prodato') {
+            statusClass = 'status-sold';
+            statusText = '● Prodat';
+          } else if (apt.status === 'U pregovoru') {
+            statusClass = 'status-pending';
+            statusText = '● Rezervisan';
+          }
+
+          // Display cleaner name in the Stan column
+          var displayTitle = apt.title || 'Stan ' + (i + 1);
+          if (displayTitle.indexOf('Klisa - ') !== -1) {
+            displayTitle = displayTitle.replace('Klisa - ', '');
+            displayTitle = displayTitle.split(' (')[0];
+          }
+
           tr.innerHTML =
-            '<td>' + (apt.title || 'Stan ' + (i + 1)) + '</td>' +
-            '<td>' + (apt.floor || '—') + '</td>' +
-            '<td>' + (apt.area ? apt.area + ' m²' : '—') + '</td>' +
-            '<td>' + getRoomLabel(apt.rooms) + '</td>' +
-            '<td class="price-cell">' + formatPrice(apt.price) + '</td>' +
-            '<td><span class="status-available">● Dostupan</span></td>';
+            '<td data-label="Stan">' + displayTitle + '</td>' +
+            '<td data-label="Sprat">' + (apt.floor || '—') + '</td>' +
+            '<td data-label="Površina">' + (apt.area ? apt.area + ' m²' : '—') + '</td>' +
+            '<td data-label="Struktura">' + getStructureFromTitle(apt.title) + '</td>' +
+            '<td data-label="Cena" class="price-cell">' + formatPrice(apt.price) + '</td>' +
+            '<td data-label="Status"><span class="' + statusClass + '">' + statusText + '</span></td>';
           tbody.appendChild(tr);
         });
       }
 
-      fetch(CRM_API)
+      // Fallback: load from properties API
+      function loadFallbackData() {
+        console.log('Klisa: falling back to properties API');
+        fetch(PROPERTIES_API)
+          .then(function(r) {
+            if (!r.ok) throw new Error('Properties HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function(data) {
+            if (!data.properties) throw new Error('No properties');
+            var klisaApts = data.properties.filter(function(p) {
+              var titleMatch = p.title && p.title.toLowerCase().indexOf('klisa') !== -1;
+              var locMatch = p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
+              var isNovo = p.type === 'Novogradnja';
+              return (titleMatch || locMatch) && isNovo;
+            });
+            if (klisaApts.length === 0) {
+              klisaApts = data.properties.filter(function(p) {
+                return p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
+              });
+            }
+            renderTable(klisaApts);
+          })
+          .catch(function(err) {
+            console.error('Properties API fallback also failed:', err);
+            renderTable([]);
+          });
+      }
+
+      // Primary: load from Projects API
+      fetch(PROJECTS_API)
         .then(function(r) {
-          if (!r.ok) throw new Error('CRM HTTP ' + r.status);
+          if (!r.ok) throw new Error('API HTTP ' + r.status);
           return r.json();
         })
         .then(function(data) {
-          if (!data.properties) throw new Error('No properties');
-          // Filter: Klisa apartments (Klisa location, Novogradnja type)
-          var klisaApts = data.properties.filter(function(p) {
-            var titleMatch = p.title && p.title.toLowerCase().indexOf('klisa') !== -1;
-            var locMatch = p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
-            var isNovo = p.type === 'Novogradnja';
-            return (titleMatch || locMatch) && isNovo;
-          });
-          if (klisaApts.length === 0) {
-            // Fallback: try any Klisa property
-            klisaApts = data.properties.filter(function(p) {
-              return p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
-            });
+          if (!data.projects) throw new Error('No projects');
+          var klisaProject = null;
+          for (var i = 0; i < data.projects.length; i++) {
+            if (data.projects[i].name === 'Klisa' || data.projects[i].slug === 'klisa') {
+              klisaProject = data.projects[i];
+              break;
+            }
           }
-          renderTable(klisaApts);
+          if (klisaProject && klisaProject.units && klisaProject.units.length > 0) {
+            renderTable(klisaProject.units);
+          } else {
+            loadFallbackData();
+          }
         })
         .catch(function(err) {
-          console.error('CRM error for Sunny Line:', err);
-          renderTable([]);
+          console.warn('CRM Projects API failed, falling back:', err);
+          loadFallbackData();
         });
     })();
   </script>
 
-  <script src="novogradnja-project.js"></script>
+  <script src="novogradnja-project.js?v=20260701c"></script>
   <style>
     /* POI Marker Styles */
     .poi-marker {
@@ -423,6 +487,59 @@
       font-size: 11px;
       color: #999;
       margin-top: 2px;
+    }
+    .status-available {
+      color: #27ae60;
+      font-weight: 600;
+    }
+    .status-sold {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+    .status-pending {
+      color: #e67e22;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .proj-table {
+        min-width: unset !important;
+      }
+      .proj-table thead {
+        display: none;
+      }
+      .proj-table tbody tr {
+        display: block;
+        margin-bottom: 16px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 12px;
+        padding: 16px;
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+      .proj-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        font-size: 0.9rem;
+      }
+      .proj-table tbody td:last-child {
+        border-bottom: none;
+      }
+      .proj-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--gold, #D4AF37);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        min-width: 100px;
+      }
+      .proj-table tbody td:first-child {
+        font-weight: 700;
+        font-size: 1rem;
+        color: #fff;
+      }
     }
   </style>
   <script>

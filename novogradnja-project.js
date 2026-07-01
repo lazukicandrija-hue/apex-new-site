@@ -1,62 +1,80 @@
 /* APEX — Novogradnja Project Detail JS */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 
   // Mobile Nav
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-  });
-  document.querySelectorAll('[data-nav]').forEach(link => {
-    link.addEventListener('click', () => {
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+    });
+  }
+  var navItems = document.querySelectorAll('[data-nav]');
+  for (var n = 0; n < navItems.length; n++) {
+    navItems[n].addEventListener('click', function() {
       navToggle.classList.remove('active');
       navLinks.classList.remove('active');
       document.body.style.overflow = 'auto';
     });
-  });
+  }
 
   // Gallery — single image, no carousel needed
 
   // Scroll Reveal
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      for (var e = 0; e < entries.length; e++) {
+        if (entries[e].isIntersecting) {
+          entries[e].target.classList.add('visible');
+          observer.unobserve(entries[e].target);
+        }
       }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    for (var r = 0; r < revealEls.length; r++) {
+      observer.observe(revealEls[r]);
+    }
+  } else {
+    // Fallback: show all elements immediately on older browsers
+    for (var f = 0; f < revealEls.length; f++) {
+      revealEls[f].classList.add('visible');
+    }
+  }
 
   // Back to Top
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 400);
-  });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Inquiry Form Submit
-  const inquiryForm = document.getElementById('inquiryForm');
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-EOvcwDJ7oZ-KHPgTVmHrCEZYnqxzkHHx9AdQyKgNa7d-o1-eiSme_LAsl8eKwclU/exec';
+  var inquiryForm = document.getElementById('inquiryForm');
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-EOvcwDJ7oZ-KHPgTVmHrCEZYnqxzkHHx9AdQyKgNa7d-o1-eiSme_LAsl8eKwclU/exec';
 
   if (inquiryForm) {
-    inquiryForm.addEventListener('submit', (e) => {
+    inquiryForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const submitBtn = inquiryForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
+      var submitBtn = inquiryForm.querySelector('button[type="submit"]');
+      var originalText = submitBtn.textContent;
 
       submitBtn.textContent = 'Šalje se...';
       submitBtn.style.opacity = '0.7';
       submitBtn.disabled = true;
 
       // Prikupi podatke
-      const formData = {
+      var formData = {
         ime: (document.getElementById('inquiryName') || {}).value || '',
         telefon: (document.getElementById('inquiryPhone') || {}).value || '',
         email: (document.getElementById('inquiryEmail') || {}).value || '',
@@ -67,12 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       // Pošalji
-      const params = new URLSearchParams(formData).toString();
-      const img = new Image();
+      var params = '';
+      for (var key in formData) {
+        if (formData.hasOwnProperty(key)) {
+          if (params) params += '&';
+          params += encodeURIComponent(key) + '=' + encodeURIComponent(formData[key]);
+        }
+      }
+      var img = new Image();
       img.src = GOOGLE_SCRIPT_URL + '?' + params;
 
       // Prikaži uspeh odmah
-      setTimeout(() => {
+      setTimeout(function() {
         submitBtn.textContent = '✓ Uspešno Poslato!';
         submitBtn.style.opacity = '1';
         submitBtn.style.background = 'linear-gradient(135deg, #2a7a2a, #3d9d3d)';
@@ -86,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
 
-        setTimeout(() => {
+        setTimeout(function() {
           inquiryForm.reset();
           submitBtn.textContent = originalText;
           submitBtn.style.background = '';
