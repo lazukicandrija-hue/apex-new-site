@@ -633,3 +633,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.head.appendChild(style);
 })();
+
+// -------- FAQ Accordion --------
+(function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  if (!faqQuestions.length) return;
+
+  faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const answer = btn.nextElementSibling;
+
+      // Close all other answers
+      faqQuestions.forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherBtn.nextElementSibling.classList.remove('open');
+        }
+      });
+
+      // Toggle current
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (isOpen) {
+        answer.classList.remove('open');
+      } else {
+        answer.classList.add('open');
+      }
+    });
+  });
+})();
