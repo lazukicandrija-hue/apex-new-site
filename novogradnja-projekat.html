@@ -307,7 +307,27 @@
 
     var allUnits = [];
 
-    // Fetch project details
+    // Hardcoded fallback data for projects where CRM API doesn't sync units
+    var HARDCODED_UNITS = {
+      'klisa': [
+        { title: 'Klisa - Stan 01 A (Četvorosoban)', area: 64.50, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan 02 A (Dvosoban)', area: 33.04, rooms: 2, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan 03 A (Petosoban)', area: 113.05, rooms: 5, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G1 A (Dvosoban)', area: 42.43, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G2 A (Dvosoban)', area: 33.08, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G01 B (Dvosoban)', area: 34.75, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G02 B (Dvosoban)', area: 37.93, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S01 B (Četvorosoban)', area: 105.68, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S02 B (Trosoban)', area: 59.52, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S03 B (Četvorosoban)', area: 105.68, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G01 C (Garsonjera)', area: 20.16, rooms: 1, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G02 C (Jednosoban)', area: 33.08, rooms: 1, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G03 C (Dvosoban)', area: 33.86, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S01 C (Trosoban)', area: 47.25, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S02 C (Trosoban)', area: 47.00, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S03 C (Četvorosoban)', area: 104.17, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] }
+      ]
+    };
     fetch(CRM + '/api/sync/projects/' + slug)
       .then(function(r) { return r.json(); })
       .then(function(data) {
@@ -360,8 +380,20 @@
           document.getElementById('gallerySection').style.display = 'none';
         }
 
-        // Load apartments
+        // Load apartments — use hardcoded fallback if API returns empty
         var units = p.units || [];
+        if (units.length === 0) {
+          // Check hardcoded fallback by slug or name
+          var projSlug = (p.slug || '').toLowerCase();
+          var projName = (p.name || '').toLowerCase();
+          if (HARDCODED_UNITS[projSlug]) {
+            units = HARDCODED_UNITS[projSlug];
+            console.log('Using hardcoded fallback for: ' + projSlug);
+          } else if (HARDCODED_UNITS[projName]) {
+            units = HARDCODED_UNITS[projName];
+            console.log('Using hardcoded fallback for: ' + projName);
+          }
+        }
         allUnits = units;
 
         // Stats
@@ -478,13 +510,13 @@
         var tr = document.createElement('tr');
         if (isSold) tr.style.opacity = '0.5';
         tr.innerHTML =
-          '<td>' + name + '</td>' +
-          '<td>' + (u.floor || '—') + '</td>' +
-          '<td>' + areaText + '</td>' +
-          '<td>' + struct + '</td>' +
-          '<td><strong>CENA NA UPIT</strong></td>' +
-          '<td><span class="' + statusClass + '">' + statusText + '</span></td>' +
-          '<td>' + sketchHtml + '</td>';
+          '<td data-label="Stan">' + name + '</td>' +
+          '<td data-label="Sprat">' + (u.floor || '—') + '</td>' +
+          '<td data-label="Površina">' + areaText + '</td>' +
+          '<td data-label="Struktura">' + struct + '</td>' +
+          '<td data-label="Cena"><strong>CENA NA UPIT</strong></td>' +
+          '<td data-label="Status"><span class="' + statusClass + '">' + statusText + '</span></td>' +
+          '<td data-label="Skica">' + sketchHtml + '</td>';
         tbody.appendChild(tr);
       });
     }
