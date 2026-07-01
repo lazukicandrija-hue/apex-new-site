@@ -351,16 +351,25 @@
         })
         .then(function(data) {
           if (!data.projects) throw new Error('No projects');
-          // Find Telep project
-          var telepProject = null;
+          // Collect ALL Telep projects except Telep Premium
+          var allUnits = [];
           for (var i = 0; i < data.projects.length; i++) {
-            if (data.projects[i].slug === 'telep' || data.projects[i].name === 'Telep') {
-              telepProject = data.projects[i];
-              break;
+            var proj = data.projects[i];
+            var slug = (proj.slug || '').toLowerCase();
+            var name = (proj.name || '').toLowerCase();
+            // Include: telep, telep-i, telep-ii, telep-iii, telep-novogradnja
+            // Exclude: telep-premium
+            if (slug === 'telep-premium') continue;
+            if (slug.indexOf('telep') !== -1 || name.indexOf('telep') !== -1) {
+              if (proj.units && proj.units.length > 0) {
+                for (var j = 0; j < proj.units.length; j++) {
+                  allUnits.push(proj.units[j]);
+                }
+              }
             }
           }
-          if (telepProject && telepProject.units) {
-            renderTable(telepProject.units);
+          if (allUnits.length > 0) {
+            renderTable(allUnits);
           } else {
             renderTable([]);
           }
