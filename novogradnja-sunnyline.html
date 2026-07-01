@@ -348,36 +348,27 @@
         });
       }
 
-      // Fallback: load from properties API
-      function loadFallbackData() {
-        console.log('Klisa: falling back to properties API');
-        fetch(PROPERTIES_API)
-          .then(function(r) {
-            if (!r.ok) throw new Error('Properties HTTP ' + r.status);
-            return r.json();
-          })
-          .then(function(data) {
-            if (!data.properties) throw new Error('No properties');
-            var klisaApts = data.properties.filter(function(p) {
-              var titleMatch = p.title && p.title.toLowerCase().indexOf('klisa') !== -1;
-              var locMatch = p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
-              var isNovo = p.type === 'Novogradnja';
-              return (titleMatch || locMatch) && isNovo;
-            });
-            if (klisaApts.length === 0) {
-              klisaApts = data.properties.filter(function(p) {
-                return p.location && p.location.toLowerCase().indexOf('klisa') !== -1;
-              });
-            }
-            renderTable(klisaApts);
-          })
-          .catch(function(err) {
-            console.error('Properties API fallback also failed:', err);
-            renderTable([]);
-          });
-      }
+      // Hardcoded Klisa data from CRM (fallback when API doesn't sync units)
+      var KLISA_HARDCODED = [
+        { title: 'Klisa - Stan 01 A (Četvorosoban)', area: 64.50, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan 02 A (Dvosoban)', area: 33.04, rooms: 2, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan 03 A (Petosoban)', area: 113.05, rooms: 5, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G1 A (Dvosoban)', area: 42.43, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G2 A (Dvosoban)', area: 33.08, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G01 B (Dvosoban)', area: 34.75, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G02 B (Dvosoban)', area: 37.93, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S01 B (Četvorosoban)', area: 105.68, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S02 B (Trosoban)', area: 59.52, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S03 B (Četvorosoban)', area: 105.68, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G01 C (Garsonjera)', area: 20.16, rooms: 1, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G02 C (Jednosoban)', area: 33.08, rooms: 1, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan G03 C (Dvosoban)', area: 33.86, rooms: 2, floor: 'Prizemlje', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S01 C (Trosoban)', area: 47.25, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S02 C (Trosoban)', area: 47.00, rooms: 3, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] },
+        { title: 'Klisa - Stan S03 C (Četvorosoban)', area: 104.17, rooms: 4, floor: '1. sprat', status: 'Aktivna', location: 'Klisa, Novi Sad', price: 0, images: [] }
+      ];
 
-      // Primary: load from Projects API
+      // Primary: load from Projects API, fallback to hardcoded
       fetch(PROJECTS_API)
         .then(function(r) {
           if (!r.ok) throw new Error('API HTTP ' + r.status);
@@ -395,12 +386,14 @@
           if (klisaProject && klisaProject.units && klisaProject.units.length > 0) {
             renderTable(klisaProject.units);
           } else {
-            loadFallbackData();
+            // API has no units — use hardcoded CRM data
+            console.log('Klisa: API returned 0 units, using hardcoded CRM data');
+            renderTable(KLISA_HARDCODED);
           }
         })
         .catch(function(err) {
-          console.warn('CRM Projects API failed, falling back:', err);
-          loadFallbackData();
+          console.warn('CRM API failed, using hardcoded data:', err);
+          renderTable(KLISA_HARDCODED);
         });
     })();
   </script>
