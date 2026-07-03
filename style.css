@@ -238,9 +238,10 @@ ul {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--pure-white);
   position: relative;
   padding: 4px 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .nav-links a::after {
@@ -2941,5 +2942,182 @@ html, body {
 
   .faq-answer p {
     font-size: 0.85rem;
+  }
+}
+
+/* ===== Hero Features ===== */
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.hero-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gold);
+  background: rgba(191, 164, 105, 0.12);
+  border: 1px solid rgba(191, 164, 105, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Why APEX ===== */
+.why-apex {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(191, 164, 105, 0.15);
+}
+
+.why-apex-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.why-apex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.why-apex-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--silver);
+  font-weight: 400;
+}
+
+.why-apex-item svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ===== Sellers Section ===== */
+.sellers-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.sellers-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.sellers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.sellers-info .section-tag {
+  text-align: left;
+}
+
+.sellers-info .section-title {
+  text-align: left;
+}
+
+.sellers-text {
+  font-size: 0.95rem;
+  color: var(--silver);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.sellers-benefits {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sellers-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--pure-white);
+  font-weight: 400;
+}
+
+.sellers-benefit svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.sellers-form-wrap {
+  background: rgba(191, 164, 105, 0.04);
+  border: 1px solid rgba(191, 164, 105, 0.12);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.sellers-form-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--pure-white);
+  margin-bottom: 8px;
+}
+
+.sellers-form-desc {
+  font-size: 0.9rem;
+  color: var(--silver);
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* Sellers Responsive */
+@media (max-width: 992px) {
+  .sellers-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sellers-section {
+    padding: 70px 0;
+  }
+
+  .sellers-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .sellers-form-wrap {
+    padding: 24px;
+  }
+
+  .hero-features {
+    gap: 8px;
+  }
+
+  .hero-feature {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .why-apex-grid {
+    grid-template-columns: 1fr;
   }
 }
