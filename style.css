@@ -1974,6 +1974,28 @@ ul {
 .stagger-4 { transition-delay: 0.4s; }
 .stagger-5 { transition-delay: 0.5s; }
 
+/* Safety fallback: auto-reveal on mobile after 2s even without JS */
+@media (max-width: 1024px) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    animation: safeReveal 0.5s ease 2s both;
+  }
+  .reveal.visible,
+  .reveal-left.visible,
+  .reveal-right.visible,
+  .reveal-scale.visible {
+    animation: none;
+  }
+}
+@keyframes safeReveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- Parallax ---------- */
 .parallax-img {
   will-change: transform;
