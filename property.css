@@ -270,6 +270,7 @@
   color: var(--silver);
   line-height: 1.9;
   margin-bottom: 16px;
+  white-space: pre-line;
 }
 
 /* ---------- Rooms Grid ---------- */
