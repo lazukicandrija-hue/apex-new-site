@@ -705,6 +705,14 @@ ul {
   font-weight: 400;
 }
 
+.stat-desc {
+  font-size: 0.82rem;
+  color: var(--silver);
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
 /* ---------- Featured Listings ---------- */
 .listings-section {
   background: var(--black);
