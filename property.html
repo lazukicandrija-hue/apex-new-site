@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
@@ -358,36 +358,39 @@
           }
         }
 
-        var prevBtn = document.getElementById('galleryPrev');
-        var nextBtn = document.getElementById('galleryNext');
-        
-        var newPrev = prevBtn.cloneNode(true);
-        var newNext = nextBtn.cloneNode(true);
-        prevBtn.parentNode.replaceChild(newPrev, prevBtn);
-        nextBtn.parentNode.replaceChild(newNext, nextBtn);
-        
-        newPrev.addEventListener('click', function() {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          updateGallery();
-        });
-        newNext.addEventListener('click', function() {
-          currentIndex = (currentIndex + 1) % images.length;
-          updateGallery();
-        });
-
-        var touchStartX = 0;
+        // Clone gallery-main first to remove any stale listeners, then re-attach everything
         var galleryMain = document.querySelector('.gallery-main');
         if (galleryMain) {
           var newGalleryMain = galleryMain.cloneNode(true);
           galleryMain.parentNode.replaceChild(newGalleryMain, galleryMain);
-          
+
+          // Re-acquire references after cloning
           mainImg = document.getElementById('galleryMainImg');
+
+          // Prev/Next buttons (get fresh references from cloned DOM)
+          var prevBtn = newGalleryMain.querySelector('.gallery-prev');
+          var nextBtn = newGalleryMain.querySelector('.gallery-next');
+
+          prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery();
+          });
+          nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery();
+          });
+
+          // Click main image to open lightbox
           mainImg.addEventListener('click', function() {
             if (typeof window._openLightbox === 'function') {
               window._openLightbox();
             }
           });
-          
+
+          // Touch swipe support
+          var touchStartX = 0;
           newGalleryMain.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
           }, { passive: true });
