@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
         _t: Date.now()
       };
 
-      // Build query string manually (no URLSearchParams for older browsers)
+      // Build query string manually (ES5 compatible)
       var params = '';
       for (var key in formData) {
         if (formData.hasOwnProperty(key)) {
@@ -327,10 +327,12 @@ document.addEventListener('DOMContentLoaded', function() {
           params += encodeURIComponent(key) + '=' + encodeURIComponent(formData[key]);
         }
       }
-      var img = new Image();
-      img.src = GOOGLE_SCRIPT_URL + '?' + params;
 
-      setTimeout(function() {
+      // Send via fetch POST (reliable) with GET fallback for older browsers
+      var sendDone = false;
+      function onSuccess() {
+        if (sendDone) return;
+        sendDone = true;
         submitBtn.textContent = '✓ Uspešno Poslato!';
         submitBtn.style.opacity = '1';
         submitBtn.style.background = 'linear-gradient(135deg, #2a7a2a, #3d9d3d)';
@@ -348,7 +350,115 @@ document.addEventListener('DOMContentLoaded', function() {
           submitBtn.style.background = '';
           submitBtn.disabled = false;
         }, 3000);
-      }, 300);
+      }
+
+      function onError() {
+        if (sendDone) return;
+        sendDone = true;
+        submitBtn.textContent = '✗ Greška, pokušajte ponovo';
+        submitBtn.style.opacity = '1';
+        setTimeout(function() {
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      }
+
+      if (typeof fetch === 'function') {
+        fetch(GOOGLE_SCRIPT_URL + '?' + params, {
+          method: 'GET',
+          mode: 'no-cors'
+        }).then(function() {
+          onSuccess();
+        }).catch(function() {
+          // Fallback to GET via Image
+          var img = new Image();
+          img.src = GOOGLE_SCRIPT_URL + '?' + params;
+          setTimeout(onSuccess, 500);
+        });
+      } else {
+        // Old browser fallback
+        var img = new Image();
+        img.src = GOOGLE_SCRIPT_URL + '?' + params;
+        setTimeout(onSuccess, 500);
+      }
+    });
+  }
+
+  // -------- Seller Form (Zatražite besplatnu procenu) --------
+  var sellerForm = document.getElementById('sellerForm');
+  if (sellerForm) {
+    sellerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var sellerBtn = document.getElementById('sellerSubmitBtn');
+      var origText = sellerBtn.textContent;
+
+      sellerBtn.textContent = 'Šalje se...';
+      sellerBtn.style.opacity = '0.7';
+      sellerBtn.disabled = true;
+
+      var sellerData = {
+        ime: document.getElementById('sellerName').value.trim(),
+        email: (document.getElementById('sellerEmail') ? document.getElementById('sellerEmail').value.trim() : ''),
+        telefon: document.getElementById('sellerPhone').value.trim(),
+        kategorija: 'Prodaja nekretnine - ' + (document.getElementById('sellerType').value || 'Nepoznato'),
+        poruka: 'Tip: ' + (document.getElementById('sellerType').value || '-') +
+                ' | Lokacija: ' + (document.getElementById('sellerLocation') ? document.getElementById('sellerLocation').value.trim() : '-') +
+                ' | Kvadratura: ' + (document.getElementById('sellerSize') ? document.getElementById('sellerSize').value.trim() : '-') + 'm²' +
+                ' | Cena: ' + (document.getElementById('sellerPrice') ? document.getElementById('sellerPrice').value.trim() : '-') + '€' +
+                ' | Napomena: ' + (document.getElementById('sellerMessage') ? document.getElementById('sellerMessage').value.trim() : '-'),
+        datum: new Date().toLocaleString('sr-RS'),
+        _t: Date.now()
+      };
+
+      var sellerParams = '';
+      for (var sk in sellerData) {
+        if (sellerData.hasOwnProperty(sk)) {
+          if (sellerParams) sellerParams += '&';
+          sellerParams += encodeURIComponent(sk) + '=' + encodeURIComponent(sellerData[sk]);
+        }
+      }
+
+      var sellerDone = false;
+      function sellerSuccess() {
+        if (sellerDone) return;
+        sellerDone = true;
+        sellerBtn.textContent = '✓ Uspešno Poslato!';
+        sellerBtn.style.opacity = '1';
+        sellerBtn.style.background = 'linear-gradient(135deg, #2a7a2a, #3d9d3d)';
+
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            content_name: 'Procena nekretnine',
+            content_category: 'Seller Lead'
+          });
+        }
+
+        setTimeout(function() {
+          sellerForm.reset();
+          sellerBtn.textContent = origText;
+          sellerBtn.style.background = '';
+          sellerBtn.disabled = false;
+        }, 3000);
+      }
+
+      if (typeof fetch === 'function') {
+        fetch(GOOGLE_SCRIPT_URL + '?' + sellerParams, {
+          method: 'GET',
+          mode: 'no-cors'
+        }).then(function() {
+          sellerSuccess();
+        }).catch(function() {
+          var img2 = new Image();
+          img2.src = GOOGLE_SCRIPT_URL + '?' + sellerParams;
+          setTimeout(sellerSuccess, 500);
+        });
+      } else {
+        var img2 = new Image();
+        img2.src = GOOGLE_SCRIPT_URL + '?' + sellerParams;
+        setTimeout(sellerSuccess, 500);
+      }
     });
   }
 
