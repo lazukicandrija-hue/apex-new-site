@@ -3151,3 +3151,30 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Floating Meeting Button */
+.floating-meeting-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #C3AB7F;
+  color: #0a1128;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.floating-meeting-btn:hover {
+  background-color: #D4AF37;
+  color: #000;
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
