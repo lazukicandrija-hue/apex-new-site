@@ -305,14 +305,29 @@ document.addEventListener('DOMContentLoaded', function() {
       var submitBtn = document.getElementById('submitBtn');
       var originalText = submitBtn.textContent;
 
+      // Honeypot check — if hidden field is filled, it's a bot
+      var hp = document.getElementById('contactWebsite');
+      if (hp && hp.value) return;
+
+      var nameVal = document.getElementById('contactName').value.trim();
+      var emailVal = document.getElementById('contactEmail').value.trim();
+      var phoneVal = document.getElementById('contactPhone').value.trim();
+
+      // Validate: must have name AND at least email or phone
+      if (!nameVal || (!emailVal && !phoneVal)) {
+        submitBtn.textContent = 'Popunite obavezna polja';
+        setTimeout(function() { submitBtn.textContent = originalText; }, 2000);
+        return;
+      }
+
       submitBtn.textContent = 'Šalje se...';
       submitBtn.style.opacity = '0.7';
       submitBtn.disabled = true;
 
       var formData = {
-        ime: document.getElementById('contactName').value.trim(),
-        email: document.getElementById('contactEmail').value.trim(),
-        telefon: document.getElementById('contactPhone').value.trim(),
+        ime: nameVal,
+        email: emailVal,
+        telefon: phoneVal,
         kategorija: document.getElementById('contactInterest').value,
         poruka: document.getElementById('contactMessage').value.trim(),
         datum: new Date().toLocaleString('sr-RS'),
@@ -394,14 +409,25 @@ document.addEventListener('DOMContentLoaded', function() {
       var sellerBtn = document.getElementById('sellerSubmitBtn');
       var origText = sellerBtn.textContent;
 
+      var sName = document.getElementById('sellerName').value.trim();
+      var sPhone = document.getElementById('sellerPhone').value.trim();
+      var sEmail = document.getElementById('sellerEmail') ? document.getElementById('sellerEmail').value.trim() : '';
+
+      // Validate: must have name AND phone
+      if (!sName || !sPhone) {
+        sellerBtn.textContent = 'Popunite obavezna polja';
+        setTimeout(function() { sellerBtn.textContent = origText; }, 2000);
+        return;
+      }
+
       sellerBtn.textContent = 'Šalje se...';
       sellerBtn.style.opacity = '0.7';
       sellerBtn.disabled = true;
 
       var sellerData = {
-        ime: document.getElementById('sellerName').value.trim(),
-        email: (document.getElementById('sellerEmail') ? document.getElementById('sellerEmail').value.trim() : ''),
-        telefon: document.getElementById('sellerPhone').value.trim(),
+        ime: sName,
+        email: sEmail,
+        telefon: sPhone,
         kategorija: 'Prodaja nekretnine - ' + (document.getElementById('sellerType').value || 'Nepoznato'),
         poruka: 'Tip: ' + (document.getElementById('sellerType').value || '-') +
                 ' | Lokacija: ' + (document.getElementById('sellerLocation') ? document.getElementById('sellerLocation').value.trim() : '-') +

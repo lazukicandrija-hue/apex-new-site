@@ -1059,6 +1059,10 @@
               <label for="contactMessage">Poruka</label>
               <textarea id="contactMessage" placeholder="Opišite vaše želje..."></textarea>
             </div>
+            <!-- Honeypot: invisible to users, bots fill it -->
+            <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
+              <input type="text" id="contactWebsite" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <button type="submit" class="btn-submit" id="submitBtn">Pošaljite Upit</button>
           </form>
         </div>
