@@ -3158,8 +3158,8 @@ html, body {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #C3AB7F;
-  color: #0a1128;
+  background-color: var(--gold);
+  color: var(--black);
   padding: 12px 30px;
   border-radius: 50px;
   font-family: var(--font-body);
@@ -3173,8 +3173,8 @@ html, body {
 }
 
 .floating-meeting-btn:hover {
-  background-color: #D4AF37;
-  color: #000;
+  background-color: #C3AB7F;
+  color: var(--black);
   transform: translateX(-50%) translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
