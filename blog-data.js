@@ -484,5 +484,154 @@ const BLOG_POSTS = [
     readTime: "7 min",
     metaDescription: "Kredit za mlade u Srbiji 2026 – vodič za kupovinu prve nekretnine uz učešće od 1% i subvencionisanu kamatnu stopu. Uslovi, banke, dokumentacija i saveti.",
     tags: ["kredit za mlade", "prva nekretnina", "stambeni kredit", "subvencionisani kredit", "kupovina stana", "Novi Sad"]
+  },
+  {
+    slug: "porezi-pri-kupovini-i-prodaji-stana-u-srbiji",
+    title: "Porezi pri kupovini i prodaji stana u Srbiji – vodič za kupce i vlasnike nekretnina",
+    category: "Vodič",
+    excerpt: "Kupovina ili prodaja stana ne podrazumeva samo dogovor o ceni i potpisivanje ugovora. Saznajte sve o PDV-u, porezu na prenos apsolutnih prava, porezu na imovinu i kapitalnom dobitku.",
+    content: `
+      <p>Kupovina ili prodaja stana ne podrazumeva samo dogovor o ceni i potpisivanje kupoprodajnog ugovora. Važan deo celog procesa čine i poreske obaveze koje mogu značajno uticati na ukupne troškove transakcije.</p>
+
+      <p>U zavisnosti od toga da li kupujete stan u novogradnji ili starogradnji, možete imati obavezu plaćanja poreza na dodatu vrednost (PDV) ili poreza na prenos apsolutnih prava. Nakon kupovine, vlasnika očekuje i godišnji porez na imovinu, dok prodaja nekretnine u određenim okolnostima može dovesti do obaveze plaćanja poreza na kapitalni dobitak.</p>
+
+      <p>U ovom vodiču APEX Real Estate objašnjava najvažnije poreske obaveze koje treba uzeti u obzir prilikom kupovine, vlasništva i prodaje stana u Srbiji.</p>
+
+      <h2>1. PDV pri kupovini stana u novogradnji</h2>
+      <p>Kada kupujete stan direktno od investitora koji je obveznik PDV-a, na prvi prenos prava raspolaganja novoizgrađenim stanom primenjuje se posebna poreska stopa.</p>
+      <ul>
+        <li><strong>10% PDV-a</strong> obračunava se na promet stambenih objekata.</li>
+        <li><strong>20% PDV-a</strong> primenjuje se na promet dobara i usluga za koje važi opšta poreska stopa, uključujući odgovarajuće nestambene prostore.</li>
+      </ul>
+      <p>Kod novogradnje je PDV najčešće uključen u iskazanu kupoprodajnu cenu, ali je važno proveriti šta je tačno navedeno u ponudi i ugovoru.</p>
+      <p>Poreski tretman zavisi od konkretne transakcije, statusa prodavca i vrste nepokretnosti, pa se ne može svaka kupovina stana u novogradnji automatski tretirati na isti način.</p>
+
+      <h3>Povraćaj PDV-a za kupovinu prvog stana</h3>
+      <p>Jedna od značajnih poreskih olakšica namenjena kupcima prve nekretnine jeste mogućnost refundacije PDV-a. Pravo se ostvaruje pod zakonom propisanim uslovima, na osnovu zahteva nadležnom poreskom organu.</p>
+      <p>Da bi kupac ostvario ovo pravo, potrebno je, između ostalog, da:</p>
+      <ol>
+        <li>Bude punoletno fizičko lice i državljanin Republike Srbije.</li>
+        <li>Ima prebivalište na teritoriji Republike Srbije.</li>
+        <li>Od 1. jula 2006. godine do dana overe ugovora nije imao u svojini, zajedničkoj svojini ili susvojini stan na teritoriji Srbije.</li>
+        <li>Ugovorena cena stana sa PDV-om bude u potpunosti plaćena na način propisan zakonom.</li>
+      </ol>
+      <p>Pored navedenog, primenjuju se i druga zakonska ograničenja, uključujući pravila o ranije ostvarenom pravu na poresku olakšicu.</p>
+
+      <h3>Za koju kvadraturu se može ostvariti povraćaj?</h3>
+      <p>Zakonom je predviđena refundacija PDV-a za površinu:</p>
+      <ul>
+        <li>do 40 m² za kupca prvog stana;</li>
+        <li>dodatnih 15 m² za svakog kvalifikovanog člana porodičnog domaćinstva.</li>
+      </ul>
+      <p>Pravo za članove domaćinstva zavisi od ispunjenosti posebnih uslova, uključujući uslov da nisu imali stan u vlasništvu u relevantnom periodu.</p>
+      <p>Ako je površina kupljenog stana veća od površine za koju se ostvaruje pravo, refundacija se odnosi samo na priznati deo.</p>
+
+      <h3>Koja dokumentacija je potrebna za refundaciju PDV-a?</h3>
+      <p>Zahtev se podnosi nadležnom poreskom organu uz dokumentaciju propisanu za konkretan slučaj. Ona može obuhvatati:</p>
+      <ul>
+        <li>kupoprodajni ugovor;</li>
+        <li>dokaze o uplati kupoprodajne cene;</li>
+        <li>propisane izjave i obrasce;</li>
+        <li>dokumentaciju kojom se potvrđuje ispunjenost uslova za kupca i članove domaćinstva.</li>
+      </ul>
+      <p>Pre podnošenja zahteva treba proveriti aktuelan spisak dokumentacije i način podnošenja kod Poreske uprave.</p>
+
+      <h2>2. Porez na prenos apsolutnih prava pri kupovini starogradnje</h2>
+      <p>Kada kupujete stan koji je već bio u prometu, najčešće se primenjuje porez na prenos apsolutnih prava, umesto PDV-a.</p>
+      <p>Zakonska poreska stopa iznosi <strong>2,5%</strong>.</p>
+      <p>Poreska osnovica je ugovorena cena ako odgovara tržišnoj vrednosti nepokretnosti. Ako nadležni poreski organ proceni da je ugovorena cena niža od tržišne, može utvrditi osnovicu prema tržišnoj vrednosti, u skladu sa zakonom.</p>
+      <p>Iako je prodavac zakonski poreski obveznik, ugovorom se može predvideti da trošak snosi kupac, što je česta praksa na tržištu. Zato je važno da kupac pre potpisivanja ugovora proveri kako su poreske obaveze uređene.</p>
+
+      <h3>Da li kupac prvog stana može biti oslobođen poreza?</h3>
+      <p>Da. Kupac prvog stana može ostvariti pravo na poresko oslobođenje ako ispunjava zakonske uslove.</p>
+      <p>Oslobođenje se, po pravilu, odnosi na površinu do 40 m² za kupca, uz mogućnost dodatnih 15 m² po kvalifikovanom članu porodičnog domaćinstva.</p>
+      <p>Za površinu koja prelazi priznatu kvadraturu porez se plaća u skladu sa zakonom.</p>
+      <p>Važno je znati da se kod kupovine starogradnje ostvaruje oslobođenje od poreza na prenos apsolutnih prava, dok se kod kupovine prvog stana u novogradnji od investitora koji obračunava PDV može ostvariti refundacija PDV-a. Ova dva poreska režima ne treba poistovećivati.</p>
+
+      <h2>3. Godišnji porez na imovinu</h2>
+      <p>Kupovinom stana nastaje i obaveza plaćanja godišnjeg poreza na imovinu, u skladu sa propisima i okolnostima konkretnog slučaja.</p>
+      <p>Za fizička lica koja ne vode poslovne knjige, poreska osnovica se utvrđuje prema zakonskim pravilima, uzimajući u obzir odgovarajuću vrednost nepokretnosti, njenu površinu, zonu i druge propisane elemente.</p>
+      <p>Porez utvrđuje nadležni lokalni poreski organ, pa iznos može da se razlikuje u zavisnosti od grada, opštine i lokacije stana.</p>
+
+      <h3>Kako se obračunava porez na imovinu?</h3>
+      <p>Prilikom obračuna mogu biti značajni:</p>
+      <ul>
+        <li>površina nepokretnosti;</li>
+        <li>prosečne cene odgovarajućih nepokretnosti u zoni;</li>
+        <li>poreska stopa koju je propisala lokalna samouprava;</li>
+        <li>zakonska umanjenja i olakšice za koje vlasnik ispunjava uslove.</li>
+      </ul>
+      <p>Zbog toga nije moguće odrediti tačan godišnji porez samo na osnovu kupoprodajne cene stana.</p>
+
+      <h3>Da li postoji olakšica za stan u kojem vlasnik živi?</h3>
+      <p>Za stan ili kuću u kojoj obveznik stanuje i u kojoj ima prijavljeno prebivalište, zakon predviđa poreski kredit, odnosno umanjenje utvrđenog poreza za 50%, najviše do 20.000 dinara godišnje, pod propisanim uslovima.</p>
+      <p>Mogu se primenjivati i druga pravila, uključujući amortizaciju vrednosti objekta, u skladu sa zakonom i odlukama lokalne samouprave.</p>
+
+      <h3>Kada se plaća porez na imovinu?</h3>
+      <p>Porez na imovinu fizičkih lica uobičajeno se plaća tromesečno, u četiri rate godišnje. Uobičajeni rokovi su:</p>
+      <ul>
+        <li>15. februar;</li>
+        <li>15. maj;</li>
+        <li>15. avgust;</li>
+        <li>15. novembar.</li>
+      </ul>
+      <p>Treba pratiti rešenje i instrukcije nadležnog lokalnog poreskog organa, jer su merodavni konkretno utvrđena obaveza i važeći propisi. Kašnjenje sa uplatom može dovesti do obračuna kamate.</p>
+
+      <h2>4. Porez na kapitalni dobitak pri prodaji stana</h2>
+      <p>Prilikom prodaje nekretnine može nastati obaveza plaćanja poreza na kapitalni dobitak, ukoliko se ostvari oporeziva razlika između prodajne i nabavne vrednosti.</p>
+      <p>Za fizička lica, stopa poreza na kapitalni dobitak iznosi <strong>15%</strong>.</p>
+      <p>Kapitalni dobitak se ne određuje jednostavno oduzimanjem iznosa sa starog i novog kupoprodajnog ugovora. Nabavna vrednost i drugi relevantni elementi utvrđuju se prema pravilima poreskih propisa, uključujući odgovarajuće usklađivanje nabavne cene.</p>
+
+      <h3>Kako se utvrđuje kapitalni dobitak?</h3>
+      <p>Prilikom obračuna razmatraju se, između ostalog:</p>
+      <ul>
+        <li>prodajna cena nepokretnosti;</li>
+        <li>nabavna cena, utvrđena u skladu sa zakonom;</li>
+        <li>propisano usklađivanje nabavne vrednosti;</li>
+        <li>okolnosti sticanja i eventualna zakonska oslobođenja.</li>
+      </ul>
+      <p>Ne treba pretpostaviti da se svi troškovi notara, taksi ili adaptacije automatski priznaju kao deo nabavne vrednosti. Poreski tretman konkretnih troškova zavisi od važećih propisa i raspoložive dokumentacije.</p>
+
+      <h3>Kada se porez na kapitalni dobitak ne plaća ili se može ostvariti oslobođenje?</h3>
+      <p>Postoje zakonom predviđeni slučajevi u kojima se porez ne plaća ili se može ostvariti oslobođenje, odnosno povraćaj već plaćenog poreza.</p>
+      <p>Primeri uključuju:</p>
+      <ul>
+        <li>prenos nepokretnosti u određenim slučajevima nasleđivanja ili prenosa između članova porodice, u skladu sa zakonom;</li>
+        <li>situacije u kojima je protekao zakonom propisani period od sticanja do prenosa nepokretnosti;</li>
+        <li>ulaganje sredstava od prodaje u rešavanje sopstvenog stambenog pitanja ili stambenog pitanja članova porodice, pod propisanim uslovima i u predviđenim rokovima.</li>
+      </ul>
+      <p>Kod reinvestiranja, pravo na oslobođenje ili povraćaj zavisi od toga koliko je sredstava uloženo, u koje svrhe i u kom roku. U određenim slučajevima relevantni su rok od 90 dana za ulaganje i rok od 12 meseci za ostvarivanje prava na povraćaj već plaćenog poreza.</p>
+      <p>Pošto primena oslobođenja zavisi od konkretnih činjenica i zakonskih uslova, preporučljivo je da se pre prodaje proveri poreski tretman transakcije.</p>
+
+      <h2>5. Kako unapred planirati troškove kupovine i prodaje?</h2>
+      <p>Pre nego što donesete odluku o kupovini ili prodaji stana, korisno je da napravite pregled svih potencijalnih troškova.</p>
+      <p><strong>Ako kupujete stan, proverite:</strong></p>
+      <ul>
+        <li>da li se primenjuje PDV ili porez na prenos apsolutnih prava;</li>
+        <li>da li ispunjavate uslove za refundaciju PDV-a ili poresko oslobođenje za prvi stan;</li>
+        <li>koliki bi mogao biti godišnji porez na imovinu;</li>
+        <li>koji dodatni troškovi prate kupoprodaju.</li>
+      </ul>
+      <p><strong>Ako prodajete stan, proverite:</strong></p>
+      <ul>
+        <li>da li prodaja može dovesti do obaveze poreza na kapitalni dobitak;</li>
+        <li>koja nabavna vrednost se priznaje za poreske potrebe;</li>
+        <li>da li postoje uslovi za oslobođenje ili povraćaj poreza;</li>
+        <li>koje prijave i rokove treba ispoštovati.</li>
+      </ul>
+
+      <h2>APEX Real Estate – informisana odluka je dobar početak</h2>
+      <p>Kupovina ili prodaja nekretnine važna je finansijska odluka, a razumevanje poreskih obaveza pomaže da se proces planira realno i bez nepotrebnih iznenađenja.</p>
+      <p>U APEX Real Estate-u nastojimo da klijentima približimo važne korake na tržištu nekretnina i pomognemo im da lakše sagledaju mogućnosti prilikom kupovine ili prodaje stana u Novom Sadu.</p>
+      <p>Ukoliko razmišljate o kupovini ili prodaji nekretnine, <a href="index.html#contact"><strong>kontaktirajte naš tim</strong></a> i informišite se o narednim koracima.</p>
+      <p><em>Napomena: Ovaj tekst je informativnog karaktera i ne predstavlja poreski ili pravni savet. Poreske obaveze zavise od okolnosti konkretnog slučaja i važećih propisa. Pre zaključenja transakcije preporučuje se provera sa nadležnim poreskim organom ili stručnim poreskim savetnikom.</em></p>
+    `,
+    image: "assets/images/blog-7.jpg",
+    author: "APEX Tim",
+    date: "2026-10-21",
+    dateFormatted: "21. Okt 2026",
+    readTime: "8 min",
+    metaDescription: "Porezi pri kupovini i prodaji stana u Srbiji – kompletan vodič kroz PDV u novogradnji, porez na prenos apsolutnih prava, porez na imovinu i kapitalni dobitak.",
+    tags: ["porezi", "kupovina stana", "prodaja stana", "PDV", "porez na prenos apsolutnih prava", "kapitalni dobitak", "porez na imovinu"]
   }
 ];
