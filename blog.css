@@ -304,8 +304,35 @@
   background: var(--gold);
 }
 
-.blog-post-content ul li strong {
+.blog-post-content ul li strong,
+.blog-post-content ol li strong {
   color: var(--pure-white);
+}
+
+.blog-post-content ol {
+  margin: 16px 0 24px 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: blog-ol;
+}
+
+.blog-post-content ol li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--silver);
+  line-height: 1.8;
+  counter-increment: blog-ol;
+}
+
+.blog-post-content ol li::before {
+  content: counter(blog-ol) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .blog-post-content strong {

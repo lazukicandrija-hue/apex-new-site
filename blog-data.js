@@ -310,5 +310,74 @@ const BLOG_POSTS = [
     readTime: "7 min",
     metaDescription: "Povrat PDV-a od 10% za kupovinu prvog stana u novogradnji u Srbiji. Uslovi, dokumentacija, koraci i saveti. APEX Real Estate Novi Sad.",
     tags: ["PDV", "povrat PDV-a", "prvi stan", "novogradnja", "kupovina stana", "dokumentacija"]
+  },
+  {
+    slug: "beli-karton-u-srbiji-sta-strani-drzavljani-treba-da-znaju",
+    title: "Beli karton u Srbiji – šta strani državljani treba da znaju?",
+    category: "Vodič",
+    excerpt: "Dolazak u Srbiju radi posla, dužeg boravka ili kupovine nekretnine podrazumeva i određene administrativne obaveze. Jedna od prvih sa kojom se strani državljani susreću jeste prijava boravišta, poznata kao beli karton.",
+    content: `
+      <p>Dolazak u Srbiju radi posla, dužeg boravka ili kupovine nekretnine podrazumeva i određene administrativne obaveze. Jedna od prvih sa kojom se strani državljani susreću jeste prijava boravišta, poznata kao beli karton.</p>
+
+      <p>U ovom vodiču objašnjavamo šta predstavlja beli karton, ko je odgovoran za prijavu boravka, koja dokumentacija može biti potrebna i na koji način se ova procedura uklapa u planiranje boravka ili kupovinu nekretnine u Srbiji.</p>
+
+      <h2>Šta predstavlja beli karton?</h2>
+      <p>Beli karton je uobičajen naziv za potvrdu o prijavi boravišta stranog državljanina u Republici Srbiji. Njegova svrha je da nadležni organi imaju evidenciju o adresi na kojoj stranac boravi tokom svog boravka u zemlji.</p>
+      <p>Prema pravilima koja uređuju boravak stranaca, prijava se, po pravilu, vrši u roku od 24 časa od dolaska u mesto boravišta, odnosno od promene adrese, kada je to primenljivo.</p>
+      <p>Važno je razlikovati prijavu boravišta od odobrenja privremenog boravka. Beli karton ne predstavlja dozvolu za privremeni boravak, već evidenciju prijavljene adrese.</p>
+
+      <h2>Ko je dužan da prijavi boravak stranca?</h2>
+      <p>Postupak prijave zavisi od toga gde je strani državljanin smešten.</p>
+      <ul>
+        <li><strong>Hotel, hostel ili drugi registrovani smeštajni objekat:</strong> prijavu uobičajeno obavlja pružalac smeštaja.</li>
+        <li><strong>Privatni stan ili kuća:</strong> prijavu obavlja lice koje ima zakonsku obavezu da prijavi stranog državljanina, najčešće vlasnik nepokretnosti ili lice koje mu je omogućilo smeštaj.</li>
+      </ul>
+      <p>Ukoliko stranac iznajmljuje stan u Novom Sadu ili drugom gradu u Srbiji, preporučljivo je da unapred sa vlasnikom dogovori način prijave boravišta i potrebnu dokumentaciju.</p>
+      <p>U APEX Real Estate-u smatramo da su jasne informacije o administrativnim obavezama važan deo kvalitetne podrške prilikom pronalaženja i zakupa nekretnine.</p>
+
+      <h2>Gde se prijavljuje boravište?</h2>
+      <p>Prijava se obavlja u skladu sa procedurom Ministarstva unutrašnjih poslova (MUP), odnosno preko nadležne policijske uprave ili stanice prema mestu boravka. U zavisnosti od okolnosti, mogu biti dostupne i druge propisane mogućnosti prijave.</p>
+      <p>Pre odlaska, preporučljivo je proveriti aktuelnu proceduru i nadležnost za konkretnu adresu, kako bi se izbegli nepotrebni odlasci i eventualna kašnjenja.</p>
+
+      <h2>Koja dokumentacija je potrebna?</h2>
+      <p>Za prijavu boravišta najčešće je potrebno pripremiti:</p>
+      <ol>
+        <li>Važeći pasoš stranog državljanina.</li>
+        <li>Podatke i, kada se zahteva, identifikacioni dokument lica koje obezbeđuje smeštaj.</li>
+        <li>Podatke o adresi na kojoj će stranac boraviti.</li>
+        <li>Dokaz ili dokumentaciju o osnovu korišćenja nepokretnosti, ukoliko je to potrebno u konkretnom postupku.</li>
+        <li>Ugovor o zakupu, kada postoji i kada je relevantan za prijavu.</li>
+      </ol>
+      <p>Tačan spisak dokumenata može zavisiti od načina smeštaja i konkretne procedure, pa je pre podnošenja prijave korisno proveriti zahteve nadležnog organa.</p>
+
+      <h2>Da li je beli karton potreban prilikom kupovine nekretnine?</h2>
+      <p>Strani državljani koji planiraju kupovinu stana ili kuće u Srbiji treba da razlikuju dve stvari: dokumentaciju potrebnu za samu kupoprodaju i obaveze koje nastaju povodom njihovog boravka u zemlji.</p>
+      <p>Beli karton nije univerzalni preduslov za zaključenje kupoprodajnog ugovora. Dokumentacija koju kupac treba da obezbedi zavisi od konkretne transakcije, njegovog statusa i zahteva nadležnih institucija.</p>
+      <p>Ipak, ako strani državljanin boravi u Srbiji, potrebno je da poštuje propise o prijavi boravišta. Ova obaveza može biti važna i za naredne administrativne korake, naročito ako kupac nakon sticanja nekretnine planira da podnese zahtev za privremeni boravak.</p>
+      <p>Zato je korisno da se pitanja prijave boravišta i dokumentacije za kupoprodaju razmotre na vreme, posebno kada se transakcija obavlja uz podršku više učesnika.</p>
+
+      <h2>Beli karton i privremeni boravak – koja je razlika?</h2>
+      <p>Iako se ova dva pojma često povezuju, oni nemaju isto značenje.</p>
+      <ul>
+        <li><strong>Beli karton</strong> predstavlja prijavu adrese boravka stranog državljanina.</li>
+        <li><strong>Privremeni boravak</strong> predstavlja odobrenje boravka u Srbiji po zakonom predviđenom osnovu i pod propisanim uslovima.</li>
+      </ul>
+      <p>Kupovina nekretnine može biti relevantna za podnošenje zahteva za privremeni boravak, ali samo vlasništvo nad nekretninom ne znači da je privremeni boravak automatski odobren. Potrebno je ispuniti uslove i sprovesti odgovarajući postupak.</p>
+
+      <h2>Šta ako boravak nije prijavljen?</h2>
+      <p>Neprijavljivanje boravka u skladu sa važećim propisima može dovesti do prekršajne odgovornosti i dodatnih administrativnih poteškoća. Zbog toga je važno da strani državljani, kao i lica koja im obezbeđuju smeštaj, provere svoje obaveze i poštuju propisane rokove.</p>
+
+      <h2>APEX Real Estate – podrška pri pronalaženju nekretnine u Srbiji</h2>
+      <p>Bilo da dolazite u Srbiju zbog posla, planirate duži boravak ili želite da kupite nekretninu u Novom Sadu, pravovremene informacije mogu vam olakšati organizaciju celog procesa.</p>
+      <p>APEX Real Estate pruža podršku pri pronalaženju nekretnina za kupovinu i zakup, uz nastojanje da klijenti budu upoznati sa važnim koracima koji ih očekuju.</p>
+      <p>Za informacije o ponudi stanova i kuća u Novom Sadu, <a href="index.html#contact"><strong>kontaktirajte naš tim</strong></a> i pronađite nekretninu koja odgovara vašim potrebama.</p>
+    `,
+    image: "assets/images/blog-5.jpg",
+    author: "APEX Tim",
+    date: "2026-10-21",
+    dateFormatted: "21. Okt 2026",
+    readTime: "5 min",
+    metaDescription: "Beli karton u Srbiji – šta strani državljani treba da znaju? Vodič kroz prijavu boravišta, potrebnu dokumentaciju, zakup i kupovinu nekretnine u Srbiji.",
+    tags: ["beli karton", "strani državljani", "prijava boravišta", "kupovina nekretnine", "zakup stana", "Novi Sad"]
   }
 ];
