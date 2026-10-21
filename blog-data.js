@@ -626,7 +626,7 @@ const BLOG_POSTS = [
       <p>Ukoliko razmišljate o kupovini ili prodaji nekretnine, <a href="index.html#contact"><strong>kontaktirajte naš tim</strong></a> i informišite se o narednim koracima.</p>
       <p><em>Napomena: Ovaj tekst je informativnog karaktera i ne predstavlja poreski ili pravni savet. Poreske obaveze zavise od okolnosti konkretnog slučaja i važećih propisa. Pre zaključenja transakcije preporučuje se provera sa nadležnim poreskim organom ili stručnim poreskim savetnikom.</em></p>
     `,
-    image: "assets/images/blog-7.jpg",
+    image: "assets/images/blog-7.jpg?v=2",
     author: "APEX Tim",
     date: "2026-10-21",
     dateFormatted: "21. Okt 2026",
