@@ -379,5 +379,110 @@ const BLOG_POSTS = [
     readTime: "5 min",
     metaDescription: "Beli karton u Srbiji – šta strani državljani treba da znaju? Vodič kroz prijavu boravišta, potrebnu dokumentaciju, zakup i kupovinu nekretnine u Srbiji.",
     tags: ["beli karton", "strani državljani", "prijava boravišta", "kupovina nekretnine", "zakup stana", "Novi Sad"]
+  },
+  {
+    slug: "kredit-za-mlade-u-srbiji-2026-vodic-za-kupovinu-prve-nekretnine",
+    title: "Kredit za mlade u Srbiji 2026 – vodič za kupovinu prve nekretnine",
+    category: "Vodič",
+    excerpt: "Kupovina prve nekretnine predstavlja važan korak, a državni program subvencionisanih stambenih kredita omogućava mladima od 20 do 35 godina kupovinu prve stambene nepokretnosti uz učešće od 1% i subvencionisanu kamatu.",
+    content: `
+      <p>Kupovina prve nekretnine predstavlja važan korak, ali visoko učešće i troškovi finansiranja često predstavljaju prepreku za mlade koji žele da reše svoje stambeno pitanje. Upravo zbog toga pokrenut je državni program subvencionisanih stambenih kredita, koji omogućava kupovinu prve stambene nepokretnosti pod povoljnijim uslovima.</p>
+
+      <p>Program je namenjen mladima od 20 do 35 godina i pruža mogućnost finansiranja uz minimalno učešće, subvencionisanu kamatnu stopu u prvih šest godina i dug rok otplate.</p>
+
+      <p>U nastavku saznajte ko može da konkuriše, koji su osnovni uslovi, kakve nekretnine dolaze u obzir i na šta treba obratiti pažnju pre nego što se odlučite za kupovinu stana ili kuće.</p>
+
+      <h2>Ko ima pravo na subvencionisani kredit za mlade?</h2>
+      <p>Program je namenjen državljanima Republike Srbije koji imaju prebivalište u Srbiji i koji u trenutku podnošenja zahteva imaju od navršenih 20 do navršenih 35 godina.</p>
+      <p>Jedan od osnovnih uslova jeste da podnosilac zahteva kupuje svoju prvu stambenu nepokretnost i da ispunjava zakonom propisane kriterijume u vezi sa prethodnim vlasništvom i korišćenjem stambenih kredita.</p>
+      <p>Kada je reč o radnom statusu, mogućnost konkurisanja nije ograničena samo na zaposlene na neodređeno vreme. U program mogu biti uključeni i:</p>
+      <ul>
+        <li>Zaposleni na određeno vreme.</li>
+        <li>Nezaposlena lica, uz odgovarajuće jemstvo kada je potrebno.</li>
+        <li>Preduzetnici i lica koja obavljaju samostalnu delatnost.</li>
+        <li>Poljoprivrednici.</li>
+        <li>Samostalni umetnici.</li>
+      </ul>
+      <p>Ipak, ispunjavanje osnovnih uslova programa ne znači automatsko odobrenje kredita. Banka procenjuje kreditnu sposobnost podnosioca zahteva i proverava dokumentaciju u skladu sa svojim procedurama.</p>
+
+      <h2>Koji su finansijski uslovi kredita za mlade?</h2>
+      <p>Jedna od glavnih prednosti programa jeste niže početno finansijsko opterećenje u odnosu na uobičajene uslove stambenog kreditiranja.</p>
+      <ul>
+        <li><strong>Maksimalni iznos kredita:</strong> do 100.000 evra.</li>
+        <li><strong>Minimalno učešće:</strong> 1% vrednosti nepokretnosti, u skladu sa uslovima programa i banke.</li>
+        <li><strong>Kamatna stopa:</strong> u prvih šest godina ugovorena fiksna kamatna stopa iznosi 3,5% godišnje, pri čemu država subvencioniše 2 procentna poena, a korisnik plaća preostali deo od 1,5% godišnje.</li>
+        <li><strong>Period otplate:</strong> do 40 godina, uz uslov da kredit bude otplaćen najkasnije do navršene 70. godine života korisnika.</li>
+        <li><strong>Grejs period:</strong> predviđen je period od 12 meseci, tokom kojeg se otplata glavnice odlaže, u skladu sa ugovorenim uslovima.</li>
+      </ul>
+      <p>Nakon isteka prvih šest godina primenjuje se promenljiva kamatna stopa, vezana za tromesečni ili šestomesečni EURIBOR, uvećan za 2 procentna poena, u zavisnosti od ugovorenog modela.</p>
+      <p>Važno je imati u vidu da se uslovi nakon subvencionisanog perioda razlikuju od početnih. Pre potpisivanja ugovora potrebno je razmotriti i moguće promene mesečne rate usled kretanja referentne kamatne stope.</p>
+
+      <h2>Koliko novca je potrebno za učešće?</h2>
+      <p>Jedan od razloga zbog kojih je program privukao veliko interesovanje jeste mogućnost kupovine uz učešće od svega 1%.</p>
+      <p>Takođe, potrebno je planirati i prateće troškove kupovine, koji mogu obuhvatati troškove javnog beležnika, procene nepokretnosti, upisa hipoteke i druge troškove u zavisnosti od konkretnog slučaja.</p>
+
+      <h2>Koje nekretnine mogu da se kupe ovim kreditom?</h2>
+      <p>Program se odnosi na prvu stambenu nepokretnost, a prihvatljivost konkretnog objekta zavisi od zakonskih uslova i kriterijuma banke.</p>
+      <p>U zavisnosti od ispunjenosti propisanih uslova, predmet kupovine mogu biti:</p>
+      <ul>
+        <li>Stan.</li>
+        <li>Porodična kuća.</li>
+        <li>Odgovarajuća stambena nepokretnost u izgradnji.</li>
+        <li>Druge zakonom predviđene nepokretnosti koje ispunjavaju uslove programa.</li>
+      </ul>
+      <p>Za kupovinu nepokretnosti u izgradnji posebno je važno proveriti status projekta, stepen završenosti objekta, mogućnost uspostavljanja hipoteke i druge uslove koje banka zahteva.</p>
+      <p>Pre nego što se odlučite za određeni stan u novogradnji, preporučujemo da proverite da li je konkretna nepokretnost prihvatljiva za finansiranje putem ovog programa. Činjenica da je stan u ponudi ne znači nužno da ispunjava sve kriterijume banke.</p>
+
+      <h2>Koje obaveze ima korisnik kredita?</h2>
+      <p>Korisnik subvencionisanog kredita prihvata posebne obaveze koje se odnose na korišćenje kupljene nepokretnosti.</p>
+      <p>Prema pravilima programa, korisnik je dužan da u kupljenoj nepokretnosti stanuje najmanje šest godina od odobrenja kredita, odnosno u skladu sa zakonom i ugovorenim uslovima.</p>
+      <p>Tokom propisanog perioda nije dozvoljeno izdavanje nepokretnosti u zakup niti njeno otuđenje, osim u slučajevima koji su dopušteni važećim propisima.</p>
+      <p>Kršenje ovih obaveza može dovesti do gubitka prava na subvenciju i drugih finansijskih posledica. Zato je važno da se uslovi detaljno prouče pre podnošenja zahteva, posebno ako postoji mogućnost preseljenja ili promene stambenih potreba u narednim godinama.</p>
+
+      <h2>Koje banke učestvuju u programu?</h2>
+      <p>Krediti se realizuju preko banaka koje učestvuju u državnoj garantnoj šemi.</p>
+      <p>Među bankama koje su učestvovale u programu nalaze se Banka Poštanska štedionica, Banca Intesa, OTP banka, AIK Banka, Raiffeisen banka i UniCredit Banka.</p>
+      <p>Pošto se ponuda i operativni uslovi mogu menjati, pre podnošenja zahteva potrebno je proveriti kod izabrane banke da li trenutno prima zahteve u okviru programa, koju dokumentaciju traži i kako procenjuje kreditnu sposobnost.</p>
+
+      <h2>Koja dokumentacija je potrebna za prijavu?</h2>
+      <p>Tačan spisak dokumentacije zavisi od radnog statusa podnosioca zahteva, banke i karakteristika nepokretnosti.</p>
+      <p>Uobičajeno je potrebno pripremiti:</p>
+      <ul>
+        <li>Važeću ličnu kartu i osnovne lične podatke.</li>
+        <li>Zahtev za odobrenje stambenog kredita.</li>
+        <li>Dokaze o zaposlenju i primanjima, kada su primenljivi.</li>
+        <li>Izvode po računima i druge dokaze o prihodima, prema zahtevima banke.</li>
+        <li>Dokumentaciju jemca, ukoliko je jemstvo potrebno.</li>
+        <li>Dokumentaciju o nepokretnosti koja se kupuje.</li>
+        <li>Dodatne izjave i dokumenta koja banka zahteva radi provere ispunjenosti uslova programa.</li>
+      </ul>
+      <p>Postupak obično obuhvata proveru dokumentacije, procenu kreditne sposobnosti, procenu vrednosti nepokretnosti i proveru pravnog statusa objekta, nakon čega sledi donošenje odluke banke i realizacija kredita.</p>
+
+      <h2>Na šta obratiti pažnju pre kupovine stana?</h2>
+      <p>Čak i kada kupac ispunjava osnovne uslove za subvencionisani kredit, izbor odgovarajuće nepokretnosti zahteva dodatnu pažnju.</p>
+      <p>Pre donošenja odluke preporučujemo da proverite:</p>
+      <p><strong>1. Da li nekretnina ispunjava uslove programa.</strong><br>Nisu svi stanovi i svi projekti automatski prihvatljivi za ovu vrstu finansiranja.</p>
+      <p><strong>2. Da li je dokumentacija uredna.</strong><br>Pravni status nepokretnosti i mogućnost uspostavljanja hipoteke važni su za realizaciju stambenog kredita.</p>
+      <p><strong>3. Koliki su ukupni troškovi kupovine.</strong><br>Pored učešća, potrebno je uzeti u obzir prateće troškove i raspoloživi budžet.</p>
+      <p><strong>4. Kolika će biti rata nakon isteka subvencionisanog perioda.</strong><br>Promenljiva kamatna stopa može uticati na visinu budućih mesečnih obaveza, pa je važno planirati i dugoročno.</p>
+      <p><strong>5. Da li lokacija i nekretnina odgovaraju vašim planovima.</strong><br>Prilikom izbora stana razmotrite lokaciju, strukturu, funkcionalnost, kvalitet gradnje i potrebe vašeg domaćinstva.</p>
+
+      <h2>Da li je subvencionisani kredit za mlade dobar izbor?</h2>
+      <p>Za kupce koji ispunjavaju uslove programa, ovaj model finansiranja može predstavljati značajnu pomoć pri rešavanju stambenog pitanja. Nisko minimalno učešće i subvencionisana kamata u prvih šest godina smanjuju početno finansijsko opterećenje.</p>
+      <p>Ipak, odluka o kupovini treba da se zasniva na realnim finansijskim mogućnostima, dugoročnim planovima i pažljivoj proceni svih troškova. Odobrenje kredita zavisi od banke, a povoljniji početni uslovi ne znače da će mesečne obaveze ostati iste tokom celog perioda otplate.</p>
+
+      <h2>APEX Real Estate – pronađite nekretninu za svoj prvi dom</h2>
+      <p>Kupovina prve nekretnine počinje izborom prostora u kojem možete da zamislite svoju budućnost. Kada uz to postoji mogućnost finansiranja kroz državni program podrške mladima, važno je pronaći nekretninu koja odgovara i vašim željama i uslovima finansiranja.</p>
+      <p>APEX Real Estate pruža podršku pri pronalaženju stanova i kuća u Novom Sadu, uz informacije koje vam mogu pomoći da lakše sagledate naredne korake u procesu kupovine.</p>
+      <p><a href="prodaja.html"><strong>Pogledajte našu ponudu nekretnina</strong></a> i <a href="index.html#contact"><strong>kontaktirajte naš tim</strong></a> kako biste pronašli prostor koji odgovara vašim potrebama.</p>
+      <p><em>Napomena: Uslovi programa, dostupnost sredstava i zahtevi banaka mogu se menjati. Pre donošenja odluke proverite važeće uslove kod banke i nadležnih institucija.</em></p>
+    `,
+    image: "assets/images/blog-6.jpg",
+    author: "APEX Tim",
+    date: "2026-10-21",
+    dateFormatted: "21. Okt 2026",
+    readTime: "7 min",
+    metaDescription: "Kredit za mlade u Srbiji 2026 – vodič za kupovinu prve nekretnine uz učešće od 1% i subvencionisanu kamatnu stopu. Uslovi, banke, dokumentacija i saveti.",
+    tags: ["kredit za mlade", "prva nekretnina", "stambeni kredit", "subvencionisani kredit", "kupovina stana", "Novi Sad"]
   }
 ];
